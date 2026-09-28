@@ -17,9 +17,9 @@
   .skip-link:focus { transform: translateY(0); }
   .ticket-shadow { filter: drop-shadow(0 8px 32px rgb(21 26 74 / .06)); }
   .hero-image { position: relative; isolation: isolate; }
-  .hero-image::before { content: ""; position: absolute; z-index: -1; inset: 12% 1% 4% 0; border-radius: 43% 57% 39% 61% / 51% 38% 62% 49%; background: var(--color-mint-blob);top:200px; }
+  .hero-image::before { content: ""; position: absolute; z-index: -1; inset: 12% 1% 4% 0; border-radius: 43% 57% 39% 61% / 51% 38% 62% 49%; background: var(--color-mint-blob);top:100px; }
   .ticket-form { --cut-line: 100px; }
-  .ticket-stub { height: 100px; }
+  .ticket-stub { height: auto; }
   .pass-footer { height: 112px; }
   .step-tile { width: 100%; aspect-ratio: auto; flex-shrink: 0; }
   .prize-image { padding: 15%; }
@@ -29,8 +29,13 @@
     font-weight:700;
     line-height:100% !important;
   }
-  h1 strong{
-    font-weight:700;
+  h1 span{
+    font-weight: 800;
+    background-color: var(--color-sun-tint);
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: -5px;
+    padding-left: 5px;
   }
   h2{
     font-weight:700;
@@ -170,7 +175,7 @@
   .ticket-pass { --notch: 16px; --cut-line: calc(100% - 112px); -webkit-mask: radial-gradient(circle var(--notch) at 0 var(--cut-line), transparent 99%, #000 100%), radial-gradient(circle var(--notch) at 100% var(--cut-line), transparent 99%, #000 100%); -webkit-mask-composite: source-in; mask: radial-gradient(circle var(--notch) at 0 var(--cut-line), transparent 99%, #000 100%), radial-gradient(circle var(--notch) at 100% var(--cut-line), transparent 99%, #000 100%); mask-composite: intersect; }
   .mini-ticket { --notch: 5px; --cut-line: 36px; -webkit-mask: radial-gradient(circle var(--notch) at 0 var(--cut-line), transparent 99%, #000 100%), radial-gradient(circle var(--notch) at 100% var(--cut-line), transparent 99%, #000 100%); -webkit-mask-composite: source-in; mask: radial-gradient(circle var(--notch) at 0 var(--cut-line), transparent 99%, #000 100%), radial-gradient(circle var(--notch) at 100% var(--cut-line), transparent 99%, #000 100%); mask-composite: intersect; }
   .winner-badge { --notch: 4px; --cut-line: 50%; -webkit-mask: radial-gradient(circle var(--notch) at 0 var(--cut-line), transparent 99%, #000 100%), radial-gradient(circle var(--notch) at 100% var(--cut-line), transparent 99%, #000 100%); -webkit-mask-composite: source-in; mask: radial-gradient(circle var(--notch) at 0 var(--cut-line), transparent 99%, #000 100%), radial-gradient(circle var(--notch) at 100% var(--cut-line), transparent 99%, #000 100%); mask-composite: intersect; }
-  .perforation { border-top: 2px dashed var(--color-line); }
+  
   .radio-chip { display: flex; align-items: center; justify-content: center; gap: .25rem; min-height: 3rem; border: 1px solid var(--color-line); border-radius: .75rem; background: white; color: var(--color-ink); font-family: var(--font-ui); font-size: .875rem; font-weight: 500; text-align: center; cursor: pointer; }
   .radio-chip:has(input:checked) { border: 2px solid var(--color-coral); background: var(--color-coral-tint); }
   .radio-chip:has(input:focus-visible) { outline: 2px solid var(--color-ink); outline-offset: 2px; }

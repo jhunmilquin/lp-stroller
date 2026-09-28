@@ -46,25 +46,41 @@
   </header>
 
   <main>
-    <section class="bg-mint py-14 md:py-20 lg:py-24 lg:pb-16" aria-labelledby="hero-heading">
+    <section class="bg-mint py-14 md:py-20 lg:py-20 lg:pb-16" aria-labelledby="hero-heading">
       <div class="hero-grid mx-auto grid max-w-7xl grid-cols-1 gap-8 px-5 md:px-10 lg:grid-cols-12">
-        <div class="hero-copy min-w-0 lg:col-span-7">
-          <p class="eyebrow inline-block rounded-full bg-white px-3 py-1">Featured giveaway</p>
-          <h1 id="hero-heading" class="mt-4 text-4xl leading-tight text-balance md:text-5xl lg:text-6xl"><span>FREE</span> Stroller System Giveaway</h1>
-           
-        </div>
+        
+      <div class="flex lg:block hero-copy">
+          <div class="min-w-0 lg:col-span-7">
+            <p class="eyebrow inline-block rounded-full bg-white px-3 py-1">Featured giveaway</p>
+            <h1 id="hero-heading" class="mt-4 text-4xl leading-tight text-balance md:text-5xl lg:text-6xl"><span>FREE</span> Stroller System Giveaway</h1>
+              
+            <div class="mt-4 md:mt-8 flex-wrap items-start justify-start md:justify-start gap-3 mb-4 ">
+              <p class="max-w-xl text-sm md:text-lg text-body leading-tight mb-2 lg:md-4">Open to all Canadian parents and parents-to-be, at no cost.</p>
+              <div class="social-proof flex justify-start gap-3 items-center flex-wrap"><img src="assets/images/avatars/parents.png" alt="Five Canadian Parent members" width="160" height="40"><p class="text-sm md:text-lg"><strong>Join 400,000+</strong> Canadian parents</p></div>
+            </div>
+          </div>
+
+          
+          <div class="flex flex-col hero-image ">
+            
+         
+          
+            <picture class="mx-auto block w-full max-w-xl self-end lg:col-span-7 lg:max-w-xl">
+              <source srcset="assets/images/hero/stroller.png" type="image/png">
+              <img src="assets/images/hero/stroller.png" alt="A mother with her baby in a green Maxi-Cosi Zelia Luxe stroller" width="1200" height="1200" loading="eager" fetchpriority="high" class="aspect-square w-full object-contain">
+            </picture>
+          </div>
+      </div>
 
         <div class="ticket-shadow hero-ticket min-w-0 self-start lg:col-span-5">
           <div class="ticket-form rounded-3xl">
-            <div class="ticket-stub relative flex items-center gap-4 rounded-t-3xl bg-sun-tint px-4 md:px-8 py-6">
-              <div class="min-w-0 flex-1">
+            
+            <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
+              <div class="min-w-0 flex-1 mb-6 md:mb-8">
                 <!-- <p class="eyebrow">Your entry ticket</p> -->
-                <h2 class="text-xl lg:text-2xl xl:text-3xl leading-tight text-center">Enter to win a stroller</h2>
+                <h2 class="text-2xl md:text-3xl xl:text-4xl leading-tight text-center mb-[10px]">Enter to win a stroller</h2>
                 <p class="text-sm text-center">100% free. No purchase required.</p>
               </div>
-              <span id="entered-stamp" class="entered-stamp absolute right-6 bottom-4 items-center rounded-xl border-2 border-teal bg-sun-tint px-3 py-1 font-ui text-lg font-bold text-teal uppercase" aria-hidden="true">Entered</span>
-            </div>
-            <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
               <form id="join" novalidate aria-label="Join Canadian Parent">
                 <div id="error-summary" class="mb-6 rounded-xl bg-danger-tint p-4 text-danger" tabindex="-1" role="alert" hidden>
                   <h3 class="font-body text-base font-semibold text-danger">Please fix the following:</h3>
@@ -131,20 +147,11 @@
                 </button>
               
               </form>
+
+            
   
             </div>
           </div>
-        </div>
-        <div class="flex flex-col hero-image ">
-          <p class="mt-5 md:mt-0 max-w-xl text-lg text-body text-center md:text-start">Free and open to parents and parents-to-be across Canada.</p>
-          <div class="mt-2 flex flex-wrap items-start justify-center md:justify-start gap-3 mb-4">
-            <div class="social-proof flex justify-center gap-3 items-center flex-wrap"><img src="assets/images/avatars/parents.png" alt="Five Canadian Parent members" width="160" height="40"><p><strong>Join 400,000+</strong> Canadian parents</p></div>
-          </div>
-        
-          <picture class="mx-auto block w-full max-w-md self-end lg:col-span-7 lg:max-w-lg">
-            <source srcset="assets/images/hero/hero-mother-stroller.png" type="image/png">
-            <img src="assets/images/hero/hero-mother-stroller.png" alt="A mother with her baby in a green Maxi-Cosi Zelia Luxe stroller" width="1200" height="1200" loading="eager" fetchpriority="high" class="aspect-square w-full object-contain">
-          </picture>
         </div>
       </div>
     </section>
@@ -274,7 +281,7 @@
     <section class="bg-white py-14 md:py-20 lg:py-24" aria-labelledby="cta-heading">
       <div class="mx-auto max-w-7xl px-5 md:px-10">
         <div class="grid grid-cols-1 items-center gap-8 rounded-3xl bg-mint p-8 md:grid-cols-2 md:p-16">
-          <div class="order-2 min-w-0 md:order-1"><h2 id="cta-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Your stroller is one click away</h2><p class="mt-5">Join free to enter for the stroller, <span class="lg:block"></span>plus weekly giveaways and free samples.</span></p><a href="#join" data-scroll-to-form class="btn-primary mt-8 w-full lg:w-auto">Enter to Win the Stroller</a><p class="mt-4 text-sm text-body">No purchase required. Canada only.</p></div>
+          <div class="order-2 min-w-0 md:order-1"><h2 id="cta-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Your stroller is one click away</h2><p class="mt-5">Join today for a chance to win a stroller, <span class="lg:block"></span>plus weekly giveaways and free samples.</span></p><a href="#join" data-scroll-to-form class="btn-primary mt-8 w-full lg:w-auto">Enter to Win the Stroller</a><p class="mt-4 text-sm text-body">No purchase required. Canada only.</p></div>
           <img src="assets/images/photos/cta-mother-newborn.webp" alt="A mother smiles at her sleeping newborn on a linen sofa" width="1200" height="900" loading="lazy" class="order-1 aspect-4/3 w-full rounded-3xl object-cover md:order-2">
         </div>
       </div>
