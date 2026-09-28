@@ -25,6 +25,17 @@
   .prize-image { padding: 15%; }
   .gift-card { aspect-ratio: 8 / 5; transform: rotate(-6deg); }
   .legal-link { display: inline-flex; align-items: center; }
+  h1{
+    font-weight:700;
+    line-height:100%;
+  }
+  h1 strong{
+    font-weight:800;
+  }
+  h2,h3,h4,h5{
+    font-weight:700;
+    line-height:100%;
+  }
    #error-summary{display:none !important;}
    .steps {
         grid-template-columns: 1fr;
