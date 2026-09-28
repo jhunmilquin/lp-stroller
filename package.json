@@ -1,0 +1,13 @@
+{
+  "name": "canadian-parent-new-parents",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/tailwind.css -o ./assets/css/tailwind.css --watch",
+    "build": "tailwindcss -i ./src/css/tailwind.css -o ./assets/css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}

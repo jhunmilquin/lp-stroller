@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@source "../../index.html";
+@source "../../assets/js/app.js";
+
+@theme {
+  --color-mint: #EAF8F6;
+  --color-mint-blob: #D6F1EE;
+  --color-sun-tint: #FFF1C7;
+  --color-ink: #151A4A;
+  --color-coral: #FF4D6A;
+  --color-coral-tint: #FFE3E8;
+  --color-blush: #F4E8EC;
+  --color-mint-soft: #F1FAF8;
+  --color-cloud: #F7FBFA;
+  --color-teal: #0B6B64;
+  --color-teal-tint: #D6F1EE;
+  --color-peach: #FFE6DC;
+  --color-body: #3A3D56;
+  --color-muted: #63667D;
+  --color-line: #DCEBE7;
+  --color-danger: #B42318;
+  --color-danger-tint: #FEF3F2;
+  --font-heading: "Merriweather", Georgia, serif;
+  --font-heading-2: "Playfair Display", Georgia, serif;
+  --font-ui: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --shadow-card: 0 8px 32px rgb(21 26 74 / 0.06);
+}
