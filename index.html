@@ -126,123 +126,125 @@
           </a>
           
         </div>
+        <div class="px-4 md:px-0 lg:col-span-5">
+          <div class="ticket-shadow hero-ticket min-w-0 self-start">
+            <div class="ticket-form rounded-3xl">
 
-        <div class="ticket-shadow hero-ticket min-w-0 self-start lg:col-span-5">
-          <div class="ticket-form rounded-3xl">
+              <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
+                <div class="min-w-0 flex-1 mb-4 md:mb-4">
+                  <!-- <p class="eyebrow">Your entry ticket</p> -->
+                  <h2 class="text-2xl md:text-3xl xl:text-4xl leading-tight text-center mb-0">Enter to win a stroller</h2>
+                  <p class="text-sm text-center">100% free. No purchase required.</p>
+                </div>
+                <form id="join" novalidate aria-label="Join Canadian Parent">
+                  <div id="error-summary" class="mb-6 rounded-xl bg-danger-tint p-4 text-danger" tabindex="-1"
+                    role="alert" hidden>
+                    <h3 class="font-body text-base font-semibold text-danger">Please fix the following:</h3>
+                    <ul id="error-summary-list" class="mt-2 list-disc space-y-2 pl-5 text-sm"></ul>
+                  </div>
+                  <div class="name-grid grid gap-4">
+                    <div>
+                      <label class="field-label" for="first-name">First name</label>
+                      <input class="field-input aria-invalid:border-danger" id="first-name" name="firstName" type="text"
+                        autocomplete="given-name" placeholder="e.g. John" aria-describedby="first-name-error" required>
+                      <p id="first-name-error" class="error-text" aria-live="polite"></p>
+                    </div>
+                    <div>
+                      <label class="field-label" for="last-name">Last name</label>
+                      <input class="field-input aria-invalid:border-danger" id="last-name" name="lastName" type="text"
+                        autocomplete="family-name" placeholder="e.g. Doe" aria-describedby="last-name-error" required>
+                      <p id="last-name-error" class="error-text" aria-live="polite"></p>
+                    </div>
+                  </div>
+                  <div class="mt-5">
+                    <label class="field-label" for="email">Email address</label>
+                    <input class="field-input aria-invalid:border-danger" id="email" name="email" type="email"
+                      autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"
+                      placeholder="you@email.com" aria-describedby="email-error email-hint" required>
+                    <p id="email-error" class="error-text" aria-live="polite"></p>
+                    <div id="email-hint" class="mt-2 text-sm" aria-live="polite"></div>
+                  </div>
+                  <fieldset id="age-group" class="age-group mt-5" aria-describedby="age-error">
+                    <legend class="field-label">Age of your youngest child</legend>
+                    <div class="grid grid-cols-2 gap-3">
+                      <label
+                        class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint flex min-h-[44px] items-center">
+                        <input class="sr-only" type="radio" name="youngestChild" id="age-pregnant" value="pregnant"
+                          aria-describedby="age-error" required>
+                        <span class="flex items-center"><img src="assets/icons/interface/selected-chip-heart-coral.svg"
+                            alt="" aria-hidden="true" class="h-4 w-4 me-2">I'm pregnant</span><svg
+                          class="selected-check size-4 shrink-0" aria-hidden="true">
+                          <use href="#icon-check" />
+                        </svg>
 
-            <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
-              <div class="min-w-0 flex-1 mb-4 md:mb-4">
-                <!-- <p class="eyebrow">Your entry ticket</p> -->
-                <h2 class="text-2xl md:text-3xl xl:text-4xl leading-tight text-center mb-0">Enter to win a stroller</h2>
-                <p class="text-sm text-center">100% free. No purchase required.</p>
+                      </label>
+                      <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
+                        <input class="sr-only" type="radio" name="youngestChild" id="age-0-3" value="0-3"
+                          aria-describedby="age-error">
+                        <span>0–3 years</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
+                          <use href="#icon-check" />
+                        </svg>
+                      </label>
+                      <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
+                        <input class="sr-only" type="radio" name="youngestChild" id="age-3-plus" value="3-plus"
+                          aria-describedby="age-error">
+                        <span>3+ years</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
+                          <use href="#icon-check" />
+                        </svg>
+                      </label>
+                      <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
+                        <input class="sr-only" type="radio" name="youngestChild" id="age-none" value="none"
+                          aria-describedby="age-error">
+                        <span>No children yet</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
+                          <use href="#icon-check" />
+                        </svg>
+                      </label>
+                    </div>
+                  </fieldset>
+                  <p id="age-error" class="error-text" aria-live="polite"></p>
+                  <div class="mt-5">
+                    <label class="flex min-h-12 cursor-pointer items-start gap-3 text-sm" for="newsletter">
+                      <span class="relative mt-1 size-6 shrink-0">
+                        <input id="newsletter" name="newsletter" type="checkbox" aria-describedby="newsletter-error"
+                          class="peer size-6 cursor-pointer appearance-none rounded-sm border-2 border-muted bg-white checked:border-teal checked:bg-teal aria-invalid:border-danger">
+                        <svg class="pointer-events-none absolute inset-0 hidden size-6 text-white peer-checked:block"
+                          aria-hidden="true">
+                          <use href="#icon-check" />
+                        </svg>
+                      </span>
+                      <span>By entering your information and clicking Enter to Win Now, you agree to our <a
+                          href="https://canadianparent.ca/join/rules.html" class="legal-link text-ink">Privacy Policy</a>,
+                        <a href="https://canadianparent.ca/join/privacy.html" class="legal-link text-ink ">Terms and
+                          Conditions</a> and understand that we will be sending you our newsletters by email. Unsubscribe
+                        at any time.</span>
+                    </label>
+                    <p id="newsletter-error" class="error-text" aria-live="polite"></p>
+                  </div>
+                  <div class="sr-only" aria-hidden="true">
+                    <label for="company">Company</label>
+                    <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+                  </div>
+                  <button id="join-button" type="submit" class="btn-primary mt-6 w-full gap-2">
+                    <svg id="joining-spinner" class="size-6 shrink-0" aria-hidden="true" hidden>
+                      <use href="#icon-spinner" />
+                    </svg>
+                    <span id="join-button-label">Enter to Win Now</span>
+                  </button>
+
+                </form>
+
+
+
               </div>
-              <form id="join" novalidate aria-label="Join Canadian Parent">
-                <div id="error-summary" class="mb-6 rounded-xl bg-danger-tint p-4 text-danger" tabindex="-1"
-                  role="alert" hidden>
-                  <h3 class="font-body text-base font-semibold text-danger">Please fix the following:</h3>
-                  <ul id="error-summary-list" class="mt-2 list-disc space-y-2 pl-5 text-sm"></ul>
-                </div>
-                <div class="name-grid grid gap-4">
-                  <div>
-                    <label class="field-label" for="first-name">First name</label>
-                    <input class="field-input aria-invalid:border-danger" id="first-name" name="firstName" type="text"
-                      autocomplete="given-name" placeholder="e.g. John" aria-describedby="first-name-error" required>
-                    <p id="first-name-error" class="error-text" aria-live="polite"></p>
-                  </div>
-                  <div>
-                    <label class="field-label" for="last-name">Last name</label>
-                    <input class="field-input aria-invalid:border-danger" id="last-name" name="lastName" type="text"
-                      autocomplete="family-name" placeholder="e.g. Doe" aria-describedby="last-name-error" required>
-                    <p id="last-name-error" class="error-text" aria-live="polite"></p>
-                  </div>
-                </div>
-                <div class="mt-5">
-                  <label class="field-label" for="email">Email address</label>
-                  <input class="field-input aria-invalid:border-danger" id="email" name="email" type="email"
-                    autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"
-                    placeholder="you@email.com" aria-describedby="email-error email-hint" required>
-                  <p id="email-error" class="error-text" aria-live="polite"></p>
-                  <div id="email-hint" class="mt-2 text-sm" aria-live="polite"></div>
-                </div>
-                <fieldset id="age-group" class="age-group mt-5" aria-describedby="age-error">
-                  <legend class="field-label">Age of your youngest child</legend>
-                  <div class="grid grid-cols-2 gap-3">
-                    <label
-                      class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint flex min-h-[44px] items-center">
-                      <input class="sr-only" type="radio" name="youngestChild" id="age-pregnant" value="pregnant"
-                        aria-describedby="age-error" required>
-                      <span class="flex items-center"><img src="assets/icons/interface/selected-chip-heart-coral.svg"
-                          alt="" aria-hidden="true" class="h-4 w-4 me-2">I'm pregnant</span><svg
-                        class="selected-check size-4 shrink-0" aria-hidden="true">
-                        <use href="#icon-check" />
-                      </svg>
 
-                    </label>
-                    <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
-                      <input class="sr-only" type="radio" name="youngestChild" id="age-0-3" value="0-3"
-                        aria-describedby="age-error">
-                      <span>0–3 years</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
-                        <use href="#icon-check" />
-                      </svg>
-                    </label>
-                    <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
-                      <input class="sr-only" type="radio" name="youngestChild" id="age-3-plus" value="3-plus"
-                        aria-describedby="age-error">
-                      <span>3+ years</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
-                        <use href="#icon-check" />
-                      </svg>
-                    </label>
-                    <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
-                      <input class="sr-only" type="radio" name="youngestChild" id="age-none" value="none"
-                        aria-describedby="age-error">
-                      <span>No children yet</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
-                        <use href="#icon-check" />
-                      </svg>
-                    </label>
-                  </div>
-                </fieldset>
-                <p id="age-error" class="error-text" aria-live="polite"></p>
-                <div class="mt-5">
-                  <label class="flex min-h-12 cursor-pointer items-start gap-3 text-sm" for="newsletter">
-                    <span class="relative mt-1 size-6 shrink-0">
-                      <input id="newsletter" name="newsletter" type="checkbox" aria-describedby="newsletter-error"
-                        class="peer size-6 cursor-pointer appearance-none rounded-sm border-2 border-muted bg-white checked:border-teal checked:bg-teal aria-invalid:border-danger">
-                      <svg class="pointer-events-none absolute inset-0 hidden size-6 text-white peer-checked:block"
-                        aria-hidden="true">
-                        <use href="#icon-check" />
-                      </svg>
-                    </span>
-                    <span>By entering your information and clicking Enter to Win Now, you agree to our <a
-                        href="https://canadianparent.ca/join/rules.html" class="legal-link text-ink">Privacy Policy</a>,
-                      <a href="https://canadianparent.ca/join/privacy.html" class="legal-link text-ink ">Terms and
-                        Conditions</a> and understand that we will be sending you our newsletters by email. Unsubscribe
-                      at any time.</span>
-                  </label>
-                  <p id="newsletter-error" class="error-text" aria-live="polite"></p>
-                </div>
-                <div class="sr-only" aria-hidden="true">
-                  <label for="company">Company</label>
-                  <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
-                </div>
-                <button id="join-button" type="submit" class="btn-primary mt-6 w-full gap-2">
-                  <svg id="joining-spinner" class="size-6 shrink-0" aria-hidden="true" hidden>
-                    <use href="#icon-spinner" />
-                  </svg>
-                  <span id="join-button-label">Enter to Win Now</span>
-                </button>
 
-              </form>
 
 
 
             </div>
-
-
-
-
-
           </div>
         </div>
+
       </div>
     </section>
 
@@ -250,10 +252,10 @@
     <section class="bg-white py-14 md:py-20 lg:py-24" aria-labelledby="perks-heading">
       <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-5 md:px-10 lg:grid-cols-12">
         <div class="ticket-pass overflow-hidden rounded-3xl bg-sun-tint lg:col-span-5">
-          <div class="p-10 text-center lg:text-left">
+          <div class="p-8 md:p-10 text-center lg:text-left">
             <p class="eyebrow">Your member pass</p>
             <p
-              class="mt-4 font-heading text-6xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-ink">
+              class="mt-4 font-heading text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-ink">
               100% FREE</p>
             <!-- <p class="mt-5 text-lg">Every perk is included with your free membership.</p> -->
             <img src="assets/images/illustrations/member-pass-samples-box.png"
