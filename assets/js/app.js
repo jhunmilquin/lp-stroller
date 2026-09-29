@@ -228,7 +228,8 @@
         const focusTarget = document.getElementById('first-name') || target;
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         target.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'start' });
-        focusTarget.focus({ preventScroll: true });
+        // iOS Safari: focusing an input mid-smooth-scroll opens the keyboard and cancels the scroll.
+        if (!window.matchMedia('(pointer: coarse)').matches) focusTarget.focus({ preventScroll: true });
       });
     });
   }
