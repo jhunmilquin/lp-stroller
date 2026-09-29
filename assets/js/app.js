@@ -252,7 +252,7 @@
   }
 
   /** Blur-up: images stay blurred until they finish loading. */
-  document.querySelectorAll('img').forEach(img => {
+  document.querySelectorAll('img:not(header img)').forEach(img => {
     if (img.complete) return;
     img.classList.add('img-loading');
     const done = () => img.classList.remove('img-loading');
