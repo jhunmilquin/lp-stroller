@@ -228,8 +228,11 @@
         const focusTarget = document.getElementById('first-name') || target;
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         target.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'start' });
-        // iOS Safari: focusing an input mid-smooth-scroll opens the keyboard and cancels the scroll.
-        if (!window.matchMedia('(pointer: coarse)').matches) focusTarget.focus({ preventScroll: true });
+        // Safari cancels a running smooth scroll when an input is focused, so focus only after it settles
+        // (and never on touch, where focus opens the keyboard and shifts the viewport).
+        if (!window.matchMedia('(pointer: coarse)').matches) {
+          window.setTimeout(() => focusTarget.focus({ preventScroll: true }), reduced ? 0 : 800);
+        }
       });
     });
   }
