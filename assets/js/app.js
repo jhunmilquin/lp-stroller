@@ -227,7 +227,9 @@
         const target = document.getElementById('join') || document.getElementById('success-heading');
         const focusTarget = document.getElementById('first-name') || target;
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        target.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'start' });
+        const header = document.querySelector('header');
+        const top = target.getBoundingClientRect().top + window.pageYOffset - (header ? header.offsetHeight : 0) - 16;
+        window.scrollTo({ top: Math.max(0, top), behavior: reduced ? 'auto' : 'smooth' });
         // Safari cancels a running smooth scroll when an input is focused, so focus only after it settles
         // (and never on touch, where focus opens the keyboard and shifts the viewport).
         if (!window.matchMedia('(pointer: coarse)').matches) {
