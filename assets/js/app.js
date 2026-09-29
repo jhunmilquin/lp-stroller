@@ -3,8 +3,6 @@
 
   const REQUIRE_NEWSLETTER_CONSENT = false;
   const form = document.getElementById('join');
-  const summary = document.getElementById('error-summary');
-  const summaryList = document.getElementById('error-summary-list');
   const button = document.getElementById('join-button');
   const fieldKeys = ['first-name', 'last-name', 'email', 'age', 'newsletter'];
   const errors = new Map();
@@ -119,27 +117,6 @@
     return !message;
   }
 
-  /** Render a stable-order summary with links that focus each invalid control. */
-  function renderSummary() {
-    summaryList.replaceChildren();
-    for (const key of fieldKeys) {
-      if (!errors.has(key)) continue;
-      const item = document.createElement('li');
-      const link = document.createElement('a');
-      const target = controlsFor(key)[0];
-      link.href = `#${target.id}`;
-      link.className = 'inline-flex min-h-12 items-center underline';
-      link.textContent = errors.get(key);
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        target.focus();
-      });
-      item.append(link);
-      summaryList.append(item);
-    }
-    summary.hidden = !submitted || errors.size === 0;
-  }
-
   /** Offer common-domain corrections as optional buttons, never validation errors. */
   function showEmailHint() {
     const hint = document.getElementById('email-hint');
@@ -165,7 +142,6 @@
       email.value = suggestion;
       validateField('email', normalize());
       showEmailHint();
-      if (submitted) renderSummary();
       email.focus({ preventScroll: true });
     });
     hint.append(apply);
@@ -205,9 +181,8 @@
     if (!honeypot) {
       fieldKeys.forEach(key => validateField(key, payload));
       showEmailHint();
-      renderSummary();
       if (errors.size) {
-        summary.focus();
+        controlsFor(fieldKeys.find(key => errors.has(key)))[0].focus();
         return;
       }
     }
@@ -247,7 +222,6 @@
       control.addEventListener('blur', () => {
         validateField(key, normalize());
         if (key === 'email') showEmailHint();
-        if (submitted) renderSummary();
       });
       const eventName = key === 'newsletter' ? 'change' : 'input';
       control.addEventListener(eventName, () => {
@@ -260,7 +234,6 @@
             newsletter: document.getElementById('newsletter').checked
           };
           validateField(key, payload);
-          if (submitted) renderSummary();
         }
         if (key === 'email') showEmailHint();
       });
@@ -269,13 +242,11 @@
     ageGroup.addEventListener('focusout', event => {
       if (!ageGroup.contains(event.relatedTarget)) {
         validateField('age', normalize());
-        if (submitted) renderSummary();
       }
     });
     ageGroup.addEventListener('change', () => {
       if (previouslyInvalid.has('age') || submitted) {
         validateField('age', normalize());
-        if (submitted) renderSummary();
       }
     });
   }

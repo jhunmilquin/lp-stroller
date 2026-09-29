@@ -13,8 +13,6 @@
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
@@ -55,7 +53,6 @@
     --color-muted: #63667D;
     --color-line: #DCEBE7;
     --color-danger: #B42318;
-    --color-danger-tint: #FEF3F2;
     --font-heading: "Poppins", system-ui, sans-serif;
     --font-ui: "Poppins", system-ui, sans-serif;
     --font-body: "Poppins", system-ui, sans-serif;
@@ -302,9 +299,6 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
-  }
   .block {
     display: block;
   }
@@ -413,9 +407,6 @@
   .cursor-pointer {
     cursor: pointer;
   }
-  .list-disc {
-    list-style-type: disc;
-  }
   .appearance-none {
     appearance: none;
   }
@@ -460,11 +451,6 @@
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
-  }
-  :where(.space-y-2 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
   }
   :where(.space-y-3 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -565,9 +551,6 @@
   .bg-coral {
     background-color: var(--color-coral);
   }
-  .bg-danger-tint {
-    background-color: var(--color-danger-tint);
-  }
   .bg-line {
     background-color: var(--color-line);
   }
@@ -658,17 +641,11 @@
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
   }
-  .pl-5 {
-    padding-left: calc(var(--spacing) * 5);
-  }
   .text-center {
     text-align: center;
   }
   .text-left {
     text-align: left;
-  }
-  .font-body {
-    font-family: var(--font-body);
   }
   .font-heading {
     font-family: var(--font-heading);
@@ -687,10 +664,6 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -731,9 +704,6 @@
   }
   .text-body {
     color: var(--color-body);
-  }
-  .text-danger {
-    color: var(--color-danger);
   }
   .text-ink {
     color: var(--color-ink);

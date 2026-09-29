@@ -38,7 +38,6 @@
     display: none !important;
   }
   input,
-  #error-summary,
   #success-heading {
     scroll-margin-top: 6rem;
   }
@@ -122,9 +121,6 @@
   h5 {
     font-weight: 600;
     line-height: 100% !important;
-  }
-  #error-summary {
-    display: none !important;
   }
   .steps {
     grid-template-columns: 1fr;
@@ -281,8 +277,7 @@
       --cut-line: 100px;
     }
     #join,
-    #error-summary,
-    #success-heading,
+      #success-heading,
     input {
       scroll-margin-top: 7rem;
     }
