@@ -814,6 +814,9 @@
     .md\:py-12 {
       padding-block: calc(var(--spacing) * 12);
     }
+    .md\:py-14 {
+      padding-block: calc(var(--spacing) * 14);
+    }
     .md\:py-20 {
       padding-block: calc(var(--spacing) * 20);
     }
@@ -867,11 +870,14 @@
     .lg\:py-24 {
       padding-block: calc(var(--spacing) * 24);
     }
+    .lg\:pt-20 {
+      padding-top: calc(var(--spacing) * 20);
+    }
     .lg\:pr-6 {
       padding-right: calc(var(--spacing) * 6);
     }
-    .lg\:pb-12 {
-      padding-bottom: calc(var(--spacing) * 12);
+    .lg\:pb-0 {
+      padding-bottom: 0px;
     }
     .lg\:pl-4 {
       padding-left: calc(var(--spacing) * 4);
