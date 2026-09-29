@@ -538,3 +538,16 @@
     }
   }
 }
+
+img {
+  transition: filter 0.5s ease-out;
+}
+img.img-loading {
+  filter: blur(18px);
+  background: var(--color-mint);
+}
+@media (prefers-reduced-motion: reduce) {
+  img {
+    transition: none;
+  }
+}

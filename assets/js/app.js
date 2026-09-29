@@ -251,6 +251,15 @@
     });
   }
 
+  /** Blur-up: images stay blurred until they finish loading. */
+  document.querySelectorAll('img').forEach(img => {
+    if (img.complete) return;
+    img.classList.add('img-loading');
+    const done = () => img.classList.remove('img-loading');
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });
+  });
+
   form.addEventListener('submit', handleSubmit);
   initValidation();
   initScrollLinks();
