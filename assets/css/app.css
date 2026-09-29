@@ -267,6 +267,7 @@
     .hero-copy {
       grid-column: 1 / 8;
       grid-row: 1;
+      margin-top: -30px;
     }
     .hero-ticket {
       grid-column: 8 / 13;
