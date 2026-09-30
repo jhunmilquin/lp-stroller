@@ -2,7 +2,7 @@ name: Deploy to Hostinger
 
 on:
   push:
-    branches: [main,lp2,amazon,amazonv2]
+    branches: [main,babysample]
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /domains/jqd.io/public_html/work/amazon/
+          server-dir: /domains/jqd.io/public_html/work/babysample/
           exclude: |
             **/.git*
             **/.git*/**
