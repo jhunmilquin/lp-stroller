@@ -2,7 +2,7 @@ name: Deploy to Hostinger
 
 on:
   push:
-    branches: [main,lp2,amazon]
+    branches: [main,lp2,amazon,amazonv2]
 
 jobs:
   deploy:
