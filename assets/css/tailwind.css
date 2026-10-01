@@ -317,11 +317,11 @@
   .inline-flex {
     display: inline-flex;
   }
-  .aspect-1\/1 {
-    aspect-ratio: 1/1;
-  }
   .aspect-4\/3 {
     aspect-ratio: 4/3;
+  }
+  .aspect-5\/4 {
+    aspect-ratio: 5/4;
   }
   .size-0 {
     width: 0px;
