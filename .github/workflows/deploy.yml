@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /domains/jqd.io/public_html/work/lululemon/
+          server-dir: /domains/jqd.io/public_html/work/lululemon-bag/
           exclude: |
             **/.git*
             **/.git*/**
