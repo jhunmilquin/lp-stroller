@@ -339,10 +339,6 @@
     width: calc(var(--spacing) * 8);
     height: calc(var(--spacing) * 8);
   }
-  .size-9 {
-    width: calc(var(--spacing) * 9);
-    height: calc(var(--spacing) * 9);
-  }
   .size-16 {
     width: calc(var(--spacing) * 16);
     height: calc(var(--spacing) * 16);
@@ -439,9 +435,6 @@
   }
   .justify-center {
     justify-content: center;
-  }
-  .gap-1 {
-    gap: var(--spacing);
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
@@ -558,9 +551,6 @@
   }
   .bg-cloud {
     background-color: var(--color-cloud);
-  }
-  .bg-coral {
-    background-color: var(--color-coral);
   }
   .bg-line {
     background-color: var(--color-line);
