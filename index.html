@@ -19,8 +19,8 @@
   <link rel="preload" as="image" href="assets/images/hero/lululemon-d.jpg" fetchpriority="high">
     <link rel="preload" as="image" href="assets/images/hero/lululemon-m.jpg" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/tailwind.css?v=1.0.1">
-  <link rel="stylesheet" href="assets/css/app.css">
-  <script src="assets/js/app.js" defer></script>
+  <link rel="stylesheet" href="assets/css/app.css?v=1.0.2">
+  <script src="assets/js/app.js?v=1.0.2" defer></script>
   <noscript>
     <style>
       img.img-loading {
@@ -460,6 +460,7 @@
 
 
 
+
     <section class="bg-mint-soft py-14 md:py-14 lg:py-20" aria-labelledby="winners-heading">
       <div class="mx-auto max-w-7xl px-5 md:px-10">
         <div class="text-center">
@@ -473,70 +474,50 @@
             <span class="wb-live"><i></i>Weekly winners</span>
             Week of <span id="wb-range">last week</span>
           </div>
-          <div class="wb-cols" aria-hidden="true">
-            <span>Date</span><span>Prize</span><span>Winner</span><span>Status</span></div>
+          <div class="wb-cols" aria-hidden="true"><span>Date</span><span>Prize</span><span>Winner</span><span>Status</span></div>
           <div class="wb-view">
             <ul class="wb-track">
-              <li class="wb-row" data-day="5">
-                <time class="wb-date">&nbsp;</time>
-                <span class="wb-prize"><img src="assets/images/prizes/prize-sound-machine.png" alt="" width="56"
-                    height="56" loading="lazy"><b>Baby sound machine</b></span>
-                <span class="wb-who"><b>Lydia W.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
-                      <use href="#icon-map-pin" />
-                    </svg>Temiskaming, ON</span></span>
-                <span class="wb-status">Claimed</span>
-              </li>
-              <li class="wb-row" data-day="4">
-                <time class="wb-date">&nbsp;</time>
-                <span class="wb-prize"><img src="assets/images/prizes/prize-audio-player.png" alt="" width="56"
-                    height="56" loading="lazy"><b>Kids' audio player</b></span>
-                <span class="wb-who"><b>Olinda F.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
-                      <use href="#icon-map-pin" />
-                    </svg>Mississauga, ON</span></span>
-                <span class="wb-status">Claimed</span>
-              </li>
-              <li class="wb-row" data-day="3">
-                <time class="wb-date">&nbsp;</time>
-                <span class="wb-prize"><img src="assets/images/prizes/prize-formula-dispenser.png" alt="" width="56"
-                    height="56" loading="lazy"><b>Formula dispenser</b></span>
-                <span class="wb-who"><b>Billie K.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
-                      <use href="#icon-map-pin" />
-                    </svg>Moose Jaw, SK</span></span>
-                <span class="wb-status">Claimed</span>
-              </li>
-              <li class="wb-row" data-day="2">
-                <time class="wb-date">&nbsp;</time>
-                <span class="wb-prize"><img src="assets/images/prizes/amazongift.png" alt="" width="56" height="56"
-                    loading="lazy"><b>$250 Amazon gift card</b></span>
-                <span class="wb-who"><b>Bianca A.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
-                      <use href="#icon-map-pin" />
-                    </svg>Stouffville, ON</span></span>
-                <span class="wb-status">Claimed</span>
-              </li>
-              <li class="wb-row" data-day="1">
-                <time class="wb-date">&nbsp;</time>
-                <span class="wb-prize"><img src="assets/images/prizes/walmartgift.png" alt="" width="56" height="56"
-                    loading="lazy"><b>$100 Walmart gift card</b></span>
-                <span class="wb-who"><b>Jennifer M.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
-                      <use href="#icon-map-pin" />
-                    </svg>Calgary, AB</span></span>
-                <span class="wb-status">Claimed</span>
-              </li>
-              <li class="wb-row" data-day="0">
-                <time class="wb-date">&nbsp;</time>
-                <span class="wb-prize"><img src="assets/images/prizes/prize-baby-carrier.png" alt="" width="56"
-                    height="56" loading="lazy"><b>Baby carrier</b></span>
-                <span class="wb-who"><b>Sarah L.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
-                      <use href="#icon-map-pin" />
-                    </svg>Vancouver, BC</span></span>
-                <span class="wb-status">Claimed</span>
-              </li>
+            <li class="wb-row" data-day="5">
+              <time class="wb-date">&nbsp;</time>
+              <span class="wb-prize"><img src="assets/images/prizes/prize-sound-machine.png" alt="" width="56" height="56" loading="lazy"><b>Baby sound machine</b></span>
+              <span class="wb-who"><b>Lydia W.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Temiskaming, ON</span></span>
+              <span class="wb-status">Claimed</span>
+            </li>
+            <li class="wb-row" data-day="4">
+              <time class="wb-date">&nbsp;</time>
+              <span class="wb-prize"><img src="assets/images/prizes/prize-audio-player.png" alt="" width="56" height="56" loading="lazy"><b>Kids' audio player</b></span>
+              <span class="wb-who"><b>Olinda F.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Mississauga, ON</span></span>
+              <span class="wb-status">Claimed</span>
+            </li>
+            <li class="wb-row" data-day="3">
+              <time class="wb-date">&nbsp;</time>
+              <span class="wb-prize"><img src="assets/images/prizes/prize-formula-dispenser.png" alt="" width="56" height="56" loading="lazy"><b>Formula dispenser</b></span>
+              <span class="wb-who"><b>Billie K.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Moose Jaw, SK</span></span>
+              <span class="wb-status">Claimed</span>
+            </li>
+            <li class="wb-row" data-day="2">
+              <time class="wb-date">&nbsp;</time>
+              <span class="wb-prize"><img src="assets/images/prizes/amazongift.png" alt="" width="56" height="56" loading="lazy"><b>$250 Amazon gift card</b></span>
+              <span class="wb-who"><b>Bianca A.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Stouffville, ON</span></span>
+              <span class="wb-status">Claimed</span>
+            </li>
+            <li class="wb-row" data-day="1">
+              <time class="wb-date">&nbsp;</time>
+              <span class="wb-prize"><img src="assets/images/prizes/walmartgift.png" alt="" width="56" height="56" loading="lazy"><b>$100 Walmart gift card</b></span>
+              <span class="wb-who"><b>Jennifer M.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Calgary, AB</span></span>
+              <span class="wb-status">Claimed</span>
+            </li>
+            <li class="wb-row" data-day="0">
+              <time class="wb-date">&nbsp;</time>
+              <span class="wb-prize"><img src="assets/images/prizes/prize-baby-carrier.png" alt="" width="56" height="56" loading="lazy"><b>Baby carrier</b></span>
+              <span class="wb-who"><b>Sarah L.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Vancouver, BC</span></span>
+              <span class="wb-status">Claimed</span>
+            </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-
 
 
 
