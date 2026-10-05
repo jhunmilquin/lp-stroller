@@ -16,11 +16,18 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="preload" as="image" href="assets/images/hero/hero-mother-stroller.png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero/lululemon-d.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/hero/lululemon-m.jpg" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/tailwind.css?v=1.0.1">
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="assets/js/app.js" defer></script>
-  <noscript><style>img.img-loading{filter:none}</style></noscript>
+  <noscript>
+    <style>
+      img.img-loading {
+        filter: none
+      }
+    </style>
+  </noscript>
 </head>
 
 <body id="top" class="bg-white antialiased">
@@ -98,34 +105,36 @@
       <!-- <p class="hidden text-sm lg:block">Free for Canadian parents. No purchase required.</p>-->
       <nav aria-label="Main navigation" class="flex items-center gap-4 md:gap-6">
 
-        <a href="#join" class="btn-primary text-[13px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem]">Win FREE Lululemon</a>
+        <a href="#join" class="btn-primary text-[13px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem]">Win FREE
+          Lululemon</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="py-8 md:py-12 pt-0 pt:md-8 lg:pb-0 lg:pt-20" aria-labelledby="hero-heading" style="background-color: #fdece5;">
+    <section class="py-8 md:py-12 pt-0 pt:md-8 lg:pb-0 lg:pt-20" aria-labelledby="hero-heading"
+      style="background-color: #fdece5;">
       <div class="hero-grid mx-auto grid max-w-7xl grid-cols-1 gap-8 px-0 sm:px-5 md:px-10 lg:grid-cols-12">
 
         <div class="flex items-center lg:block hero-copy">
           <h1 class="sr-only">Win a FREE Lululemon Outfit & Belt Bag!</h1>
-          <a href="#join" class="block" >
+          <a href="#join" class="block">
             <picture class="mx-auto block w-full lg:hidden">
               <source srcset="assets/images/hero/lululemon-m.jpg" type="image/png">
-              <img src="assets/images/hero/lululemon-m.jpg"
-                alt="Free Baby Samples" width="1200" height="1200"
-                loading="eager" fetchpriority="high" class="w-full object-contain img-loading" onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
+              <img src="assets/images/hero/lululemon-m.jpg" alt="Free Baby Samples" width="1200" height="1200"
+                loading="eager" fetchpriority="high" class="w-full object-contain img-loading"
+                onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
             </picture>
           </a>
-         
-            <picture class="mx-auto w-full hidden lg:block">
-              <source srcset="assets/images/hero/lululemon-d.jpg" type="image/png">
-              <img src="assets/images/hero/lululemon-d.jpg"
-                alt="Free Baby Samples" width="1200" height="1200"
-                loading="eager" fetchpriority="high" class="w-full object-contain img-loading" onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
-            </picture>
-          
-          
+
+          <picture class="mx-auto w-full hidden lg:block">
+            <source srcset="assets/images/hero/lululemon-d.jpg" type="image/png">
+            <img src="assets/images/hero/lululemon-d.jpg" alt="Free Baby Samples" width="1200" height="1200"
+              loading="eager" fetchpriority="high" class="w-full object-contain img-loading"
+              onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
+          </picture>
+
+
         </div>
         <div class="px-4 md:px-0 lg:col-span-5">
           <div class="ticket-shadow hero-ticket min-w-0 self-start">
@@ -134,7 +143,8 @@
               <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
                 <div class="min-w-0 flex-1 mb-4 md:mb-4">
                   <!-- <p class="eyebrow">Your entry ticket</p> -->
-                  <h2 class="text-2xl md:text-3xl xl:text-4xl leading-tight text-center mb-0">Win a <span style="color:#dc0857">FREE</span> Lululemon Outfit & Belt Bag!</h2>
+                  <h2 class="text-2xl md:text-3xl xl:text-4xl leading-tight text-center mb-0">Win a <span
+                      style="color:#dc0857">FREE</span> Lululemon Outfit & Belt Bag!</h2>
                   <p class="text-sm text-center mt-2">100% free. No purchase required.</p>
                 </div>
                 <form id="join" novalidate aria-label="Join Canadian Parent">
@@ -209,9 +219,11 @@
                         </svg>
                       </span>
                       <span>By entering your information and clicking Claim my free samples, you agree to our <a
-                          href="https://canadianparent.ca/join/rules.html" class="legal-link text-ink">Privacy Policy</a>,
+                          href="https://canadianparent.ca/join/rules.html" class="legal-link text-ink">Privacy
+                          Policy</a>,
                         <a href="https://canadianparent.ca/join/privacy.html" class="legal-link text-ink ">Terms and
-                          Conditions</a> and understand that we will be sending you our newsletters by email. Unsubscribe
+                          Conditions</a> and understand that we will be sending you our newsletters by email.
+                        Unsubscribe
                         at any time.</span>
                     </label>
                     <p id="newsletter-error" class="error-text" aria-live="polite"></p>
@@ -220,11 +232,12 @@
                     <label for="company">Company</label>
                     <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
                   </div>
-               <button id="join-button" type="submit" class="btn-primary mt-6 w-full gap-2 p-[5px] sm:py-[0.75rem]">
+                  <button id="join-button" type="submit" class="btn-primary mt-6 w-full gap-2 p-[5px] sm:py-[0.75rem]">
                     <svg id="joining-spinner" class="size-6 shrink-0" aria-hidden="true" hidden>
                       <use href="#icon-spinner" />
                     </svg>
-                       <span id="join-button-label" class="btn-primary text-[18px] sm:text-[1.25rem]" >Enter to win Lululemon</span>
+                    <span id="join-button-label" class="btn-primary text-[18px] sm:text-[1.25rem]">Enter to win
+                      Lululemon</span>
                   </button>
 
                 </form>
@@ -249,27 +262,31 @@
 
 
 
-  <section class="bg-cloud pb-4 py-12 md:py-16 lg:py-20" aria-labelledby="steps-heading">
+    <section class="bg-cloud pb-4 py-12 md:py-16 lg:py-20" aria-labelledby="steps-heading">
       <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 lg:gap-12 px-5 md:px-10 lg:grid-cols-12">
-      
+
         <!-- Content Column -->
         <div class="space-y-4 lg:col-span-7 order-2 lg:order-1">
-         
+
           <h2 id="steps-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl font-bold">
-           Your Best Daily Combo — Completely <span style="color:color:#dc0857">Free</span>
+            Your Best Daily Combo — Completely <span style="color:color:#dc0857">Free</span>
           </h2>
           <p class="mt-5 ">
-           We’re giving one Canadian parent a complete Lululemon outfit paired with the viral Everywhere Belt Bag. Designed to deliver premium comfort, effortless style, and maximum durability, this setup is built to handle your busiest days. From morning workouts and school runs to weekend errands, get the ultimate wardrobe upgrade. Enter today for your free chance to win!
+            We’re giving one Canadian parent a complete Lululemon outfit paired with the viral Everywhere Belt Bag.
+            Designed to deliver premium comfort, effortless style, and maximum durability, this setup is built to handle
+            your busiest days. From morning workouts and school runs to weekend errands, get the ultimate wardrobe
+            upgrade. Enter today for your free chance to win!
           </p>
-          
-          <a href="#join" class="btn-primary mt-12 md:mt-8 w-full sm:w-auto block md:max-w-[350px]">I Want FREE Lululemon!</a>
-        
+
+          <a href="#join" class="btn-primary mt-12 md:mt-8 w-full sm:w-auto block md:max-w-[350px]">I Want FREE
+            Lululemon!</a>
+
         </div>
 
         <!-- Image Column (Centered & sized to max 300px) -->
         <div class="flex justify-center lg:col-span-5 order-1 lg:order-2">
-          <img src="assets/images/photos/lululemon-3.jpg"
-            alt="A mother smiles at her sleeping newborn on a linen sofa" width="1200" height="900" loading="lazy"
+          <img src="assets/images/photos/lululemon-3.jpg" alt="A mother smiles at her sleeping newborn on a linen sofa"
+            width="1200" height="900" loading="lazy"
             class="order-1 aspect-4/3 w-full rounded-3xl object-cover max-w-[420px]">
         </div>
 
@@ -280,79 +297,64 @@
 
 
 
-
-
-
-
-
     <section class="bg-white py-14 md:py-14 lg:py-20" aria-labelledby="perks-heading">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-5 md:px-10 lg:grid-cols-12">
-       
-        <div class="ticket-pass overflow-hidden rounded-3xl bg-sun-tint lg:col-span-5 self-start">
-          <div class="p-8 md:p-10 text-center lg:text-left">
-            <p class="eyebrow">Your member pass</p>
-            <p
-              class="mt-4 font-heading text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-ink">
-              100% FREE</p>
-            <!-- <p class="mt-5 text-lg">Every perk is included with your free membership.</p> -->
-            <img src="assets/images/illustrations/member-pass-samples-box.png"
-              alt="An open sample box with a diaper, wipes and baby bottle" width="800" height="600" loading="lazy"
-              class="mx-auto mt-6 aspect-4/3 w-60 max-w-full object-contain">
+      <div class="mx-auto max-w-7xl px-5 md:px-10">
+        <div class="pt-stage">
+          <span class="pt-mark" aria-hidden="true">FREE</span>
+          <div class="pt-copy">
+            <p class="eyebrow">What members get</p>
+            <h2 id="perks-heading" class="mt-4 text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Free perks
+              for your family</h2>
+            <p class="mt-5 text-lg">One free membership. Four tickets to prizes, samples and savings. No purchase
+              required.</p>
           </div>
-          <div
-            class="text-sm pass-footer flex min-h-24 items-center justify-center border-t-2 border-dashed border-ink/20 px-8 py-6 text-center font-ui text-lg font-semibold text-ink">
-            No purchase required. Canada only.</div>
-        </div>
-
-        <div class="lg:col-span-7 lg:pl-4">
-          <p class="eyebrow">What members get</p>
-          <h2 id="perks-heading" class="mt-4 text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Free perks for
-            your family</h2>
-          <ul class="mt-12 divide-y divide-line">
-            <li class="flex items-center gap-6 py-5"><span
-                class="flex size-16 shrink-0 items-center justify-center rounded-full bg-peach"><svg class="size-16"
-                  aria-hidden="true">
-                  <use href="#icon-perk-ticket" />
-                </svg></span>
-              <div>
+          <ul class="pt-grid">
+            <li class="pt pt-sun">
+              <div class="pt-body"><span class="pt-icon"><svg class="size-16" aria-hidden="true">
+                    <use href="#icon-perk-ticket" />
+                  </svg></span>
                 <h3 class="text-xl">Weekly giveaways</h3>
-                <p class="mt-1">New prizes added every week</p>
+                <p>New prizes added every week</p>
               </div>
+              <div class="pt-stub"><span>Member perk</span><b>No. 01</b><span>Free</span></div>
             </li>
-            <li class="flex items-center gap-6 py-5"><span
-                class="flex size-16 shrink-0 items-center justify-center rounded-full bg-peach"><svg class="size-16"
-                  aria-hidden="true">
-                  <use href="#icon-perk-diaper" />
-                </svg></span>
-              <div>
+            <li class="pt pt-mint">
+              <div class="pt-body"><span class="pt-icon"><svg class="size-16" aria-hidden="true">
+                    <use href="#icon-perk-diaper" />
+                  </svg></span>
                 <h3 class="text-xl">Free baby samples</h3>
-                <p class="mt-1">Diapers, wipes, formula and more</p>
+                <p>Diapers, wipes, formula and more</p>
               </div>
+              <div class="pt-stub"><span>Member perk</span><b>No. 02</b><span>Free</span></div>
             </li>
-            <li class="flex items-center gap-6 py-5"><span
-                class="flex size-16 shrink-0 items-center justify-center rounded-full bg-peach"><svg class="size-16"
-                  aria-hidden="true">
-                  <use href="#icon-perk-coupon" />
-                </svg></span>
-              <div>
+            <li class="pt pt-peach">
+              <div class="pt-body"><span class="pt-icon"><svg class="size-16" aria-hidden="true">
+                    <use href="#icon-perk-coupon" />
+                  </svg></span>
                 <h3 class="text-xl">Exclusive coupons</h3>
-                <p class="mt-1">Save on the brands you love</p>
+                <p>Save on the brands you love</p>
               </div>
+              <div class="pt-stub"><span>Member perk</span><b>No. 03</b><span>Free</span></div>
             </li>
-            <li class="flex items-center gap-6 py-5"><span
-                class="flex size-16 shrink-0 items-center justify-center rounded-full bg-peach"><svg class="size-16"
-                  aria-hidden="true">
-                  <use href="#icon-perk-houses" />
-                </svg></span>
-              <div>
+            <li class="pt pt-blush">
+              <div class="pt-body"><span class="pt-icon"><svg class="size-16" aria-hidden="true">
+                    <use href="#icon-perk-houses" />
+                  </svg></span>
                 <h3 class="text-xl">400,000+ members</h3>
-                <p class="mt-1">New and expecting parents across Canada</p>
+                <p>New and expecting parents across Canada</p>
               </div>
+              <div class="pt-stub"><span>Member perk</span><b>No. 04</b><span>Free</span></div>
             </li>
           </ul>
         </div>
       </div>
     </section>
+
+
+
+
+
+
 
 
     <section class="bg-cloud py-14 md:py-14 lg:py-20" aria-labelledby="steps-heading">
@@ -377,7 +379,9 @@
                 <use href="#icon-check" />
               </svg><span>Members-only giveaways</span></li>
           </ul>
-          <a href="#join" class="btn-primary mt-8 w-full sm:w-auto block md:max-w-[370px] text-[16px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem]" >Enter to win Lululemon</a>
+          <a href="#join"
+            class="btn-primary mt-8 w-full sm:w-auto block md:max-w-[370px] text-[16px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem]">Enter
+            to win Lululemon</a>
           <p class="mt-3 text-sm text-muted">No purchase required. Canada only.</p>
         </div>
         <ol class="space-y-6 lg:col-span-7">
@@ -455,6 +459,7 @@
 
 
 
+
     <section class="bg-mint-soft py-14 md:py-14 lg:py-20" aria-labelledby="winners-heading">
       <div class="mx-auto max-w-7xl px-5 md:px-10">
         <div class="text-center">
@@ -463,96 +468,95 @@
             parents, real prizes</h2>
           <p class="mt-5 text-lg">Canadian families win every week. You could be next.</p>
         </div>
-        <ul class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <li class="rounded-3xl bg-white p-4 shadow-card">
-            <div class="relative flex aspect-4/3 items-center justify-center rounded-2xl bg-cloud"><span
-                class="winner-badge absolute top-3 left-3 z-10 rounded-lg bg-sun-tint px-4 py-2 font-ui text-sm font-semibold text-ink">Winner</span><img
-                src="assets/images/prizes/prize-sound-machine.png" alt="A round white baby sound machine" width="800"
-                height="600" loading="lazy" class="prize-image aspect-4/3 w-full object-contain"></div>
-            <h3 class="mt-4 text-xl">Baby sound machine</h3>
-            <p class="mt-2 flex items-start gap-2 text-sm text-muted"><svg class="mt-0.5 size-4 shrink-0 text-ink"
-                aria-hidden="true">
-                <use href="#icon-map-pin" />
-              </svg>Lydia W., Temiskaming, ON</p>
-          </li>
-          <li class="rounded-3xl bg-white p-4 shadow-card">
-            <div class="relative flex aspect-4/3 items-center justify-center rounded-2xl bg-cloud"><span
-                class="winner-badge absolute top-3 left-3 z-10 rounded-lg bg-sun-tint px-4 py-2 font-ui text-sm font-semibold text-ink">Winner</span><img
-                src="assets/images/prizes/prize-audio-player.png" alt="A soft-teal children's audio player" width="800"
-                height="600" loading="lazy" class="prize-image aspect-4/3 w-full object-contain"></div>
-            <h3 class="mt-4 text-xl">Kids' audio player</h3>
-            <p class="mt-2 flex items-start gap-2 text-sm text-muted"><svg class="mt-0.5 size-4 shrink-0 text-ink"
-                aria-hidden="true">
-                <use href="#icon-map-pin" />
-              </svg>Olinda F., Mississauga, ON</p>
-          </li>
-          <li class="rounded-3xl bg-white p-4 shadow-card">
-            <div class="relative flex aspect-4/3 items-center justify-center rounded-2xl bg-cloud"><span
-                class="winner-badge absolute top-3 left-3 z-10 rounded-lg bg-sun-tint px-4 py-2 font-ui text-sm font-semibold text-ink">Winner</span><img
-                src="assets/images/prizes/prize-formula-dispenser.png"
-                alt="A white formula dispenser with a baby bottle" width="800" height="600" loading="lazy"
-                class="prize-image aspect-4/3 w-full object-contain"></div>
-            <h3 class="mt-4 text-xl">Formula dispenser</h3>
-            <p class="mt-2 flex items-start gap-2 text-sm text-muted"><svg class="mt-0.5 size-4 shrink-0 text-ink"
-                aria-hidden="true">
-                <use href="#icon-map-pin" />
-              </svg>Billie K., Moose Jaw, SK</p>
-          </li>
-         
-            <li class="rounded-3xl bg-white p-4 shadow-card">
-             <div class="relative flex aspect-4/3 items-center justify-center rounded-2xl bg-cloud"><span
-                class="winner-badge absolute top-3 left-3 z-10 rounded-lg bg-sun-tint px-4 py-2 font-ui text-sm font-semibold text-ink">Winner</span><img
-                src="assets/images/prizes/amazongift.png"
-                alt="$250 gift card" width="800" height="600" loading="lazy"
-                class="prize-image aspect-4/3 w-full object-contain"></div>
-    
-            <h3 class="mt-4 text-xl">$250 Amazongift card</h3>
-            <p class="mt-2 flex items-start gap-2 text-sm text-muted"><svg class="mt-0.5 size-4 shrink-0 text-ink"
-                aria-hidden="true">
-                <use href="#icon-map-pin" />
-              </svg>Bianca A., Stouffville, ON</p>
-          </li>
-          <li class="rounded-3xl bg-white p-4 shadow-card">
-            <div class="relative flex aspect-4/3 items-center justify-center rounded-2xl bg-cloud"><span
-                class="winner-badge absolute top-3 left-3 z-10 rounded-lg bg-sun-tint px-4 py-2 font-ui text-sm font-semibold text-ink">Winner</span><img
-                src="assets/images/prizes/walmartgift.png"
-                alt="$100 Walmart gift card" width="800" height="600" loading="lazy"
-                class="prize-image aspect-4/3 w-full object-contain"></div>
-    
-            <h3 class="mt-4 text-xl">$100 Walmart gift card</h3>
-            <p class="mt-2 flex items-start gap-2 text-sm text-muted"><svg class="mt-0.5 size-4 shrink-0 text-ink"
-                aria-hidden="true">
-                <use href="#icon-map-pin" />
-              </svg>Jennifer M., Calgary, AB</p>
-          </li>
-
-
-
-          <li class="rounded-3xl bg-white p-4 shadow-card">
-            <div class="relative flex aspect-4/3 items-center justify-center rounded-2xl bg-cloud"><span
-                class="winner-badge absolute top-3 left-3 z-10 rounded-lg bg-sun-tint px-4 py-2 font-ui text-sm font-semibold text-ink">Winner</span><img
-                src="assets/images/prizes/prize-baby-carrier.png" alt="A charcoal-grey structured baby carrier"
-                width="800" height="600" loading="lazy" class="prize-image aspect-4/3 w-full object-contain"></div>
-            <h3 class="mt-4 text-xl">Baby carrier</h3>
-            <p class="mt-2 flex items-start gap-2 text-sm text-muted"><svg class="mt-0.5 size-4 shrink-0 text-ink"
-                aria-hidden="true">
-                <use href="#icon-map-pin" />
-              </svg>Sarah L., Vancouver, BC</p>
-          </li>
-        </ul>
+        <div class="wb mt-12" id="winners-board">
+          <div class="wb-head">
+            <span class="wb-live"><i></i>Weekly winners</span>
+            Week of <span id="wb-range">last week</span>
+          </div>
+          <div class="wb-cols" aria-hidden="true">
+            <span>Date</span><span>Prize</span><span>Winner</span><span>Status</span></div>
+          <div class="wb-view">
+            <ul class="wb-track">
+              <li class="wb-row" data-day="5">
+                <time class="wb-date">&nbsp;</time>
+                <span class="wb-prize"><img src="assets/images/prizes/prize-sound-machine.png" alt="" width="56"
+                    height="56" loading="lazy"><b>Baby sound machine</b></span>
+                <span class="wb-who"><b>Lydia W.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
+                      <use href="#icon-map-pin" />
+                    </svg>Temiskaming, ON</span></span>
+                <span class="wb-status">Claimed</span>
+              </li>
+              <li class="wb-row" data-day="4">
+                <time class="wb-date">&nbsp;</time>
+                <span class="wb-prize"><img src="assets/images/prizes/prize-audio-player.png" alt="" width="56"
+                    height="56" loading="lazy"><b>Kids' audio player</b></span>
+                <span class="wb-who"><b>Olinda F.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
+                      <use href="#icon-map-pin" />
+                    </svg>Mississauga, ON</span></span>
+                <span class="wb-status">Claimed</span>
+              </li>
+              <li class="wb-row" data-day="3">
+                <time class="wb-date">&nbsp;</time>
+                <span class="wb-prize"><img src="assets/images/prizes/prize-formula-dispenser.png" alt="" width="56"
+                    height="56" loading="lazy"><b>Formula dispenser</b></span>
+                <span class="wb-who"><b>Billie K.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
+                      <use href="#icon-map-pin" />
+                    </svg>Moose Jaw, SK</span></span>
+                <span class="wb-status">Claimed</span>
+              </li>
+              <li class="wb-row" data-day="2">
+                <time class="wb-date">&nbsp;</time>
+                <span class="wb-prize"><img src="assets/images/prizes/amazongift.png" alt="" width="56" height="56"
+                    loading="lazy"><b>$250 Amazon gift card</b></span>
+                <span class="wb-who"><b>Bianca A.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
+                      <use href="#icon-map-pin" />
+                    </svg>Stouffville, ON</span></span>
+                <span class="wb-status">Claimed</span>
+              </li>
+              <li class="wb-row" data-day="1">
+                <time class="wb-date">&nbsp;</time>
+                <span class="wb-prize"><img src="assets/images/prizes/walmartgift.png" alt="" width="56" height="56"
+                    loading="lazy"><b>$100 Walmart gift card</b></span>
+                <span class="wb-who"><b>Jennifer M.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
+                      <use href="#icon-map-pin" />
+                    </svg>Calgary, AB</span></span>
+                <span class="wb-status">Claimed</span>
+              </li>
+              <li class="wb-row" data-day="0">
+                <time class="wb-date">&nbsp;</time>
+                <span class="wb-prize"><img src="assets/images/prizes/prize-baby-carrier.png" alt="" width="56"
+                    height="56" loading="lazy"><b>Baby carrier</b></span>
+                <span class="wb-who"><b>Sarah L.</b><span><svg class="size-4 shrink-0" aria-hidden="true">
+                      <use href="#icon-map-pin" />
+                    </svg>Vancouver, BC</span></span>
+                <span class="wb-status">Claimed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
+
+
+
+
+
     <section class="bg-white py-14 md:py-14 lg:py-20" aria-labelledby="cta-heading">
       <div class="mx-auto max-w-7xl px-5 md:px-10">
-        <div class="grid grid-cols-1 items-center gap-8 rounded-3xlp-8 md:grid-cols-2 p-8 md:p-16  rounded-3xl" style="background-color:#fdece5">
+        <div class="grid grid-cols-1 items-center gap-8 rounded-3xlp-8 md:grid-cols-2 p-8 md:p-16  rounded-3xl"
+          style="background-color:#fdece5">
           <div class="order-2 min-w-0 md:order-1">
-            <h2 id="cta-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Win a FREE Lululemon Outfit & Everywhere Belt Bag</h2>
-            <p class="mt-5">A fresh outfit. An iconic bag. Your chance to get both FREE. Sign up now for your chance to win—it’s quick, easy, and costs nothing.</span></p><a href="#join" class="btn-primary mt-8 w-full lg:w-auto block md:max-w-[350px] text-[18px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem] ">Sign Me Up to Win!</a>
+            <h2 id="cta-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Win a FREE
+              Lululemon Outfit & Everywhere Belt Bag</h2>
+            <p class="mt-5">A fresh outfit. An iconic bag. Your chance to get both FREE. Sign up now for your chance to
+              win—it’s quick, easy, and costs nothing.</span></p><a href="#join"
+              class="btn-primary mt-8 w-full lg:w-auto block md:max-w-[350px] text-[18px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem] ">Sign
+              Me Up to Win!</a>
             <p class="mt-4 text-sm text-body">No purchase required. Canada only.</p>
           </div>
-          <img src="assets/images/photos/lululemon-2.jpg"
-            alt="A mother smiles at her sleeping newborn on a linen sofa" width="1200" height="900" loading="lazy"
+          <img src="assets/images/photos/lululemon-2.jpg" alt="A mother smiles at her sleeping newborn on a linen sofa"
+            width="1200" height="900" loading="lazy"
             class="order-1 aspect-5/4 w-full rounded-3xl object-cover md:order-2">
         </div>
       </div>
@@ -573,7 +577,8 @@
       <p class="mt-6 border-t border-line pt-6 text-sm text-muted">No purchase necessary. Giveaways are open to
         residents of Canada 18+; see the official rules for each draw. Sample offers come from independent brands, may
         change and may vary by location. Canadian Parent is not affiliated with or sponsored by the brands mentioned.
-        <br />© 2026 Canadian Parent. No purchase required. 100% free. Open to residents of Canada.</p>
+        <br />© 2026 Canadian Parent. No purchase required. 100% free. Open to residents of Canada.
+      </p>
     </div>
   </footer>
 </body>
