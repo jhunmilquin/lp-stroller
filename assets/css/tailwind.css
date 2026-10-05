@@ -32,6 +32,9 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-mint: #EAF8F6;
@@ -302,6 +305,9 @@
   }
   .aspect-4\/3 {
     aspect-ratio: 4/3;
+  }
+  .aspect-5\/4 {
+    aspect-ratio: 5/4;
   }
   .size-0 {
     width: 0px;

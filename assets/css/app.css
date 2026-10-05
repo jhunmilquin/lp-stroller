@@ -585,7 +585,7 @@ img.img-loading {
 .pt-stage{position:relative;overflow:hidden;display:grid;gap:2.5rem;padding:2.5rem 1.25rem;background:#F1FAF8;border-radius:2rem;align-items:center}
 .pt-mark{position:absolute;right:-1rem;bottom:-2.5rem;font-size:clamp(8rem,22vw,18rem);font-weight:900;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:2px #D6F1EE;pointer-events:none;user-select:none}
 .pt-copy,.pt-grid{position:relative}
-.pt-copy{text-align:center}
+.pt-copy{text-align:left}
 .pt-grid{display:grid;gap:1.25rem;margin:0;padding:0;list-style:none}
 .pt{position:relative;border-radius:1.25rem;box-shadow:0 12px 28px rgba(21,26,74,.1);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
 .pt:hover{transform:rotate(0) translateY(-6px)!important;box-shadow:0 20px 40px rgba(21,26,74,.16)}
