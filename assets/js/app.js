@@ -264,3 +264,23 @@
   initValidation();
   initScrollLinks();
 })();
+
+// Weekly winners board: dates = previous Mon–Sun week, list cloned for a seamless loop
+(function () {
+  var track = document.querySelector('.wb-track');
+  if (!track) return;
+  var fmt = function (d, o) { return d.toLocaleDateString('en-CA', o); };
+  var t = new Date(); t.setHours(0, 0, 0, 0);
+  var mon = new Date(t); mon.setDate(t.getDate() - ((t.getDay() + 6) % 7) - 7);
+  var day = function (n) { var d = new Date(mon); d.setDate(mon.getDate() + n); return d; };
+  track.querySelectorAll('.wb-row').forEach(function (r) {
+    r.querySelector('.wb-date').textContent = fmt(day(+r.dataset.day), { month: 'short', day: 'numeric' });
+  });
+  var short = { month: 'short', day: 'numeric' };
+  document.getElementById('wb-range').textContent =
+    fmt(day(0), short) + ' – ' + fmt(day(6), short) + ', ' + day(6).getFullYear();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  Array.prototype.slice.call(track.children).forEach(function (r) {
+    var c = r.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c);
+  });
+})();
