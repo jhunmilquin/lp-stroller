@@ -20,121 +20,6 @@
   <link rel="stylesheet" href="assets/css/tailwind.css?v=1.0.1">
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="assets/js/app.js" defer></script>
-  <style>
-    /* v3 hub: cozy hero + bento (this page only) */
-    .v3 {
-      --cream: #FFF8F1;
-      position: relative; overflow: hidden; isolation: isolate;
-      background: var(--cream);
-      padding: 1.5rem 1.25rem 3.5rem;
-    }
-    .v3::before { /* paper grain */
-      content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .6 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    .v3-blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
-    .v3-blob-1 { width: 34rem; height: 34rem; top: -14rem; right: -10rem; background: #FFE3D3; }
-    .v3-blob-2 { width: 28rem; height: 28rem; top: 18rem; left: -14rem; background: #DDF3EF; }
-    .v3-wrap { max-width: 80rem; margin: 0 auto; }
-
-    /* hero */
-    .v3-hero { display: grid; gap: 2.5rem; align-items: center; }
-    .v3-logo { display: flex; width: fit-content; }
-    .v3-logo img { display: block; height: 2.25rem; width: auto; }
-    .v3-kicker { display: inline-flex; align-items: center; gap: .5rem; margin-top: 2rem; padding: .4rem .9rem; border-radius: 999px; background: white; box-shadow: 0 2px 10px rgb(21 26 74 / .06); font: 600 .8rem/1.4 var(--font-ui); color: var(--color-ink); }
-    .v3-dot { width: .5rem; height: .5rem; border-radius: 50%; background: #22B07D; box-shadow: 0 0 0 4px rgb(34 176 125 / .18); }
-    .v3 h1 { margin-top: 1.25rem; font-size: clamp(1.9rem, 8.6vw, 2.4rem); line-height: 1.08 !important; font-weight: 700; letter-spacing: -.02em; color: var(--color-ink); text-wrap: balance; }
-    .v3 h1 .v3-mark { position: relative; display: inline; white-space: nowrap; color: var(--color-teal); background: none; padding: 0; margin: 0; font-weight: 700; }
-    .v3-mark svg { position: absolute; left: 0; right: 0; bottom: -.35em; width: 100%; height: .4em; }
-    .v3-hand { margin-top: 2.25rem; max-width: 32rem; font-family: "Caveat", "Segoe Script", cursive; font-weight: 500; font-size: 1.55rem; line-height: 1.3; color: var(--color-body); }
-    .v3-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
-    .v3-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 3.5rem; padding: .75rem 1.75rem; border-radius: 999px; background: var(--color-coral); color: white; font: 700 1.05rem/1.3 var(--font-ui); text-decoration: none; box-shadow: 0 10px 24px rgb(255 77 106 / .3); transition: transform .2s ease, box-shadow .2s ease; }
-    .v3-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgb(255 77 106 / .38); }
-    .v3-proof { display: flex; align-items: center; gap: .75rem; font-size: .85rem; line-height: 1.35; color: var(--color-muted); }
-    .v3-proof img { height: 2.5rem; width: auto; }
-    .v3-proof b { color: var(--color-ink); }
-
-    .v3-photo { position: relative; margin: 0 .5rem 1rem; }
-    .v3-photo > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 45% 30%; border-radius: 48% 52% 44% 56% / 58% 50% 50% 42%; box-shadow: 0 30px 60px -20px rgb(21 26 74 / .35); }
-    .v3-seal { position: absolute; top: -.75rem; right: -.25rem; width: 6.5rem; height: 6.5rem; filter: drop-shadow(0 8px 16px rgb(21 26 74 / .15)); }
-    .v3-seal text { font: 700 10.5px var(--font-ui); letter-spacing: .14em; fill: var(--color-ink); }
-    .v3-seal text { animation: v3-spin 22s linear infinite; transform-origin: 60px 60px; }
-    .v3-note { position: absolute; left: -.25rem; bottom: -.75rem; padding: .35rem 1rem; background: white; border-radius: .75rem; transform: rotate(-4deg); box-shadow: 0 8px 20px rgb(21 26 74 / .12); font: 600 1.35rem/1.2 "Caveat", cursive; color: var(--color-ink); }
-    @keyframes v3-spin { to { transform: rotate(360deg); } }
-
-    /* bento */
-    .v3-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 3rem 0 0; padding: 0; list-style: none; scroll-margin-top: 1.5rem; }
-    .v3-grid > li { min-width: 0; animation: v3-rise .6s cubic-bezier(.2,.7,.2,1) both; }
-    .v3-grid > li:nth-child(2) { animation-delay: .06s; }
-    .v3-grid > li:nth-child(3) { animation-delay: .12s; }
-    .v3-grid > li:nth-child(4) { animation-delay: .18s; }
-    .v3-grid > li:nth-child(5) { animation-delay: .24s; }
-    @keyframes v3-rise { from { opacity: 0; transform: translateY(18px); } }
-    .v3-tile {
-      position: relative; display: flex; flex-direction: column-reverse; height: 100%; overflow: hidden;
-      border-radius: 2rem; background: var(--bg); color: var(--color-body); text-decoration: none;
-      box-shadow: inset 0 0 0 1px rgb(21 26 74 / .05), 0 1px 2px rgb(21 26 74 / .04);
-      transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
-    }
-    .v3-pic { display: flex; align-items: center; justify-content: center; padding: 1.25rem 1.25rem 0; }
-    .v3-pic img { display: block; width: 100%; max-height: 17rem; object-fit: contain; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-    .v3-txt { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: .55rem; padding: 1.25rem 1.5rem 1.75rem; }
-    .v3-tag { padding: .3rem .75rem; border-radius: 999px; background: rgb(255 255 255 / .75); font: 600 .72rem/1.4 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--color-teal); }
-    .v3-txt h2 { font-size: 1.35rem; line-height: 1.2; letter-spacing: -.01em; }
-    .v3-txt p { font-size: .95rem; line-height: 1.6; }
-    .v3-txt .v3-cta { display: inline-flex; align-items: center; gap: .6rem; margin-top: auto; padding: .7rem 1.25rem; border-radius: 999px; background: var(--color-ink); color: white; font: 600 .95rem/1.3 var(--font-ui); transition: background .2s ease; }
-    .v3-txt p + .v3-cta { margin-top: .9rem; }
-    .v3-cta i { font-style: normal; transition: transform .2s ease; }
-    .v3-sticker { position: absolute; top: 1rem; right: 1rem; z-index: 2; padding: .3rem .9rem; border-radius: .6rem; background: white; transform: rotate(4deg); box-shadow: 0 6px 16px rgb(21 26 74 / .12); font: 600 1.3rem/1.2 "Caveat", cursive; color: var(--color-coral); }
-    .v3-tile:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
-    @media (hover: hover) {
-      .v3-tile:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px rgb(21 26 74 / .05), 0 24px 48px -16px rgb(21 26 74 / .25); }
-      .v3-tile:hover .v3-pic img { transform: scale(1.05) rotate(-1deg); }
-      .v3-tile:hover .v3-cta { background: var(--color-coral); }
-      .v3-tile:hover .v3-cta i { transform: translateX(4px); }
-    }
-    .v3-fine { margin-top: 2rem; text-align: center; font-size: .85rem; color: var(--color-muted); }
-
-    @media (min-width: 640px) {
-      .v3 { padding: 2rem 2.5rem 4.5rem; }
-      .v3 h1 { font-size: 3.25rem; }
-      .v3-hand { font-size: 1.75rem; }
-      .v3-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-      .v3-a { grid-column: 1 / -1; }
-      .v3-a .v3-tile { flex-direction: row; align-items: center; }
-      .v3-a .v3-txt { width: 48%; padding: 2.25rem; justify-content: center; }
-      .v3-a .v3-pic { width: 52%; padding: 2rem 1.5rem; }
-      .v3-a .v3-pic img { max-height: 22rem; }
-    }
-    @media (min-width: 1024px) {
-      .v3 { padding: 2.25rem 2.5rem 5.5rem; }
-      .v3-hero { grid-template-columns: 1.15fr 1fr; gap: 4rem; }
-      .v3 h1 { font-size: 4rem; }
-      .v3-photo { margin: 2.5rem 1rem 1.5rem 0; }
-      .v3-seal { width: 8rem; height: 8rem; top: -1.5rem; right: -1rem; }
-      .v3-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; margin-top: 4.5rem; }
-      .v3-a { grid-column: span 7; grid-row: span 2; }
-      .v3-b, .v3-c { grid-column: span 5; }
-      .v3-d, .v3-e { grid-column: span 6; }
-      /* hero tile: text over a big product shot */
-      .v3-a .v3-tile { flex-direction: column; align-items: stretch; }
-      .v3-a .v3-txt { width: auto; padding: 2.5rem 2.5rem 0; }
-      .v3-a .v3-txt h2 { font-size: 2.25rem; }
-      .v3-a .v3-txt p { font-size: 1.05rem; max-width: 34rem; }
-      .v3-a .v3-pic { width: auto; flex: 1; padding: 1rem 2rem 2rem; }
-      .v3-a .v3-pic img { max-height: 24rem; }
-      /* small tiles: text left, product right */
-      .v3-b .v3-tile, .v3-c .v3-tile, .v3-d .v3-tile, .v3-e .v3-tile { flex-direction: row; align-items: center; }
-      .v3-b .v3-txt, .v3-c .v3-txt, .v3-d .v3-txt, .v3-e .v3-txt { width: 56%; padding: 1.75rem 0 1.75rem 1.75rem; justify-content: center; }
-      .v3-b .v3-pic, .v3-c .v3-pic, .v3-d .v3-pic, .v3-e .v3-pic { width: 44%; padding: 1rem; }
-      .v3-b .v3-pic img, .v3-c .v3-pic img, .v3-d .v3-pic img, .v3-e .v3-pic img { max-height: 14rem; }
-      .v3-b .v3-txt p, .v3-c .v3-txt p { font-size: .9rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .v3-grid > li, .v3-seal text { animation: none; }
-      .v3-tile, .v3-pic img, .v3-btn, .v3-cta i { transition: none; }
-    }
-  </style>
   <noscript><style>img.img-loading{filter:none}</style></noscript>
 </head>
 
@@ -207,95 +92,79 @@
 
 
   <main>
-    <section class="v3" aria-labelledby="v3-heading">
-      <span class="v3-blob v3-blob-1" aria-hidden="true"></span>
-      <span class="v3-blob v3-blob-2" aria-hidden="true"></span>
-      <div class="v3-wrap">
-        <div class="v3-hero">
-          <div class="v3-copy">
-            <a href="#top" aria-label="Canadian Parent home" class="v3-logo"><img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40"></a>
-            <p class="v3-kicker"><span class="v3-dot" aria-hidden="true"></span>5 giveaways open this week</p>
-            <h1 id="v3-heading">Our top giveaway picks for <span class="v3-mark">Canadian parents<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c60-9 140-12 294-6" fill="none" stroke="#FF4D6A" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
-            <p class="v3-hand">We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
-            <div class="v3-actions">
-              <a href="#v3-picks" class="v3-btn">See the giveaways <span aria-hidden="true">↓</span></a>
-              <div class="v3-proof">
-                <img src="assets/images/avatars/parents.png" alt="" width="120" height="40">
-                <span><b>400,000+</b> parents<br>across Canada</span>
-              </div>
-            </div>
-          </div>
-          <figure class="v3-photo">
-            <img src="assets/images/photos/cta-mother-newborn.webp" alt="A mother smiles at her sleeping newborn on a sofa" width="1200" height="900" fetchpriority="high">
-            <svg class="v3-seal" viewBox="0 0 120 120" aria-hidden="true">
-              <defs><path id="v3-ring" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
-              <circle cx="60" cy="60" r="58" fill="#FFF1C7"/>
-              <text><textPath href="#v3-ring">100% FREE · NO PURCHASE · CANADA ·</textPath></text>
-              <path d="M60 78S42 67 42 55c0-6 7-9 11-5l7 7 7-7c4-4 11-1 11 5 0 12-18 23-18 23Z" fill="#FF4D6A"/>
-            </svg>
-            <figcaption class="v3-note">made with love for new families</figcaption>
-          </figure>
+    <section class="gv" aria-labelledby="gv-heading">
+      <svg class="gv-doodle gv-d1" viewBox="0 0 48 48" aria-hidden="true"><path d="m24 4 5.5 13.5L44 19l-11 9.5L36 43l-12-8-12 8 3-14.5L4 19l14.5-1.5z" fill="#FFF1C7" stroke="#151A4A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg class="gv-doodle gv-d2" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41S6 30 6 17c0-7 8-10 12-5l6 6 6-6c4-5 12-2 12 5 0 13-18 24-18 24Z" fill="#FFE3E8" stroke="#151A4A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg class="gv-doodle gv-d3" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6a18 18 0 1 0 12 30A14 14 0 0 1 30 6Z" fill="#D6F1EE" stroke="#151A4A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="relative mx-auto max-w-7xl px-5 md:px-10">
+        <div class="gv-head">
+          <a href="#top" aria-label="Canadian Parent home" class="inline-block">
+            <img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40" class="mx-auto h-10 w-auto lg:h-12">
+          </a>
+         
+          <h1 id="gv-heading" class="mt-8 text-4xl leading-tight text-balance md:text-5xl lg:text-6xl font-bold">Our Top Giveaway Picks for Canadian Parents</h1>
+          <p class="gv-hand mx-auto mt-5 max-w-3xl text-balance">We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
         </div>
 
-        <ul class="v3-grid" id="v3-picks" role="list">
-          <li class="v3-a">
-            <a href="https://work.jqd.io/stroller/" class="v3-tile" style="--bg:#D6F1EE">
-              <span class="v3-sticker">Our #1 pick!</span>
-              <div class="v3-txt">
-                <span class="v3-tag">Grand prize · Gear</span>
-                <h2>Win a Maxi-Cosi stroller set</h2>
+        <ul class="gv-grid" role="list">
+          <li class="gv-a">
+            <a href="https://work.jqd.io/stroller/" class="gv-tile gv-wide bg-mint-blob">
+              <span class="gv-ribbon">Grand prize</span>
+              <div class="gv-copy">
+                <p class="gv-note">For the long walks</p>
+                <h2>Win a new stroller system</h2>
                 <p>A full travel system with a matching car seat, ready for the school run and beyond. One lucky parent will take it home, and entering is free.</p>
-                <span class="v3-cta">Enter to win a stroller <i aria-hidden="true">→</i></span>
+                <span class="gv-cta">Enter to win a stroller <i aria-hidden="true">→</i></span>
               </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/stroller.jpg" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512"></div>
+              <div class="gv-pic"><img src="assets/images/giveaways/stroller.png" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512" loading="eager" fetchpriority="high"></div>
             </a>
           </li>
-          <li class="v3-b">
-            <a href="https://work.jqd.io/diapers/" class="v3-tile" style="--bg:#FFF1C7">
-              <div class="v3-txt">
-                <span class="v3-tag">Essentials</span>
+          <li class="gv-b">
+            <a href="https://work.jqd.io/diapers/" class="gv-tile bg-sun-tint">
+              <div class="gv-pic"><img src="assets/images/giveaways/diapers.jpg" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400" loading="eager"></div>
+              <div class="gv-copy">
+                <p class="gv-note">One less thing to buy</p>
                 <h2>Diapers for a year</h2>
                 <p>Twelve months of top-brand diapers, delivered right to your door. Skip the late-night store runs and put the savings toward your little one.</p>
-                <span class="v3-cta">Win free diapers <i aria-hidden="true">→</i></span>
+                <span class="gv-cta">Win free diapers <i aria-hidden="true">→</i></span>
               </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/diapers.jpg" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400"></div>
             </a>
           </li>
-          <li class="v3-c">
-            <a href="https://work.jqd.io/babysample2/" class="v3-tile" style="--bg:#EAF8F6">
-              <div class="v3-txt">
-                <span class="v3-tag">Free samples</span>
+          <li class="gv-c">
+            <a href="https://work.jqd.io/babysample2/" class="gv-tile bg-mint">
+              <div class="gv-pic"><img src="assets/images/photos/sample-baby-product.jpg" alt="Baby lotion, formula, wipes, diapers and bottles in a sample box" width="500" height="500" loading="lazy"></div>
+              <div class="gv-copy">
+                <p class="gv-note">Try before you buy</p>
                 <h2>Free baby product box</h2>
                 <p>Try trusted baby brands at no cost, shipped straight to you. Find the products your family loves before you buy.</p>
-                <span class="v3-cta">Get my free samples <i aria-hidden="true">→</i></span>
+                <span class="gv-cta">Get my free samples <i aria-hidden="true">→</i></span>
               </div>
-              <div class="v3-pic"><img src="assets/images/photos/sample-baby-product.jpg" alt="Baby lotion, formula, wipes, diapers and bottles in a sample box" width="500" height="500" loading="lazy"></div>
             </a>
           </li>
-          <li class="v3-d">
-            <a href="https://work.jqd.io/lululemon/" class="v3-tile" style="--bg:#FFE6DC">
-              <div class="v3-txt">
-                <span class="v3-tag">For you</span>
+          <li class="gv-d">
+            <a href="https://work.jqd.io/lululemon/" class="gv-tile bg-peach">
+              <div class="gv-pic"><img src="assets/images/photos/lululemon-set.jpg" alt="Lululemon diaper bag and outfit set in a gift box" width="640" height="512" loading="lazy"></div>
+              <div class="gv-copy">
+                <p class="gv-note">For busy days</p>
                 <h2>Lululemon bag and outfit</h2>
                 <p>A stylish diaper bag and a fresh outfit just for you. The perfect pair for busy days out with your little one.</p>
-                <span class="v3-cta">Enter to win Lululemon <i aria-hidden="true">→</i></span>
+                <span class="gv-cta">Enter to win Lululemon <i aria-hidden="true">→</i></span>
               </div>
-              <div class="v3-pic"><img src="assets/images/photos/lululemon-set.jpg" alt="Lululemon diaper bag and outfit set in a gift box" width="640" height="512" loading="lazy"></div>
             </a>
           </li>
-          <li class="v3-e">
-            <a href="https://work.jqd.io/amazon/" class="v3-tile" style="--bg:#F4E8EC">
-              <div class="v3-txt">
-                <span class="v3-tag">Registry</span>
+          <li class="gv-e">
+            <a href="https://work.jqd.io/amazon/" class="gv-tile bg-blush">
+              <div class="gv-pic"><img src="assets/images/photos/amazon-caard.jpg" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
+              <div class="gv-copy">
+                <p class="gv-note">Build your nest</p>
                 <h2>$500 Amazon Baby Registry</h2>
                 <p>Fill your registry with the essentials you actually need. Win $500 to cover the big items and the small ones too.</p>
-                <span class="v3-cta">Win my registry <i aria-hidden="true">→</i></span>
+                <span class="gv-cta">Win my registry <i aria-hidden="true">→</i></span>
               </div>
-              <div class="v3-pic"><img src="assets/images/photos/amazon-caard.jpg" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
             </a>
           </li>
         </ul>
-        <p class="v3-fine">No purchase required · Canada only · 18+ · New giveaways every week</p>
+       
       </div>
     </section>
 
