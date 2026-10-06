@@ -260,8 +260,10 @@
     img.addEventListener('error', done, { once: true });
   });
 
-  form.addEventListener('submit', handleSubmit);
-  initValidation();
+  if (form && button) {
+    form.addEventListener('submit', handleSubmit);
+    initValidation();
+  }
   initScrollLinks();
 })();
 

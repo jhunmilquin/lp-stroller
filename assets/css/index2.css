@@ -1,0 +1,121 @@
+/* Version two extends the existing Canadian Parent visual system. */
+.discover-hero {
+  --discover-mint: #e8f7f3;
+  --discover-sun: #fff1c7;
+  --discover-blush: #f3e8ec;
+  --discover-peach: #ffe6dc;
+  background: var(--color-cloud);
+  padding: 38px 0 44px;
+}
+.discover-wrap { max-width: 1280px; padding-inline: 40px; margin-inline: auto; }
+.discover-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.discover-brand { display: inline-flex; min-height: 48px; align-items: center; border-radius: 6px; }
+.discover-brand img { width: 210px; height: auto; }
+.discover-brand-row nav { display: flex; gap: 32px; align-items: center; }
+.discover-brand-row nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--color-ink); font-weight: 500; text-decoration: none; }
+.discover-brand-row nav a:hover { text-decoration: underline; }
+.discover-intro { display: grid; grid-template-columns: 1.65fr 1fr; gap: 70px; align-items: end; margin: 64px 0 42px; }
+
+.discover-intro-copy { padding-bottom: 5px; max-width: 380px; }
+.discover-intro-copy > p:first-child { font-size: 16px; line-height: 1.75; }
+.discover-free { display: flex; align-items: center; gap: 8px; color: var(--color-teal); margin-top: 18px; font-size: 13px; font-weight: 500; }
+.discover-free svg { flex: none; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.discover-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; scroll-margin-top: 24px; }
+.discover-card { position: relative; min-width: 0; display: flex; flex-direction: column; overflow: hidden; border-radius: 24px; color: var(--color-body); text-decoration: none; isolation: isolate; touch-action: manipulation; -webkit-tap-highlight-color: rgb(255 77 106 / .14); }
+.discover-card:focus-visible, .discover-brand:focus-visible, .discover-brand-row a:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 5px; }
+.discover-copy { position: relative; z-index: 1; padding: 28px 30px 0; }
+.discover-copy h2 { font-size: 25px; line-height: 1.22 !important; letter-spacing: -.025em; text-wrap: balance; }
+.discover-copy p { font-size: 14px; line-height: 1.65; margin-top: 13px; max-width: 34ch; }
+.discover-cta { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: auto 30px 24px; min-height: 58px; padding: 10px 16px 10px 22px; border-radius: 999px; background: white; color: var(--color-ink); box-shadow: 0 4px 12px rgb(21 26 74 / .06); font-size: 16px; line-height: 1.4; font-weight: 500; }
+.discover-cta svg { flex: none; width: 34px; height: 34px; padding: 8px; border-radius: 50%; background: var(--color-coral-tint); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.discover-art { position: relative; display: flex; justify-content: center; align-items: center; min-height: 0; }
+.discover-art img { width: 100%; height: 100%; min-height: 0; object-fit: contain; filter: brightness(1.08) contrast(1.12); mix-blend-mode: multiply; }
+.discover-stroller { grid-column: span 7; background: var(--discover-mint); display: grid; grid-template-columns: .95fr 1.15fr; min-height: 330px; }
+.discover-stroller .discover-copy { display: flex; flex-direction: column; padding: 36px 0 30px 34px; }
+.discover-stroller h2 { font-size: 32px; }
+.discover-stroller .discover-copy p { max-width: 25ch; }
+.discover-stroller .discover-art { padding: 12px 8px 16px 0; }
+.discover-stroller .discover-cta { margin: auto 20px 0 0; align-self: stretch; }
+.discover-diapers { grid-column: span 5; background: var(--discover-sun); display: grid; grid-template-columns: 1.15fr .85fr; min-height: 330px; }
+.discover-diapers .discover-copy { display: flex; flex-direction: column; padding: 34px 0 30px 30px; }
+.discover-diapers h2 { font-size: 29px; }
+.discover-diapers .discover-copy p { max-width: 24ch; }
+.discover-diapers .discover-art { padding: 12px 10px 12px 0; }
+.discover-diapers .discover-cta { margin: auto 20px 0 0; }
+.discover-samples, .discover-lululemon, .discover-amazon { grid-column: span 4; min-height: 435px; }
+.discover-samples { background: var(--discover-mint); }
+.discover-lululemon { background: var(--discover-blush); }
+.discover-amazon { background: var(--discover-peach); }
+.discover-samples .discover-art, .discover-lululemon .discover-art, .discover-amazon .discover-art { height: 206px; margin: 16px 30px 8px; }
+.discover-value { position: absolute; display: grid; place-items: center; top: 4px; right: -4px; width: 64px; height: 64px; border-radius: 50%; background: var(--discover-sun); color: var(--color-ink); font-size: 20px; font-weight: 600; transform: rotate(8deg); }
+.discover-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 28px; }
+.discover-bottom p { font-size: 14px; color: var(--color-ink); font-weight: 500; }
+.discover-bottom span { font-size: 12px; line-height: 1.6; }
+@media (hover: hover) {
+  .discover-card:hover .discover-cta { background: var(--color-coral-tint); }
+  .discover-card:hover .discover-cta svg { background: var(--color-coral); }
+  .discover-card:hover .discover-cta svg { transform: translateX(3px); }
+  .discover-card:hover .discover-art img { transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .discover-cta { transition: background-color 200ms ease-out, color 200ms ease-out; }
+  .discover-cta svg { transition: transform 200ms ease-out, background-color 200ms ease-out; }
+  .discover-art img { transition: transform 250ms ease-out; }
+}
+@media (max-width: 1100px) {
+  .discover-intro { gap: 36px; }
+  .discover-stroller, .discover-diapers { grid-column: span 6; }
+  .discover-stroller { grid-template-columns: 1fr; }
+  .discover-stroller .discover-copy { padding: 28px 28px 0; }
+  .discover-stroller .discover-art { height: 200px; padding: 8px 20px 24px; }
+  .discover-stroller .discover-cta { margin: 24px 0 0; }
+  .discover-diapers { grid-template-columns: 1fr; }
+  .discover-diapers .discover-copy { padding: 28px 28px 0; }
+  .discover-diapers .discover-art { height: 200px; padding: 8px 20px 24px; }
+  .discover-diapers .discover-cta { margin: 24px 0 0; }
+  .discover-copy { padding: 26px 24px 0; }
+  .discover-copy h2 { font-size: 23px; }
+  .discover-stroller h2, .discover-diapers h2 { font-size: 29px; }
+  .discover-copy p { font-size: 14px; }
+  .discover-samples .discover-art, .discover-lululemon .discover-art, .discover-amazon .discover-art { margin-inline: 24px; height: 180px; }
+  .discover-cta { margin-inline: 24px; gap: 8px; }
+}
+@media (max-width: 850px) {
+  .discover-wrap { padding-inline: 28px; }
+  .discover-intro { grid-template-columns: 1fr; gap: 24px; margin-top: 48px; }
+  .discover-intro-copy { max-width: 560px; }
+  .discover-intro-copy > p:first-child { font-size: 16px; }
+  .discover-free { margin-top: 12px; }
+  .discover-samples, .discover-lululemon { grid-column: span 6; }
+  .discover-amazon { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; min-height: 300px; }
+  .discover-amazon .discover-copy { padding: 30px 28px 0; }
+  .discover-amazon .discover-art { grid-column: 2; grid-row: 1 / 3; height: auto; min-height: 240px; margin: 24px; }
+  .discover-amazon .discover-cta { margin: 16px 28px 28px; }
+  .discover-amazon h2 { font-size: 28px; }
+  .discover-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+@media (max-width: 600px) {
+  .discover-hero { padding-block: 28px 36px; }
+  .discover-wrap { padding-inline: 20px; }
+  .discover-brand-row { align-items: flex-start; gap: 12px; }
+  .discover-brand img { width: 172px; }
+  .discover-brand-row nav { gap: 0; }
+  .discover-brand-row nav a { font-size: 12px; }
+  .discover-brand-row nav a:last-child { display: none; }
+  .discover-intro { margin: 42px 0 30px; gap: 20px; }
+  .discover-intro h1 { font-size: clamp(2.125rem, 8.7vw, 3.1rem); }
+  .discover-intro-copy > p:first-child { font-size: 15px; }
+  .discover-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .discover-card { grid-column: 1; border-radius: 20px; }
+  .discover-copy h2, .discover-stroller h2, .discover-diapers h2, .discover-amazon h2 { font-size: 27px; }
+  .discover-copy p { font-size: 15px; max-width: 34ch; }
+  .discover-stroller .discover-copy, .discover-diapers .discover-copy { padding: 28px 26px 0; }
+  .discover-stroller .discover-copy p, .discover-diapers .discover-copy p { max-width: 34ch; }
+  .discover-stroller .discover-art, .discover-diapers .discover-art { height: 238px; padding: 14px 24px 24px; }
+  .discover-samples .discover-art, .discover-lululemon .discover-art, .discover-amazon .discover-art { height: 226px; margin: 18px 26px 12px; }
+  .discover-amazon { display: flex; min-height: 435px; }
+  .discover-amazon .discover-copy { padding: 26px 24px 0; }
+  .discover-amazon .discover-art { min-height: 0; }
+  .discover-amazon .discover-cta { margin: auto 24px 24px; }
+  .discover-cta { font-size: 16px; }
+}

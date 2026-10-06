@@ -1,0 +1,45 @@
+.discover-hero { position: relative; isolation: isolate; }
+.discover-wrap { position: relative; z-index: 1; }
+.cozy-decoration { position: absolute; inset: 0; overflow: hidden; pointer-events: none; user-select: none; }
+.cozy-symbols { position: absolute; width: 0; height: 0; }
+.cozy-mark, .cozy-content-icon {
+  position: absolute; width: var(--cozy-size, 48px); height: var(--cozy-size, 48px);
+  color: #85a6a3; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  opacity: .65; transform: rotate(var(--cozy-angle, -12deg));
+}
+.cozy-content-icon { pointer-events: none; }
+.discover-intro { position: relative; }
+.cozy-content-icon--intro-one { top: -14px; left: 46%; width: 36px; height: 36px; }
+.cozy-content-icon--intro-two { bottom: 0; right: 7%; width: 32px; height: 32px; }
+.cozy-content-icon--intro-three { bottom: -22px; left: 30%; width: 32px; height: 32px; }
+.cozy-content-icon--tile { z-index: 2; top: 15px; right: 16px; width: 28px; height: 28px; opacity: .5; }
+.cozy-mark--one { top: 175px; left: 2.2%; }
+.cozy-mark--two { top: 180px; right: 2.2%; }
+.cozy-mark--three { top: 50%; left: 2.4%; }
+.cozy-mark--four { top: 62%; right: 2.4%; }
+.cozy-mark--five { bottom: 105px; left: 2.2%; }
+.cozy-mark--six { bottom: 85px; right: 2.2%; }
+.discover-motion-toggle {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+  padding: 8px 14px; border: 1px solid var(--color-line); border-radius: 999px;
+  color: var(--color-teal); background: white; font: inherit; font-size: 12px; cursor: pointer;
+}
+.discover-motion-toggle:hover { background: var(--color-mint); }
+.discover-card:active .discover-cta { transform: scale(.985); }
+@media (max-width: 1349px) {
+  .discover-hero { padding-bottom: 64px; }
+  .cozy-mark { display: none; }
+  .cozy-mark--one, .cozy-mark--two { display: block; top: auto; bottom: 10px; width: 28px; height: 28px; }
+  .cozy-mark--one { left: 28px; }
+  .cozy-mark--two { right: 28px; }
+}
+@media (max-width: 850px) { .discover-motion-toggle { order: 1; } }
+@media (max-width: 850px) {
+  .cozy-content-icon--intro-one { left: auto; right: 4px; top: -20px; }
+  .cozy-content-icon--intro-two { right: 8px; bottom: -20px; }
+  .cozy-content-icon--intro-three { left: 20%; }
+}
+@media (min-width: 601px) and (max-width: 850px) {
+  .discover-amazon .cozy-content-icon--tile { top: auto; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .discover-card:active .discover-cta { transform: none; } }
