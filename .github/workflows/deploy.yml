@@ -2,7 +2,7 @@ name: Deploy to Hostinger
 
 on:
   push:
-    branches: [main,lululemon3]
+    branches: [main,mainlp2]
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /domains/jqd.io/public_html/work/lululemon-full/
+          server-dir: /domains/jqd.io/public_html/work/mainlp2/
           exclude: |
             **/.git*
             **/.git*/**

@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;700;900&family=Caveat:wght@500;600&family=Poppins:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/hero/hero-mother-stroller.png" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/tailwind.css?v=1.0.1">
@@ -89,187 +89,89 @@
     </symbol>
   </svg>
 
-  <header class="sticky top-0 z-50 border-b border-line bg-white shadow-card">
-    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 md:px-10 lg:h-20">
-      <a href="#top" aria-label="Canadian Parent home" class="flex min-h-12 shrink-0 items-center">
-        <img src="assets/images/brand/logo.svg" alt="Canadian Parent " width="195" height="40" loading="eager"
-          class="h-8 w-auto lg:h-10">
-      </a>
-      <!-- <p class="hidden text-sm lg:block">Free for Canadian parents. No purchase required.</p>-->
-      <nav aria-label="Main navigation" class="flex items-center gap-4 md:gap-6">
 
-        <a href="#join" class="btn-primary text-[13px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem]">Win Lululemon</a>
-      </nav>
-    </div>
-  </header>
 
   <main>
-    <section class="py-8 md:py-12 pt-0 pt:md-8 lg:pb-0 lg:pt-20 " style="background-color:#ffeee6" aria-labelledby="hero-heading" >
-      <div class="hero-grid mx-auto grid max-w-7xl grid-cols-1 gap-8 px-0 sm:px-5 md:px-10 lg:grid-cols-12">
-
-        <div class="flex items-center lg:block hero-copy">
-          <h1 class="sr-only">Win FREE Lululemon Diaper Bag</h1>
-          <a href="#join" class="block" >
-            <picture class="mx-auto block w-full lg:hidden">
-              <source srcset="assets/images/hero/webp/lululemon-3-m.webp" type="image/png">
-              <img src="assets/images/hero/lululemon-3-m.jpeg"
-                alt="Win FREE Lululemon Diaper Bag banner" width="1200" height="1200"
-                loading="eager" fetchpriority="high" class="w-full object-contain img-loading" onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
-            </picture>
+    <section class="gv" aria-labelledby="gv-heading">
+      <svg class="gv-doodle gv-d1" viewBox="0 0 48 48" aria-hidden="true"><path d="m24 4 5.5 13.5L44 19l-11 9.5L36 43l-12-8-12 8 3-14.5L4 19l14.5-1.5z" fill="#FFF1C7" stroke="#151A4A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg class="gv-doodle gv-d2" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41S6 30 6 17c0-7 8-10 12-5l6 6 6-6c4-5 12-2 12 5 0 13-18 24-18 24Z" fill="#FFE3E8" stroke="#151A4A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <svg class="gv-doodle gv-d3" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6a18 18 0 1 0 12 30A14 14 0 0 1 30 6Z" fill="#D6F1EE" stroke="#151A4A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="relative mx-auto max-w-7xl px-5 md:px-10">
+        <div class="gv-head">
+          <a href="#top" aria-label="Canadian Parent home" class="inline-block">
+            <img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40" class="mx-auto h-10 w-auto lg:h-12">
           </a>
          
-            <picture class="mx-auto w-full hidden lg:block">
-              <source srcset="assets/images/hero/webp/lululemon-3-d.webp" type="image/png">
-              <img src="assets/images/hero/lululemon-3-d.jpeg"
-                alt="Win FREE Lululemon Diaper Bag banner" width="1200" height="1200"
-                loading="eager" fetchpriority="high" class="w-full object-contain img-loading" onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
-            </picture>
-          
-          
+          <h1 id="gv-heading" class="mt-8 text-4xl leading-tight text-balance md:text-5xl lg:text-6xl font-bold">Our Top Giveaway Picks for Canadian Parents</h1>
+          <p class="gv-hand mx-auto mt-5 max-w-3xl text-balance">We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
         </div>
-        <div class="px-4 md:px-0 lg:col-span-5">
-          <div class="ticket-shadow hero-ticket min-w-0 self-start">
-            <div class="ticket-form rounded-3xl">
 
-              <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
-                <div class="min-w-0 flex-1 mb-4 md:mb-4">
-                  <!-- <p class="eyebrow">Your entry ticket</p> -->
-                  <h2 class="text-2xl md:text-3xl xl:text-3xl leading-tight text-center mb-0">Join the Lululemon Diaper Bag & Outfit Giveaway!</h2>
-                  <p class="text-sm text-center mt-2">Enter today. No purchase required.</p>
-                </div>
-                <form id="join" novalidate aria-label="Join Canadian Parent">
-                  <div class="name-grid grid gap-4">
-                    <div>
-                      <label class="field-label" for="first-name">First name</label>
-                      <input class="field-input aria-invalid:border-danger" id="first-name" name="firstName" type="text"
-                        autocomplete="given-name" placeholder="e.g. John" aria-describedby="first-name-error" required>
-                      <p id="first-name-error" class="error-text" aria-live="polite"></p>
-                    </div>
-                    <div>
-                      <label class="field-label" for="last-name">Last name</label>
-                      <input class="field-input aria-invalid:border-danger" id="last-name" name="lastName" type="text"
-                        autocomplete="family-name" placeholder="e.g. Doe" aria-describedby="last-name-error" required>
-                      <p id="last-name-error" class="error-text" aria-live="polite"></p>
-                    </div>
-                  </div>
-                  <div class="mt-5">
-                    <label class="field-label" for="email">Email address</label>
-                    <input class="field-input aria-invalid:border-danger" id="email" name="email" type="email"
-                      autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false"
-                      placeholder="you@email.com" aria-describedby="email-error email-hint" required>
-                    <p id="email-error" class="error-text" aria-live="polite"></p>
-                    <div id="email-hint" class="mt-2 text-sm" aria-live="polite"></div>
-                  </div>
-                  <fieldset id="age-group" class="age-group mt-5" aria-describedby="age-error">
-                    <legend class="field-label">Age of your youngest child</legend>
-                    <div class="grid grid-cols-2 gap-3">
-                      <label
-                        class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint flex min-h-[44px] items-center">
-                        <input class="sr-only" type="radio" name="youngestChild" id="age-pregnant" value="pregnant"
-                          aria-describedby="age-error" required>
-                        <span class="flex items-center"><img src="assets/icons/interface/selected-chip-heart-coral.svg"
-                            alt="" aria-hidden="true" class="h-4 w-4 me-2">I'm pregnant</span><svg
-                          class="selected-check size-4 shrink-0" aria-hidden="true">
-                          <use href="#icon-check" />
-                        </svg>
-
-                      </label>
-                      <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
-                        <input class="sr-only" type="radio" name="youngestChild" id="age-0-3" value="0-3"
-                          aria-describedby="age-error">
-                        <span>0–3 years</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
-                          <use href="#icon-check" />
-                        </svg>
-                      </label>
-                      <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
-                        <input class="sr-only" type="radio" name="youngestChild" id="age-3-plus" value="3-plus"
-                          aria-describedby="age-error">
-                        <span>3+ years</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
-                          <use href="#icon-check" />
-                        </svg>
-                      </label>
-                      <label class="radio-chip has-checked:border-2 has-checked:border-coral has-checked:bg-coral-tint">
-                        <input class="sr-only" type="radio" name="youngestChild" id="age-none" value="none"
-                          aria-describedby="age-error">
-                        <span>No children yet</span><svg class="selected-check size-4 shrink-0" aria-hidden="true">
-                          <use href="#icon-check" />
-                        </svg>
-                      </label>
-                    </div>
-                  </fieldset>
-                  <p id="age-error" class="error-text" aria-live="polite"></p>
-                  <div class="mt-5">
-                    <label class="flex min-h-12 cursor-pointer items-start gap-3 text-sm" for="newsletter">
-                      <span class="relative mt-1 size-6 shrink-0">
-                        <input id="newsletter" name="newsletter" type="checkbox" aria-describedby="newsletter-error"
-                          class="peer size-6 cursor-pointer appearance-none rounded-sm border-2 border-muted bg-white checked:border-teal checked:bg-teal aria-invalid:border-danger">
-                        <svg class="pointer-events-none absolute inset-0 hidden size-6 text-white peer-checked:block"
-                          aria-hidden="true">
-                          <use href="#icon-check" />
-                        </svg>
-                      </span>
-                      <span>By entering your information and clicking Enter to win Lululemon, you agree to our <a
-                          href="https://canadianparent.ca/join/rules.html" class="legal-link text-ink">Privacy Policy</a>,
-                        <a href="https://canadianparent.ca/join/privacy.html" class="legal-link text-ink ">Terms and
-                          Conditions</a> and understand that we will be sending you our newsletters by email. Unsubscribe
-                        at any time.</span>
-                    </label>
-                    <p id="newsletter-error" class="error-text" aria-live="polite"></p>
-                  </div>
-                  <div class="sr-only" aria-hidden="true">
-                    <label for="company">Company</label>
-                    <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
-                  </div>
-               <button id="join-button" type="submit" class="btn-primary mt-6 w-full gap-2 p-[5px] sm:py-[0.75rem]">
-                    <svg id="joining-spinner" class="size-6 shrink-0" aria-hidden="true" hidden>
-                      <use href="#icon-spinner" />
-                    </svg>
-                       <span id="join-button-label" class="btn-primary text-[18px] sm:text-[1.25rem]" >Enter to win Lululemon</span>
-                  </button>
-
-                </form>
-
-
-
+        <ul class="gv-grid" role="list">
+          <li class="gv-a">
+            <a href="https://work.jqd.io/stroller/" class="gv-tile gv-wide bg-mint-blob">
+              <span class="gv-ribbon">Grand prize</span>
+              <div class="gv-copy">
+                <p class="gv-note">For the long walks</p>
+                <h2>Win a new stroller system</h2>
+                <p>A full travel system with car seat, ready for the school run and beyond.</p>
+                <span class="gv-cta">Enter to win a stroller <i aria-hidden="true">→</i></span>
               </div>
-
-
-
-
-
-            </div>
-          </div>
-        </div>
-
+              <div class="gv-pic"><img src="assets/images/giveaways/stroller.png" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512" loading="eager" fetchpriority="high"></div>
+            </a>
+          </li>
+          <li class="gv-b">
+            <a href="https://work.jqd.io/diapers/" class="gv-tile bg-sun-tint">
+              <div class="gv-pic"><img src="assets/images/giveaways/diapers.jpg" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400" loading="eager"></div>
+              <div class="gv-copy">
+                <p class="gv-note">One less thing to buy</p>
+                <h2>Diapers for a year</h2>
+                <p>Twelve months of top-brand diapers, delivered to your door.</p>
+                <span class="gv-cta">Win free diapers <i aria-hidden="true">→</i></span>
+              </div>
+            </a>
+          </li>
+          <li class="gv-c">
+            <a href="https://work.jqd.io/babysample2/" class="gv-tile bg-mint">
+              <div class="gv-pic"><img src="assets/images/photos/sample-baby-product.jpg" alt="Baby lotion, formula, wipes, diapers and bottles in a sample box" width="500" height="500" loading="lazy"></div>
+              <div class="gv-copy">
+                <p class="gv-note">Try before you buy</p>
+                <h2>Free baby product box</h2>
+                <p>Trusted baby brands at no cost, shipped to you.</p>
+                <span class="gv-cta">Get my free samples <i aria-hidden="true">→</i></span>
+              </div>
+            </a>
+          </li>
+          <li class="gv-d">
+            <a href="https://work.jqd.io/lululemon/" class="gv-tile bg-peach">
+              <div class="gv-pic"><img src="assets/images/photos/lululemon-set.jpg" alt="Lululemon diaper bag and outfit set in a gift box" width="640" height="512" loading="lazy"></div>
+              <div class="gv-copy">
+                <p class="gv-note">For busy days</p>
+                <h2>Lululemon bag and outfit</h2>
+                <p>A diaper bag and a fresh outfit for you.</p>
+                <span class="gv-cta">Enter to win Lululemon <i aria-hidden="true">→</i></span>
+              </div>
+            </a>
+          </li>
+          <li class="gv-e">
+            <a href="https://work.jqd.io/amazon/" class="gv-tile bg-blush">
+              <div class="gv-pic"><img src="assets/images/photos/amazon-caard.jpg" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
+              <div class="gv-copy">
+                <p class="gv-note">Build your nest</p>
+                <h2>$500 Amazon Baby Registry</h2>
+                <p>Fill your registry with the essentials you need.</p>
+                <span class="gv-cta">Win my registry <i aria-hidden="true">→</i></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+       
       </div>
     </section>
 
+   
 
 
-    <section class="bg-cloud pb-4 py-12 md:py-16 lg:py-20" aria-labelledby="steps-heading">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 lg:gap-12 px-5 md:px-10 lg:grid-cols-12">
-      
-        <!-- Content Column -->
-        <div class="space-y-4 lg:col-span-7 order-2 lg:order-1">
-         
-          <h2 id="steps-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl font-bold">
-           Get Your Modern Parenting Essential — Completely Free
-          </h2>
-          <p class="mt-5 ">
-           One Canadian parent will win a Lululemon outfit and diaper bag—the ultimate combo for busy days. Refresh your wardrobe and keep your parenting essentials organized. Two prizes. One winner. Your chance starts here.
-          </p>
-          
-          <a href="#join" class="btn-primary mt-12 md:mt-8 w-full sm:w-auto block md:max-w-[350px]">Enter to win Lululemon</a>
-        
-        </div>
-
-        <!-- Image Column (Centered & sized to max 300px) -->
-        <div class="flex justify-center lg:col-span-5 order-1 lg:order-2">
-          <img src="assets/images/photos/lululemon-set.jpg" alt="A mother smiles at her sleeping newborn on a linen sofa" width="1200" height="900" loading="lazy" class="order-1 aspect-4/3 w-full rounded-3xl object-cover max-w-[420px]">
-        </div>
-
-      </div>
-    </section>
+  
 
 
 
@@ -472,21 +374,7 @@
       </div>
     </section>
 
-    <section class="bg-white py-14 md:py-14 lg:py-20" aria-labelledby="cta-heading">
-      <div class="mx-auto max-w-7xl px-5 md:px-10">
-        <div class="grid grid-cols-1 items-center gap-8 rounded-3xl bg-mint p-8 md:grid-cols-2 md:p-16">
-          <div class="order-2 min-w-0 md:order-1">
-            <h2 id="cta-heading" class="text-3xl leading-tight text-balance md:text-4xl lg:text-5xl">Enter to WIN Your FREE Lululemon Bundle</h2>
-            <p class="mt-5">Win a Lululemon outfit and diaper bag! Join <strong style="color:#dc0857">400,000+</strong> Canadian parents for access to baby sample offers, weekly prizes, and exclusive giveaways.</p>
-            <a href="#join" class="btn-primary mt-8 w-full lg:w-auto block md:max-w-[350px] text-[18px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem] ">Sign Me Up to Win!</a>
-            <p class="mt-4 text-sm text-body">No purchase required. Canada only.</p>
-          </div>
-          <img src="assets/images/photos/lululemon-set.jpg"
-            alt="A mother smiles at her sleeping newborn on a linen sofa" width="1200" height="900" loading="lazy"
-            class="order-1 aspect-4/3 w-full rounded-3xl object-cover md:order-2">
-        </div>
-      </div>
-    </section>
+  
   </main>
 
   <footer class="border-t border-line bg-cloud py-12">
