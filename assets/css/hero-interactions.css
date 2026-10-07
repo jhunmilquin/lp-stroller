@@ -27,7 +27,7 @@
 .discover-motion-toggle:hover { background: var(--color-mint); }
 .discover-card:active .discover-cta { transform: scale(.985); }
 @media (max-width: 1349px) {
-  .discover-hero { padding-bottom: 64px; }
+ 
   .cozy-mark { display: none; }
   .cozy-mark--one, .cozy-mark--two { display: block; top: auto; bottom: 10px; width: 28px; height: 28px; }
   .cozy-mark--one { left: 28px; }
