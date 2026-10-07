@@ -24,6 +24,8 @@
   <script src="assets/js/app.js" defer></script>
   <script src="assets/js/hero-interactions.js?v=3" defer></script>
   <noscript><style>img.img-loading{filter:none}</style></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/v2.css">
 </head>
 
 <body id="top" class="bg-white antialiased">
@@ -93,7 +95,7 @@
   </svg>
 
   <main>
-    <section class="discover-hero giveaway-hero" aria-labelledby="discover-heading">
+    <section class="discover-hero giveaway-hero pt-10 md:pt-12 pb-8" aria-labelledby="discover-heading">
       <div class="cozy-decoration" aria-hidden="true">
         <svg class="cozy-symbols" xmlns="http://www.w3.org/2000/svg">
           <symbol id="cozy-star" viewBox="0 0 48 48"><path d="m24 4 5.5 13.5L44 19l-11 9.5L36 43l-12-8-12 8 3-14.5L4 19l14.5-1.5z" fill="#FFF1C7"/></symbol>
@@ -115,18 +117,32 @@
           <nav aria-label="Explore Canadian Parent"><a href="#giveaways">Explore offers</a><a href="#steps-heading">How it works</a></nav>
         </div>
 
-        <div class="discover-intro py-10">
-          <svg class="cozy-content-icon cozy-content-icon--intro-one" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-star"/></svg>
-          <svg class="cozy-content-icon cozy-content-icon--intro-two" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-heart"/></svg>
-          <svg class="cozy-content-icon cozy-content-icon--intro-three" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-moon"/></svg>
-          <h1 id="discover-heading" class="text-6xl">Our Top Giveaway Picks for Canadian Parents</h1>
-          <div class="discover-intro-copy">
-            <p>We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
-            <p class="discover-free"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/><circle cx="12" cy="12" r="10"/></svg>No purchase required.</p>
-          </div>
-        </div>
-
-        <div id="giveaways" class="discover-grid giveaway-grid" tabindex="-1" aria-label="Giveaways and baby sample offers">
+        <div class="discover-intro cozy-banner">
+  <div class="cozy-banner-copy">
+    <h1 id="discover-heading">Our top giveaway picks for Canadian parents</h1>
+    <p class="cozy-subtitle pt-6 md:pt-8">We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
+    <a class="cozy-banner-link" href="#giveaways">Explore the giveaways</a>
+    <p class="cozy-banner-note">No purchase required.</p>
+  </div>
+  <figure class="cozy-banner-photo">
+    <svg class="cozy-canadian-stamp" viewBox="0 0 120 120" role="img" aria-label="Canadian Parents">
+      <defs>
+        <path id="canadian-stamp-top-arc" d="M23 60a37 37 0 0 1 74 0" />
+        <path id="canadian-stamp-bottom-arc" d="M18 60a42 42 0 0 0 84 0" />
+      </defs>
+      <circle cx="60" cy="60" r="55" fill="#fffaf5" stroke="#a73746" stroke-width="2" stroke-dasharray="3 3" />
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#a73746" stroke-width="1" />
+      <text style="font: 700 12px Georgia, serif; letter-spacing: .4px; text-anchor: middle; fill: #a73746;"><textPath href="#canadian-stamp-top-arc" startOffset="50%">Canadian</textPath></text>
+      <g transform="translate(60 60) scale(.60) translate(-60 -66)">
+        <path d="m60 40 5 12 6-5-2 15 11-5-3 9 6 2-19 14 1 5H55l1-5-19-14 6-2-3-9 11 5-2-15 6 5Z" fill="#a73746" />
+        <path d="M60 80v13" stroke="#a73746" stroke-width="3" stroke-linecap="round" />
+      </g>
+      <text style="font: 700 12px Georgia, serif; letter-spacing: .4px; text-anchor: middle; fill: #a73746;" dy="-1"><textPath href="#canadian-stamp-bottom-arc" startOffset="50%">Parents</textPath></text>
+    </svg>
+    <img src="assets/images/photos/cta-mother-newborn.webp" alt="A mother cuddling her newborn baby" fetchpriority="high" loading="eager">
+  </figure>
+</div>
+<div id="giveaways" class="discover-grid giveaway-grid" tabindex="-1" aria-label="Giveaways and baby sample offers">
           <a class="discover-card giveaway-card discover-stroller" href="https://work.jqd.io/stroller/" aria-labelledby="stroller-title stroller-cta" aria-describedby="stroller-description">
             <svg class="cozy-content-icon cozy-content-icon--tile" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-pacifier"/></svg>
             <div class="discover-copy">
@@ -406,7 +422,7 @@
       <p class="mt-6 border-t border-line pt-6 text-sm text-muted">No purchase necessary. Giveaways are open to
         residents of Canada 18+; see the official rules for each draw. Sample offers come from independent brands, may
         change and may vary by location. Canadian Parent is not affiliated with or sponsored by the brands mentioned.
-        <br />© 2026 Canadian Parent. No purchase required. 100% free. Open to residents of Canada.</p>
+        <br />Â© 2026 Canadian Parent. No purchase required. 100% free. Open to residents of Canada.</p>
     </div>
   </footer>
 </body>
