@@ -1,4 +1,15 @@
 /* A welcoming, half-photo banner for the second page variant. */
+.discover-card.cta-footer-card { grid-template-rows: 1fr auto; }
+.cta-footer-card .discover-copy { grid-column: 1; grid-row: 1; padding-bottom: 20px; }
+.cta-footer-card .discover-art { grid-column: 2; grid-row: 1 / 3; }
+.discover-stroller.cta-footer-card > .discover-cta { grid-column: 1; grid-row: 2; margin: 0 20px 30px 34px; }
+.discover-diapers.cta-footer-card > .discover-cta { grid-column: 1; grid-row: 2; margin: 0 20px 30px 30px; }
+@media (max-width: 1100px) {
+  .discover-card.cta-footer-card { display: flex; flex-direction: column; }
+  .cta-footer-card .discover-copy { order: 1; padding-bottom: 0; }
+  .cta-footer-card .discover-art { order: 2; flex: none; }
+  .discover-card.cta-footer-card > .discover-cta { order: 3; flex: none; margin: auto 24px 24px; }
+}
 .giveaway-hero .discover-intro.cozy-banner {
   display: grid;
   grid-template-columns: 1fr 1fr;

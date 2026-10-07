@@ -16,7 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="preload" as="image" href="assets/images/giveaways/stroller.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/giveaways/stroller-v3.png" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/tailwind.css?v=1.0.1">
   <link rel="stylesheet" href="assets/css/app.css">
   <link rel="stylesheet" href="assets/css/index2.css">
@@ -24,8 +24,7 @@
   <script src="assets/js/app.js" defer></script>
   <script src="assets/js/hero-interactions.js?v=3" defer></script>
   <noscript><style>img.img-loading{filter:none}</style></noscript>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/v2.css">
+  <link rel="stylesheet" href="assets/css/v3.css">
 </head>
 
 <body id="top" class="bg-white antialiased">
@@ -95,7 +94,7 @@
   </svg>
 
   <main>
-    <section class="discover-hero giveaway-hero pt-10 md:pt-12 pb-8" aria-labelledby="discover-heading">
+    <section class="discover-hero giveaway-hero" aria-labelledby="discover-heading">
       <div class="cozy-decoration" aria-hidden="true">
         <svg class="cozy-symbols" xmlns="http://www.w3.org/2000/svg">
           <symbol id="cozy-star" viewBox="0 0 48 48"><path d="m24 4 5.5 13.5L44 19l-11 9.5L36 43l-12-8-12 8 3-14.5L4 19l14.5-1.5z" fill="#FFF1C7"/></symbol>
@@ -117,84 +116,79 @@
           <nav aria-label="Explore Canadian Parent"><a href="#giveaways">Explore offers</a><a href="#steps-heading">How it works</a></nav>
         </div>
 
-        <div class="discover-intro cozy-banner">
-  <div class="cozy-banner-copy">
-    <h1 id="discover-heading">Top 5 Giveaways For Parents in Canada</h1>
-    <h3 class="mt-4">Over $30,000 in free products given away in 2026</h3>
-    <p class="cozy-subtitle pt-6 md:pt-8">New parent or parent-to-be? These five giveaways were made for you. From strollers to a Lululemon outfit, you could win big without spending a cent. Join <strong>400,000+</strong> Canadian parents who love our community.</p>
-    <a class="cozy-banner-link" href="#giveaways">Explore the giveaways</a>
-    <p class="cozy-banner-note">No purchase required.</p>
-  </div>
-  <figure class="cozy-banner-photo">
-    <svg class="cozy-canadian-stamp" viewBox="0 0 120 120" role="img" aria-label="Canadian Parents">
-      <defs>
-        <path id="canadian-stamp-top-arc" d="M23 60a37 37 0 0 1 74 0" />
-        <path id="canadian-stamp-bottom-arc" d="M18 60a42 42 0 0 0 84 0" />
-      </defs>
-      <circle cx="60" cy="60" r="55" fill="#fffaf5" stroke="#a73746" stroke-width="2" stroke-dasharray="3 3" />
-      <circle cx="60" cy="60" r="48" fill="none" stroke="#a73746" stroke-width="1" />
-      <text style="font: 700 12px Georgia, serif; letter-spacing: .4px; text-anchor: middle; fill: #a73746;"><textPath href="#canadian-stamp-top-arc" startOffset="50%">Canadian</textPath></text>
-      <g transform="translate(60 60) scale(.60) translate(-60 -66)">
-        <path d="m60 40 5 12 6-5-2 15 11-5-3 9 6 2-19 14 1 5H55l1-5-19-14 6-2-3-9 11 5-2-15 6 5Z" fill="#a73746" />
-        <path d="M60 80v13" stroke="#a73746" stroke-width="3" stroke-linecap="round" />
-      </g>
-      <text style="font: 700 12px Georgia, serif; letter-spacing: .4px; text-anchor: middle; fill: #a73746;" dy="-1"><textPath href="#canadian-stamp-bottom-arc" startOffset="50%">Parents</textPath></text>
-    </svg>
-    <img src="assets/images/photos/cta-mother-newborn.webp" alt="A mother cuddling her newborn baby" fetchpriority="high" loading="eager">
-  </figure>
-</div>
-<div id="giveaways" class="discover-grid giveaway-grid" tabindex="-1" aria-label="Giveaways and baby sample offers">
-          <a class="discover-card cta-footer-card giveaway-card discover-stroller" href="https://work.jqd.io/stroller/" aria-labelledby="stroller-title stroller-cta" aria-describedby="stroller-description">
+        <div class="discover-intro py-10">
+          <svg class="cozy-content-icon cozy-content-icon--intro-one" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-star"/></svg>
+          <svg class="cozy-content-icon cozy-content-icon--intro-two" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-heart"/></svg>
+          <svg class="cozy-content-icon cozy-content-icon--intro-three" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-moon"/></svg>
+          <div class="family-header-copy">
+          <h1 id="discover-heading" class="text-6xl">Our Top Giveaway Picks for Canadian Parents</h1>
+          <div class="discover-intro-copy">
+            <p>We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
+            <p class="discover-free"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/><circle cx="12" cy="12" r="10"/></svg>No purchase required.</p>
+          </div>
+          </div>
+          <figure class="family-header-photo">
+            <img src="assets/images/photos/family-newborn-branded-v3.png" alt="A mother cradling her newborn beside Pampers diapers, Huggies wipes, Cetaphil Baby lotion and a Philips Avent bottle" width="1200" height="900" fetchpriority="high">
+            <svg class="family-maple-stamp" viewBox="0 0 120 120" role="img" aria-label="Canadian Parents">
+              <circle cx="60" cy="60" r="54" fill="#fffaf5" fill-opacity=".58" stroke="#a73746" stroke-opacity=".6" stroke-width="2" stroke-dasharray="3 4" />
+              <circle cx="60" cy="60" r="46" fill="none" stroke="#a73746" stroke-opacity=".45" />
+              <g transform="translate(60 60) scale(.75) translate(-60 -66)" fill="#a73746" opacity=".65">
+                <path d="m60 40 5 12 6-5-2 15 11-5-3 9 6 2-19 14 1 5H55l1-5-19-14 6-2-3-9 11 5-2-15 6 5Z" />
+                <path d="M60 80v13" fill="none" stroke="#a73746" stroke-width="3" stroke-linecap="round" />
+              </g>
+            </svg>
+          </figure>
+        </div>
+
+        <div id="giveaways" class="discover-grid giveaway-grid" tabindex="-1" aria-label="Giveaways and baby sample offers">
+          <a class="discover-card giveaway-card discover-stroller" href="https://work.jqd.io/stroller/" aria-labelledby="stroller-title stroller-cta" aria-describedby="stroller-description">
             <svg class="cozy-content-icon cozy-content-icon--tile" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-pacifier"/></svg>
             <div class="discover-copy">
               <h2 id="stroller-title">Win a new<br> stroller system.</h2>
-              <p id="stroller-description">A full travel system with a matching car seat, ready for the school run and beyond. One lucky parent will take it home, and entering is free.</p>
+              <p id="stroller-description">Big adventures begin with little outings. Enter for a chance to win your next set of wheels.</p>
+              <span class="discover-cta" id="stroller-cta">Enter to win<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
             </div>
-            <div class="discover-art"><img src="assets/images/giveaways/stroller.webp" alt="Green stroller system with an infant car seat and gift box" width="640" height="512" loading="eager" fetchpriority="high"></div>
-          
-            <span class="discover-cta" id="stroller-cta">Enter to win<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+            <div class="discover-art"><img src="assets/images/giveaways/stroller-v3.png" alt="Green stroller system with an infant car seat and gift box" width="640" height="512" loading="eager" fetchpriority="high"></div>
           </a>
 
-          <a class="discover-card cta-footer-card giveaway-card discover-diapers" href="https://work.jqd.io/amazon/" aria-labelledby="diapers-title diapers-cta" aria-describedby="diapers-description">
+          <a class="discover-card giveaway-card discover-diapers" href="https://work.jqd.io/diapers/" aria-labelledby="diapers-title diapers-cta" aria-describedby="diapers-description">
             <svg class="cozy-content-icon cozy-content-icon--tile" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-bottle"/></svg>
             <div class="discover-copy">
-              <h2 id="amazon-title">$500 Amazon <br/>Baby Registry.</h2>
-            
-              <p id="amazon-description">Fill your registry with the essentials you actually need. Win $500 to cover the big items and the small ones too.</p>
+              <h2 id="diapers-title">A whole year<br> of diapers.</h2>
+              <p id="diapers-description">One less thing on your list. Enter for a chance to win diapers for an entire year.</p>
+              <span class="discover-cta" id="diapers-cta">Enter to win<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
             </div>
-            <div class="discover-art"><img src="assets/images/giveaways/amazon-registry.webp" alt="Baby registry essentials with a backpack, soft toy, blanket and bottles"  width="400" height="400" loading="eager"></div>
-          
-            <span class="discover-cta" id="diapers-cta">Enter to win<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+            <div class="discover-art"><img src="assets/images/giveaways/diapers-v3.png" alt="Pampers, Huggies and Rascals packs with a gift box of diapers" width="400" height="400" loading="eager"></div>
           </a>
 
-          <a class="discover-card giveaway-card discover-samples" href="https://work.jqd.io/nike/" aria-labelledby="samples-title samples-cta" aria-describedby="samples-description">
+          <a class="discover-card giveaway-card discover-samples" href="https://work.jqd.io/babysample2/" aria-labelledby="samples-title samples-cta" aria-describedby="samples-description">
             <svg class="cozy-content-icon cozy-content-icon--tile" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-heart"/></svg>
             <div class="discover-copy">
-              <h2 id="samples-title">Nike Shoes for <br/>your Baby.</h2>
-              <p id="samples-description">A cute addition to your baby’s wardrobe, perfect for everyday wear and sweet photo moments.</p>
+              <h2 id="samples-title">Free baby samples.<br> New favourites.</h2>
+              <p id="samples-description">Discover free baby sample offers and everyday essentials for your little one.</p>
             </div>
-            <div class="discover-art"><img src="assets/images/giveaways/nike-shoes.png" alt="Baby essentials including diapers, wipes, bottles and a carrier" width="500" height="500" loading="eager"></div>
-            <span class="discover-cta" id="samples-cta">Enter to win<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+            <div class="discover-art"><img src="assets/images/giveaways/baby-samples-v3.png" alt="Baby essentials including diapers, wipes, bottles and a carrier" width="500" height="500" loading="eager"></div>
+            <span class="discover-cta" id="samples-cta">Explore free samples<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
           </a>
 
           <a class="discover-card giveaway-card discover-lululemon" href="https://work.jqd.io/lululemon/" aria-labelledby="lululemon-title lululemon-cta" aria-describedby="lululemon-description">
             <svg class="cozy-content-icon cozy-content-icon--tile" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-star"/></svg>
             <div class="discover-copy">
-              <h2 id="lululemon-title">Lululemon bags <br/>and outfit</h2>
-              <p id="lululemon-description">A stylish diaper bag and a fresh outfit just for you. The perfect pair for busy days out with your little one.</p>
+              <h2 id="lululemon-title">Lululemon.<br> A little time for you.</h2>
+              <p id="lululemon-description">Your chance to win an outfit and diaper bag for everything the day brings.</p>
             </div>
-            <div class="discover-art"><img src="assets/images/giveaways/lululemon.webp" alt="Lululemon black diaper bag and sage green activewear gift set" width="640" height="512" loading="eager"></div>
+            <div class="discover-art"><img src="assets/images/giveaways/lululemon-v3.png" alt="Lululemon black diaper bag and sage green activewear gift set" width="640" height="512" loading="eager"></div>
             <span class="discover-cta" id="lululemon-cta">Enter to win<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
           </a>
 
-          <a class="discover-card giveaway-card discover-amazon" href="https://work.jqd.io/diapers/" aria-labelledby="amazon-title amazon-cta" aria-describedby="amazon-description">
+          <a class="discover-card giveaway-card discover-amazon" href="https://work.jqd.io/amazon/" aria-labelledby="amazon-title amazon-cta" aria-describedby="amazon-description">
             <svg class="cozy-content-icon cozy-content-icon--tile" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#cozy-moon"/></svg>
             <div class="discover-copy">
-              <h2 id="diapers-title">A whole year<br> of diapers.</h2>   
-                <p id="diapers-description">Twelve months of top-brand diapers, delivered right to your door. Skip the late-night store runs and put the savings toward your little one.</p>
+              <h2 id="amazon-title">Win your $500<br> Amazon Baby Registry.</h2>
+              <p id="amazon-description">Enter for a chance to win $500 towards the baby essentials on your wish list.</p>
             </div>
-            <div class="discover-art"><img src="assets/images/giveaways/diapers.webp" alt="Pampers, Huggies and Rascals packs with a gift box of diapers"  width="800" height="640" loading="eager"><span class="discover-value" aria-hidden="true">$500</span></div>
-            <span class="discover-cta" id="diapers-cta">Enter to win $500<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+            <div class="discover-art"><img src="assets/images/giveaways/amazon-registry-v3.png" alt="Baby registry essentials with a backpack, soft toy, blanket and bottles" width="800" height="640" loading="eager"><span class="discover-value" aria-hidden="true">$500</span></div>
+            <span class="discover-cta" id="amazon-cta">Enter to win $500<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
           </a>
         </div>
 <!--
@@ -426,7 +420,7 @@
       <p class="mt-6 border-t border-line pt-6 text-sm text-muted">No purchase necessary. Giveaways are open to
         residents of Canada 18+; see the official rules for each draw. Sample offers come from independent brands, may
         change and may vary by location. Canadian Parent is not affiliated with or sponsored by the brands mentioned.
-        <br />Â© 2026 Canadian Parent. No purchase required. 100% free. Open to residents of Canada.</p>
+        <br />© 2026 Canadian Parent. No purchase required. 100% free. Open to residents of Canada.</p>
     </div>
   </footer>
 </body>

@@ -1,0 +1,48 @@
+/* Version three: inset prize outlines and true transparent product cutouts. */
+.giveaway-hero .discover-intro {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding-block: 0;
+  margin: 48px 0;
+}
+.giveaway-hero .discover-intro h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(36px, 3.7vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.family-header-copy .discover-intro-copy { max-width: 48ch; margin-top: 24px; }
+.family-header-photo { position: relative; margin: 0; min-width: 0; overflow: hidden; border-radius: 28px; background: #eee5da; }
+.family-header-photo > img { display: block; width: 100%; height: 440px; object-fit: cover; object-position: center; }
+.family-maple-stamp { position: absolute; top: 18px; right: 18px; width: 96px; height: 96px; transform: rotate(10deg); pointer-events: none; }
+.discover-intro > .cozy-content-icon { display: none; }
+@media (max-width: 850px) {
+  .giveaway-hero .discover-intro { grid-template-columns: 1fr; gap: 28px; margin-block: 36px; }
+  .family-header-photo > img { height: auto; aspect-ratio: 4 / 3; }
+  .family-maple-stamp { width: 82px; height: 82px; top: 14px; right: 14px; }
+}
+.discover-card::after {
+  content: '';
+  position: absolute;
+  inset: 11px;
+  border: 2px dashed rgb(21 26 74 / .38);
+  border-radius: 15px;
+  z-index: 3;
+  pointer-events: none;
+}
+.discover-art img {
+  filter: none;
+  mix-blend-mode: normal;
+  background-color: transparent;
+}
+.discover-value::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgb(21 26 74 / .55);
+  border-radius: inherit;
+  pointer-events: none;
+}
