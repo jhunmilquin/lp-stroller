@@ -21,119 +21,82 @@
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="assets/js/app.js" defer></script>
   <style>
-    /* v3 hub: cozy hero + bento (this page only) */
-    .v3 {
-      --cream: #FFF8F1;
-      position: relative; overflow: hidden; isolation: isolate;
-      background: var(--cream);
-      padding: 1.5rem 1.25rem 3.5rem;
-    }
-    .v3::before { /* paper grain */
-      content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .6 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    .v3-blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
-    .v3-blob-1 { width: 34rem; height: 34rem; top: -14rem; right: -10rem; background: #FFE3D3; }
-    .v3-blob-2 { width: 28rem; height: 28rem; top: 18rem; left: -14rem; background: #DDF3EF; }
-    .v3-wrap { max-width: 80rem; margin: 0 auto; }
+    /* hero with prize composite + linked cards (this page only) */
+    .cx { --ease: cubic-bezier(.32,.72,0,1); overflow-x: clip; background: linear-gradient(180deg, #FFEEE6 0%, #FFF6F1 55%, var(--color-cloud) 100%); padding: 1.5rem 1.25rem 4rem; }
+    .cx-wrap { max-width: 80rem; margin: 0 auto; }
+    .cx-hero { display: grid; gap: 2rem; align-items: center; }
+    .cx-logo { display: flex; width: fit-content; }
+    .cx-logo img { display: block; height: 2.25rem; width: auto; }
+    .cx-eyebrow { margin-top: 2.5rem; }
+    .cx-copy h1 { margin-top: .9rem; font-size: clamp(2.1rem, 9vw, 2.6rem); line-height: 1.06 !important; letter-spacing: -.03em; text-wrap: balance; }
+    .cx-hand { margin-top: 1.25rem; max-width: 33rem; font-family: "Caveat", "Segoe Script", cursive; font-size: 1.5rem; font-weight: 500; line-height: 1.3; color: var(--color-ink); }
+    .cx-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.75rem; }
+    .cx-cta { width: 100%; }
+    .cx-proof { display: flex; align-items: center; gap: .6rem; font-size: .85rem; color: var(--color-body); }
+    .cx-proof img { height: 2.25rem; width: auto; }
+    .cx-proof b { color: var(--color-ink); }
 
-    /* hero */
-    .v3-hero { display: grid; gap: 2.5rem; align-items: center; }
-    .v3-logo { display: flex; width: fit-content; }
-    .v3-logo img { display: block; height: 2.25rem; width: auto; }
-    .v3-kicker { display: inline-flex; align-items: center; gap: .5rem; margin-top: 2rem; padding: .4rem .9rem; border-radius: 999px; background: white; box-shadow: 0 2px 10px rgb(21 26 74 / .06); font: 600 .8rem/1.4 var(--font-ui); color: var(--color-ink); }
-    .v3-dot { width: .5rem; height: .5rem; border-radius: 50%; background: #22B07D; box-shadow: 0 0 0 4px rgb(34 176 125 / .18); }
-    .v3 h1 { margin-top: 1.25rem; font-size: clamp(1.9rem, 8.6vw, 2.4rem); line-height: 1.08 !important; font-weight: 700; letter-spacing: -.02em; color: var(--color-ink); text-wrap: balance; }
-    .v3 h1 .v3-mark { position: relative; display: inline; white-space: nowrap; color: var(--color-teal); background: none; padding: 0; margin: 0; font-weight: 700; }
-    .v3-mark svg { position: absolute; left: 0; right: 0; bottom: -.35em; width: 100%; height: .4em; }
-    .v3-hand { margin-top: 2.25rem; max-width: 32rem; font-family: "Caveat", "Segoe Script", cursive; font-weight: 500; font-size: 1.55rem; line-height: 1.3; color: var(--color-body); }
-    .v3-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
-    .v3-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 3.5rem; padding: .75rem 1.75rem; border-radius: 999px; background: var(--color-coral); color: white; font: 700 1.05rem/1.3 var(--font-ui); text-decoration: none; box-shadow: 0 10px 24px rgb(255 77 106 / .3); transition: transform .2s ease, box-shadow .2s ease; }
-    .v3-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgb(255 77 106 / .38); }
-    .v3-proof { display: flex; align-items: center; gap: .75rem; font-size: .85rem; line-height: 1.35; color: var(--color-muted); }
-    .v3-proof img { height: 2.5rem; width: auto; }
-    .v3-proof b { color: var(--color-ink); }
+    /* the composite: one still-life on a soft round backdrop */
+    .cx-stage { position: relative; width: 100%; max-width: 36rem; margin: 0 auto; aspect-ratio: 1 / .92; }
+    .cx-stage::before { content: ""; position: absolute; inset: 6% 4% 2%; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #EAF6F3 55%, #DDF1EC 100%); }
+    .cx-still { position: absolute; inset: 0; }
+    .cx-p { position: absolute; display: block; height: auto; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 50%, transparent 97%); mask-image: radial-gradient(closest-side, #000 50%, transparent 97%); transition: transform .6s var(--ease), filter .6s var(--ease); }
+    .cx-p1 { left: 28%; top: 7%; width: 58%; z-index: 3; }
+    .cx-p3 { left: 3%; top: 12%; width: 36%; z-index: 1; }
+    .cx-p5 { right: 1%; top: 40%; width: 38%; z-index: 2; }
+    .cx-p2 { left: 2%; top: 46%; width: 37%; z-index: 4; }
+    .cx-p4 { left: 31%; top: 57%; width: 42%; z-index: 5; }
+    .cx-p.is-on { transform: translateY(-6px) scale(1.06); z-index: 9; }
+    .cx-pin { position: absolute; left: var(--x); top: var(--y); z-index: 10; display: flex; align-items: center; gap: .5rem; transform: translate(-50%, -50%); text-decoration: none; }
+    .cx-pin span { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: #fff; color: var(--color-ink); font: 700 .85rem/1 var(--font-ui); box-shadow: 0 0 0 4px rgb(255 77 106 / .25), 0 6px 14px rgb(21 26 74 / .18); transition: transform .4s var(--ease), background .3s, color .3s; }
+    .cx-pin em { position: absolute; left: 2.5rem; white-space: nowrap; padding: .3rem .7rem; border-radius: .6rem; background: var(--color-ink); color: #fff; font: 600 .78rem/1.3 var(--font-ui); font-style: normal; opacity: 0; transform: translateX(-4px); pointer-events: none; transition: opacity .3s var(--ease), transform .3s var(--ease); }
+    .cx-pin:hover span, .cx-pin:focus-visible span, .cx-pin.is-on span { background: var(--color-coral); color: #fff; transform: scale(1.1); }
+    .cx-pin:hover em, .cx-pin:focus-visible em, .cx-pin.is-on em { opacity: 1; transform: none; }
+    .cx-pin:focus-visible { outline: none; }
 
-    .v3-photo { position: relative; margin: 0 .5rem 1rem; }
-    .v3-photo > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 45% 30%; border-radius: 48% 52% 44% 56% / 58% 50% 50% 42%; box-shadow: 0 30px 60px -20px rgb(21 26 74 / .35); }
-    .v3-seal { position: absolute; top: -.75rem; right: -.25rem; width: 6.5rem; height: 6.5rem; filter: drop-shadow(0 8px 16px rgb(21 26 74 / .15)); }
-    .v3-seal text { font: 700 10.5px var(--font-ui); letter-spacing: .14em; fill: var(--color-ink); }
-    .v3-seal text { animation: v3-spin 22s linear infinite; transform-origin: 60px 60px; }
-    .v3-note { position: absolute; left: -.25rem; bottom: -.75rem; padding: .35rem 1rem; background: white; border-radius: .75rem; transform: rotate(-4deg); box-shadow: 0 8px 20px rgb(21 26 74 / .12); font: 600 1.35rem/1.2 "Caveat", cursive; color: var(--color-ink); }
-    @keyframes v3-spin { to { transform: rotate(360deg); } }
-
-    /* bento */
-    .v3-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 3rem 0 0; padding: 0; list-style: none; scroll-margin-top: 1.5rem; }
-    .v3-grid > li { min-width: 0; animation: v3-rise .6s cubic-bezier(.2,.7,.2,1) both; }
-    .v3-grid > li:nth-child(2) { animation-delay: .06s; }
-    .v3-grid > li:nth-child(3) { animation-delay: .12s; }
-    .v3-grid > li:nth-child(4) { animation-delay: .18s; }
-    .v3-grid > li:nth-child(5) { animation-delay: .24s; }
-    @keyframes v3-rise { from { opacity: 0; transform: translateY(18px); } }
-    .v3-tile {
-      position: relative; display: flex; flex-direction: column-reverse; height: 100%; overflow: hidden;
-      border-radius: 2rem; background: var(--bg); color: var(--color-body); text-decoration: none;
-      box-shadow: inset 0 0 0 1px rgb(21 26 74 / .05), 0 1px 2px rgb(21 26 74 / .04);
-      transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
-    }
-    .v3-pic { display: flex; align-items: center; justify-content: center; padding: 1.25rem 1.25rem 0; }
-    .v3-pic img { display: block; width: 100%; max-height: 17rem; object-fit: contain; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-    .v3-txt { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: .55rem; padding: 1.25rem 1.5rem 1.75rem; }
-    .v3-tag { padding: .3rem .75rem; border-radius: 999px; background: rgb(255 255 255 / .75); font: 600 .72rem/1.4 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--color-teal); }
-    .v3-txt h2 { font-size: 1.35rem; line-height: 1.2; letter-spacing: -.01em; }
-    .v3-txt p { font-size: .95rem; line-height: 1.6; }
-    .v3-txt .v3-cta { display: inline-flex; align-items: center; gap: .6rem; margin-top: auto; padding: .7rem 1.25rem; border-radius: 999px; background: var(--color-ink); color: white; font: 600 .95rem/1.3 var(--font-ui); transition: background .2s ease; }
-    .v3-txt p + .v3-cta { margin-top: .9rem; }
-    .v3-cta i { font-style: normal; transition: transform .2s ease; }
-    .v3-sticker { position: absolute; top: 1rem; right: 1rem; z-index: 2; padding: .3rem .9rem; border-radius: .6rem; background: white; transform: rotate(4deg); box-shadow: 0 6px 16px rgb(21 26 74 / .12); font: 600 1.3rem/1.2 "Caveat", cursive; color: var(--color-coral); }
-    .v3-tile:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
-    @media (hover: hover) {
-      .v3-tile:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px rgb(21 26 74 / .05), 0 24px 48px -16px rgb(21 26 74 / .25); }
-      .v3-tile:hover .v3-pic img { transform: scale(1.05) rotate(-1deg); }
-      .v3-tile:hover .v3-cta { background: var(--color-coral); }
-      .v3-tile:hover .v3-cta i { transform: translateX(4px); }
-    }
-    .v3-fine { margin-top: 2rem; text-align: center; font-size: .85rem; color: var(--color-muted); }
+    /* prize cards */
+    .cx-row { display: grid; gap: 1rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
+    .cx-row > li { min-width: 0; scroll-margin-top: 1.5rem; }
+    .cx-card { display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: 100%; overflow: hidden; border-radius: 1.5rem; background: #fff; color: var(--color-body); text-decoration: none; box-shadow: var(--shadow-card); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+    .cx-img { background: var(--bg); }
+    .cx-img img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+    .cx-txt { display: flex; flex-direction: column; align-items: flex-start; padding: 1.1rem 1.25rem 1.25rem; }
+    .cx-img { position: relative; }
+    .cx-num { font-size: .8rem; font-weight: 600; color: var(--color-teal); }
+    .cx-dot { position: absolute; top: .75rem; left: .75rem; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: #fff; color: var(--color-ink); font: 700 .85rem/1 var(--font-ui); box-shadow: 0 0 0 4px rgb(255 77 106 / .25), 0 6px 14px rgb(21 26 74 / .14); transition: background .3s, color .3s; }
+    .cx-row > li.is-on .cx-dot, .cx-card:hover .cx-dot { background: var(--color-coral); color: #fff; }
+    .cx-txt h2 { margin-top: .2rem; font-size: 1.05rem; line-height: 1.25 !important; }
+    .cx-txt p { margin-top: -.5rem; font-size: .9rem; line-height: 1.55; }
+    .cx-btn { width: 100%; min-height: 2.75rem; margin-top: auto; padding: .6rem 1rem; font-size: .95rem; white-space: nowrap; }
+    .cx-txt h2 { margin-bottom: .9rem; }
+    .cx-txt p { margin-bottom: 1rem; }
+    .cx-card:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; }
+    .cx-row > li.is-on .cx-card, .cx-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgb(21 26 74 / .14); }
+    .cx-fine { margin-top: 1.75rem; text-align: center; font-size: .85rem; color: var(--color-muted); }
 
     @media (min-width: 640px) {
-      .v3 { padding: 2rem 2.5rem 4.5rem; }
-      .v3 h1 { font-size: 3.25rem; }
-      .v3-hand { font-size: 1.75rem; }
-      .v3-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-      .v3-a { grid-column: 1 / -1; }
-      .v3-a .v3-tile { flex-direction: row; align-items: center; }
-      .v3-a .v3-txt { width: 48%; padding: 2.25rem; justify-content: center; }
-      .v3-a .v3-pic { width: 52%; padding: 2rem 1.5rem; }
-      .v3-a .v3-pic img { max-height: 22rem; }
+      .cx { padding: 2rem 2.5rem 5rem; }
+      .cx-copy h1 { font-size: 3.1rem; }
+      .cx-hand { font-size: 1.7rem; }
+      .cx-cta { width: auto; }
+      .cx-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+      .cx-card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+      .cx-img img { aspect-ratio: 4 / 3; height: auto; }
+      .cx-txt { padding: 1.1rem 1.25rem 1.25rem; }
+      .cx-txt h2 { font-size: 1.15rem; }
+      .cx-txt p { display: block; }
     }
     @media (min-width: 1024px) {
-      .v3 { padding: 2.25rem 2.5rem 5.5rem; }
-      .v3-hero { grid-template-columns: 1.15fr 1fr; gap: 4rem; }
-      .v3 h1 { font-size: 4rem; }
-      .v3-photo { margin: 2.5rem 1rem 1.5rem 0; }
-      .v3-seal { width: 8rem; height: 8rem; top: -1.5rem; right: -1rem; }
-      .v3-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; margin-top: 4.5rem; }
-      .v3-a { grid-column: span 7; grid-row: span 2; }
-      .v3-b, .v3-c { grid-column: span 5; }
-      .v3-d, .v3-e { grid-column: span 6; }
-      /* hero tile: text over a big product shot */
-      .v3-a .v3-tile { flex-direction: column; align-items: stretch; }
-      .v3-a .v3-txt { width: auto; padding: 2.5rem 2.5rem 0; }
-      .v3-a .v3-txt h2 { font-size: 2.25rem; }
-      .v3-a .v3-txt p { font-size: 1.05rem; max-width: 34rem; }
-      .v3-a .v3-pic { width: auto; flex: 1; padding: 1rem 2rem 2rem; }
-      .v3-a .v3-pic img { max-height: 24rem; }
-      /* small tiles: text left, product right */
-      .v3-b .v3-tile, .v3-c .v3-tile, .v3-d .v3-tile, .v3-e .v3-tile { flex-direction: row; align-items: center; }
-      .v3-b .v3-txt, .v3-c .v3-txt, .v3-d .v3-txt, .v3-e .v3-txt { width: 56%; padding: 1.75rem 0 1.75rem 1.75rem; justify-content: center; }
-      .v3-b .v3-pic, .v3-c .v3-pic, .v3-d .v3-pic, .v3-e .v3-pic { width: 44%; padding: 1rem; }
-      .v3-b .v3-pic img, .v3-c .v3-pic img, .v3-d .v3-pic img, .v3-e .v3-pic img { max-height: 14rem; }
-      .v3-b .v3-txt p, .v3-c .v3-txt p { font-size: .9rem; }
+      .cx { padding: 2.25rem 2.5rem 6rem; }
+      .cx-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 3rem; }
+      .cx-copy h1 { font-size: 3.6rem; }
+      .cx-stage { max-width: none; }
+      .cx-row { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 3rem; }
+      .cx-img img { aspect-ratio: 1; }
+      .cx-txt p { font-size: .85rem; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      .v3-grid > li, .v3-seal text { animation: none; }
-      .v3-tile, .v3-pic img, .v3-btn, .v3-cta i { transition: none; }
-    }
+    @media (min-width: 1280px) { .cx-copy h1 { font-size: 4rem; } }
+    @media (prefers-reduced-motion: reduce) { .cx-p, .cx-pin span, .cx-pin em, .cx-card { transition: none; } }
   </style>
   <noscript><style>img.img-loading{filter:none}</style></noscript>
 </head>
@@ -207,101 +170,104 @@
 
 
   <main>
-    <section class="v3" aria-labelledby="v3-heading">
-      <span class="v3-blob v3-blob-1" aria-hidden="true"></span>
-      <span class="v3-blob v3-blob-2" aria-hidden="true"></span>
-      <div class="v3-wrap">
-        <div class="v3-hero">
-          <div class="v3-copy">
-            <a href="#top" aria-label="Canadian Parent home" class="v3-logo"><img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40"></a>
-            <p class="v3-kicker"><span class="v3-dot" aria-hidden="true"></span>ver $30,000 in free products given away in 2026</p>
-            <h1 id="v3-heading">Top 5 Giveaways For <span class="v3-mark">Canadian parents<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c60-9 140-12 294-6" fill="none" stroke="#FF4D6A" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
-            <p class="v3-hand">New parent or parent-to-be? These five giveaways were made for you. From strollers to a Lululemon outfit, you could win big without spending a cent. Join 400,000+ Canadian parents who love our community.</p>
-            <div class="v3-actions">
-              <a href="#v3-picks" class="v3-btn">See the giveaways <span aria-hidden="true">↓</span></a>
-              <div class="v3-proof">
-                <img src="assets/images/avatars/parents.png" alt="" width="120" height="40">
-                <span><b>400,000+</b> parents<br>across Canada</span>
-              </div>
+    <section class="cx" aria-labelledby="cx-heading">
+      <div class="cx-wrap">
+        <div class="cx-hero">
+          <div class="cx-copy">
+            <a href="#top" aria-label="Canadian Parent home" class="cx-logo"><img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40"></a>
+            <p class="eyebrow cx-eyebrow">5 giveaways open now</p>
+            <h1 id="cx-heading">Our top giveaway picks for Canadian parents</h1>
+            <p class="cx-hand">We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
+            <div class="cx-actions">
+              <a href="#cx-prizes" class="btn-primary cx-cta">Choose your giveaway</a>
+              <span class="cx-proof"><img src="assets/images/avatars/parents.png" alt="" width="120" height="40"><span><b>400,000+</b> Canadian parents</span></span>
             </div>
           </div>
-          <figure class="v3-photo">
-            <img src="assets/images/photos/cta-mother-newborn.webp" alt="A mother smiles at her sleeping newborn on a sofa" width="1200" height="900" fetchpriority="high">
-            <svg class="v3-seal" viewBox="0 0 120 120" aria-hidden="true">
-              <defs><path id="v3-ring" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
-              <circle cx="60" cy="60" r="58" fill="#FFF1C7"/>
-              <text><textPath href="#v3-ring">100% FREE · NO PURCHASE · CANADA ·</textPath></text>
-              <path d="M60 78S42 67 42 55c0-6 7-9 11-5l7 7 7-7c4-4 11-1 11 5 0 12-18 23-18 23Z" fill="#FF4D6A"/>
-            </svg>
-            <figcaption class="v3-note">made with love for new families</figcaption>
-          </figure>
+
+          <div class="cx-stage" aria-label="All five prizes">
+            <div class="cx-still">
+              <img class="cx-p cx-p3" data-k="3" src="assets/images/photos/sample-baby-product.jpg" alt="" width="500" height="500">
+              <img class="cx-p cx-p5" data-k="5" src="assets/images/photos/amazon-caard.jpg" alt="" width="800" height="640">
+              <img class="cx-p cx-p1" data-k="1" src="assets/images/giveaways/stroller.png" alt="" width="640" height="512" fetchpriority="high">
+              <img class="cx-p cx-p2" data-k="2" src="assets/images/giveaways/diapers.jpg" alt="" width="400" height="400">
+              <img class="cx-p cx-p4" data-k="4" src="assets/images/photos/lululemon-set.jpg" alt="" width="640" height="512">
+            </div>
+            <a class="cx-pin" data-k="1" href="#cx-1" style="--x:62%;--y:30%"><span>1</span><em>Stroller set</em></a>
+            <a class="cx-pin" data-k="2" href="#cx-2" style="--x:10%;--y:62%"><span>2</span><em>Diapers for a year</em></a>
+            <a class="cx-pin" data-k="3" href="#cx-3" style="--x:12%;--y:26%"><span>3</span><em>Free baby box</em></a>
+            <a class="cx-pin" data-k="4" href="#cx-4" style="--x:52%;--y:86%"><span>4</span><em>Lululemon set</em></a>
+            <a class="cx-pin" data-k="5" href="#cx-5" style="--x:90%;--y:56%"><span>5</span><em>$500 Amazon registry</em></a>
+          </div>
         </div>
 
-        <ul class="v3-grid" id="v3-picks" role="list">
-          <li class="v3-a">
-            <a href="https://work.jqd.io/stroller/" class="v3-tile" style="--bg:#D6F1EE">
-              <span class="v3-sticker">Our #1 pick!</span>
-              <div class="v3-txt">
-                <span class="v3-tag">Grand prize · Gear</span>
-                <h2>Win a new stroller system</h2>
+        <ul class="cx-row" id="cx-prizes" role="list" aria-label="Giveaways">
+          <li id="cx-1" data-k="1">
+            <a href="https://work.jqd.io/stroller/" class="cx-card">
+              <div class="cx-img" style="--bg:#DDF3EF"><span class="cx-dot" aria-hidden="true">1</span><img src="assets/images/giveaways/stroller.png" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512" loading="lazy"></div>
+              <div class="cx-txt">
+                <span class="cx-num">Grand prize</span>
+                <h2>Maxi-Cosi stroller set</h2>
                 <p>A full travel system with a matching car seat, ready for the school run and beyond. One lucky parent will take it home, and entering is free.</p>
-                <span class="v3-cta">Enter to win a stroller <i aria-hidden="true">→</i></span>
+                <span class="btn-primary cx-btn">Enter to win</span>
               </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/stroller.png" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512"></div>
             </a>
           </li>
-          <li class="v3-b">
-            <a href="https://work.jqd.io/amazon/" class="v3-tile" style="--bg:#FFF1C7">
-              <div class="v3-txt">
-                
-                 <span class="v3-tag">Registry</span>
-                <h2>$500 Amazon Baby Registry</h2>
-                <p>Fill your registry with the essentials you actually need. Win $500 to cover the big items and the small ones too.</p>
-                <span class="v3-cta">Win my registry <i aria-hidden="true">→</i></span>
-              
-              </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/amazon-registry-v3.png" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400"></div>
-            </a>
-          </li>
-          <li class="v3-c">
-            <a href="https://work.jqd.io/lululemon/" class="v3-tile" style="--bg:#EAF8F6">
-              
-              <div class="v3-txt">
-                <span class="v3-tag">For you</span>
-                <h2>Lululemon bag and outfit</h2>
-                <p>A stylish diaper bag and a fresh outfit just for you. The perfect pair for busy days out with your little one.</p>
-                <span class="v3-cta">Enter to win Lululemon <i aria-hidden="true">→</i></span>
-              </div>
-
-              <div class="v3-pic"><img src="assets/images/giveaways/lululemon-v3.png" alt="Lululemon diaper bag and outfit set in a gift box" width="500" height="500" loading="lazy"></div>
-            </a>
-          </li>
-          <li class="v3-d">
-            <a href="https://work.jqd.io/nike/" class="v3-tile" style="--bg:#FFE6DC">
-              <div class="v3-txt">
-                <span class="v3-tag">For your baby</span>
-                <h2>Nike Shoes for your Baby.</h2>
-                <p>Try trusted baby brands at no cost, shipped straight to you. Find the products your family loves before you buy.</p>
-                <span class="v3-cta">Enter to win <i aria-hidden="true">→</i></span>
-              </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/nike-shoes.png" alt="Nike shoes for babies in a gift box" width="640" height="512" loading="lazy"></div>
-            </a>
-          </li>
-          <li class="v3-e">
-            <a href="https://work.jqd.io/diapers/" class="v3-tile" style="--bg:#F4E8EC">
-              <div class="v3-txt">
-               <span class="v3-tag">Essentials</span>
-                <h2>Diapers for a year</h2>
+          <li id="cx-2" data-k="2">
+            <a href="https://work.jqd.io/diapers/" class="cx-card">
+              <div class="cx-img" style="--bg:#FFF1C7"><span class="cx-dot" aria-hidden="true">2</span><img src="assets/images/giveaways/diapers.jpg" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400" loading="lazy"></div>
+              <div class="cx-txt">
+                                <h2>Diapers for a year</h2>
                 <p>Twelve months of top-brand diapers, delivered right to your door. Skip the late-night store runs and put the savings toward your little one.</p>
-                <span class="v3-cta">Win free diapers <i aria-hidden="true">→</i></span>
-              
+                <span class="btn-primary cx-btn">Enter to win</span>
               </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/diapers-v3.png" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
+            </a>
+          </li>
+          <li id="cx-3" data-k="3">
+            <a href="https://work.jqd.io/babysample2/" class="cx-card">
+              <div class="cx-img" style="--bg:#EAF8F6"><span class="cx-dot" aria-hidden="true">3</span><img src="assets/images/photos/sample-baby-product.jpg" alt="Baby lotion, formula, wipes, diapers and bottles in a sample box" width="500" height="500" loading="lazy"></div>
+              <div class="cx-txt">
+                                <h2>Free baby product box</h2>
+                <p>Try trusted baby brands at no cost, shipped straight to you. Find the products your family loves before you buy.</p>
+                <span class="btn-primary cx-btn">Get free samples</span>
+              </div>
+            </a>
+          </li>
+          <li id="cx-4" data-k="4">
+            <a href="https://work.jqd.io/lululemon/" class="cx-card">
+              <div class="cx-img" style="--bg:#FFE6DC"><span class="cx-dot" aria-hidden="true">4</span><img src="assets/images/photos/lululemon-set.jpg" alt="Lululemon diaper bag and outfit set in a gift box" width="640" height="512" loading="lazy"></div>
+              <div class="cx-txt">
+                                <h2>Lululemon bag and outfit</h2>
+                <p>A stylish diaper bag and a fresh outfit just for you. The perfect pair for busy days out with your little one.</p>
+                <span class="btn-primary cx-btn">Enter to win</span>
+              </div>
+            </a>
+          </li>
+          <li id="cx-5" data-k="5">
+            <a href="https://work.jqd.io/amazon/" class="cx-card">
+              <div class="cx-img" style="--bg:#F4E8EC"><span class="cx-dot" aria-hidden="true">5</span><img src="assets/images/photos/amazon-caard.jpg" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
+              <div class="cx-txt">
+                                <h2>$500 Amazon Baby Registry</h2>
+                <p>Fill your registry with the essentials you actually need. Win $500 to cover the big items and the small ones too.</p>
+                <span class="btn-primary cx-btn">Enter to win</span>
+              </div>
             </a>
           </li>
         </ul>
-        <p class="v3-fine">No purchase required · Canada only · 18+ · New giveaways every week</p>
+        <p class="cx-fine">No purchase required. Open to residents of Canada, 18 and over.</p>
       </div>
+      <script>
+        (function () {
+          var root = document.querySelector('.cx');
+          function lift(k, on) {
+            root.querySelectorAll('[data-k="' + k + '"]').forEach(function (el) { el.classList.toggle('is-on', on); });
+          }
+          root.querySelectorAll('.cx-row > li, .cx-pin').forEach(function (el) {
+            var k = el.getAttribute('data-k');
+            ['mouseenter', 'focusin'].forEach(function (t) { el.addEventListener(t, function () { lift(k, true); }); });
+            ['mouseleave', 'focusout'].forEach(function (t) { el.addEventListener(t, function () { lift(k, false); }); });
+          });
+        })();
+      </script>
     </section>
 
    

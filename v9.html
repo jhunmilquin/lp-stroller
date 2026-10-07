@@ -21,118 +21,88 @@
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="assets/js/app.js" defer></script>
   <style>
-    /* v3 hub: cozy hero + bento (this page only) */
-    .v3 {
-      --cream: #FFF8F1;
-      position: relative; overflow: hidden; isolation: isolate;
-      background: var(--cream);
-      padding: 1.5rem 1.25rem 3.5rem;
-    }
-    .v3::before { /* paper grain */
-      content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .6 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    .v3-blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
-    .v3-blob-1 { width: 34rem; height: 34rem; top: -14rem; right: -10rem; background: #FFE3D3; }
-    .v3-blob-2 { width: 28rem; height: 28rem; top: 18rem; left: -14rem; background: #DDF3EF; }
-    .v3-wrap { max-width: 80rem; margin: 0 auto; }
+    /* prize picker hub (this page only) */
+    .pk { --ease: cubic-bezier(.32,.72,0,1); background: linear-gradient(180deg, #FFF3EE 0%, #FFFAF7 60%, #FFFFFF 100%); padding: 1.5rem 1.25rem 4rem; }
+    .pk-wrap { max-width: 80rem; margin: 0 auto; }
 
-    /* hero */
-    .v3-hero { display: grid; gap: 2.5rem; align-items: center; }
-    .v3-logo { display: flex; width: fit-content; }
-    .v3-logo img { display: block; height: 2.25rem; width: auto; }
-    .v3-kicker { display: inline-flex; align-items: center; gap: .5rem; margin-top: 2rem; padding: .4rem .9rem; border-radius: 999px; background: white; box-shadow: 0 2px 10px rgb(21 26 74 / .06); font: 600 .8rem/1.4 var(--font-ui); color: var(--color-ink); }
-    .v3-dot { width: .5rem; height: .5rem; border-radius: 50%; background: #22B07D; box-shadow: 0 0 0 4px rgb(34 176 125 / .18); }
-    .v3 h1 { margin-top: 1.25rem; font-size: clamp(1.9rem, 8.6vw, 2.4rem); line-height: 1.08 !important; font-weight: 700; letter-spacing: -.02em; color: var(--color-ink); text-wrap: balance; }
-    .v3 h1 .v3-mark { position: relative; display: inline; white-space: nowrap; color: var(--color-teal); background: none; padding: 0; margin: 0; font-weight: 700; }
-    .v3-mark svg { position: absolute; left: 0; right: 0; bottom: -.35em; width: 100%; height: .4em; }
-    .v3-hand { margin-top: 2.25rem; max-width: 32rem; font-family: "Caveat", "Segoe Script", cursive; font-weight: 500; font-size: 1.55rem; line-height: 1.3; color: var(--color-body); }
-    .v3-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
-    .v3-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 3.5rem; padding: .75rem 1.75rem; border-radius: 999px; background: var(--color-coral); color: white; font: 700 1.05rem/1.3 var(--font-ui); text-decoration: none; box-shadow: 0 10px 24px rgb(255 77 106 / .3); transition: transform .2s ease, box-shadow .2s ease; }
-    .v3-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgb(255 77 106 / .38); }
-    .v3-proof { display: flex; align-items: center; gap: .75rem; font-size: .85rem; line-height: 1.35; color: var(--color-muted); }
-    .v3-proof img { height: 2.5rem; width: auto; }
-    .v3-proof b { color: var(--color-ink); }
+    /* header */
+    .pk-logo { display: flex; width: fit-content; }
+    .pk-logo img { display: block; height: 2.25rem; width: auto; }
+    .pk-titles { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+    .pk h1 { font-size: clamp(2.2rem, 9.5vw, 2.8rem); line-height: 1.04 !important; letter-spacing: -.035em; text-wrap: balance; }
+    .pk-hand { font-family: "Caveat", "Segoe Script", cursive; font-size: 1.5rem; font-weight: 500; line-height: 1.3; color: var(--color-ink); }
+    .pk-proof { display: flex; align-items: center; gap: .6rem; margin-top: 1rem; font-size: .85rem; color: var(--color-body); }
+    .pk-proof img { height: 2.25rem; width: auto; }
+    .pk-proof b { color: var(--color-ink); }
 
-    .v3-photo { position: relative; margin: 0 .5rem 1rem; }
-    .v3-photo > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 45% 30%; border-radius: 48% 52% 44% 56% / 58% 50% 50% 42%; box-shadow: 0 30px 60px -20px rgb(21 26 74 / .35); }
-    .v3-seal { position: absolute; top: -.75rem; right: -.25rem; width: 6.5rem; height: 6.5rem; filter: drop-shadow(0 8px 16px rgb(21 26 74 / .15)); }
-    .v3-seal text { font: 700 10.5px var(--font-ui); letter-spacing: .14em; fill: var(--color-ink); }
-    .v3-seal text { animation: v3-spin 22s linear infinite; transform-origin: 60px 60px; }
-    .v3-note { position: absolute; left: -.25rem; bottom: -.75rem; padding: .35rem 1rem; background: white; border-radius: .75rem; transform: rotate(-4deg); box-shadow: 0 8px 20px rgb(21 26 74 / .12); font: 600 1.35rem/1.2 "Caveat", cursive; color: var(--color-ink); }
-    @keyframes v3-spin { to { transform: rotate(360deg); } }
-
-    /* bento */
-    .v3-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 3rem 0 0; padding: 0; list-style: none; scroll-margin-top: 1.5rem; }
-    .v3-grid > li { min-width: 0; animation: v3-rise .6s cubic-bezier(.2,.7,.2,1) both; }
-    .v3-grid > li:nth-child(2) { animation-delay: .06s; }
-    .v3-grid > li:nth-child(3) { animation-delay: .12s; }
-    .v3-grid > li:nth-child(4) { animation-delay: .18s; }
-    .v3-grid > li:nth-child(5) { animation-delay: .24s; }
-    @keyframes v3-rise { from { opacity: 0; transform: translateY(18px); } }
-    .v3-tile {
-      position: relative; display: flex; flex-direction: column-reverse; height: 100%; overflow: hidden;
-      border-radius: 2rem; background: var(--bg); color: var(--color-body); text-decoration: none;
-      box-shadow: inset 0 0 0 1px rgb(21 26 74 / .05), 0 1px 2px rgb(21 26 74 / .04);
-      transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
-    }
-    .v3-pic { display: flex; align-items: center; justify-content: center; padding: 1.25rem 1.25rem 0; }
-    .v3-pic img { display: block; width: 100%; max-height: 17rem; object-fit: contain; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-    .v3-txt { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: .55rem; padding: 1.25rem 1.5rem 1.75rem; }
-    .v3-tag { padding: .3rem .75rem; border-radius: 999px; background: rgb(255 255 255 / .75); font: 600 .72rem/1.4 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--color-teal); }
-    .v3-txt h2 { font-size: 1.35rem; line-height: 1.2; letter-spacing: -.01em; }
-    .v3-txt p { font-size: .95rem; line-height: 1.6; }
-    .v3-txt .v3-cta { display: inline-flex; align-items: center; gap: .6rem; margin-top: auto; padding: .7rem 1.25rem; border-radius: 999px; background: var(--color-ink); color: white; font: 600 .95rem/1.3 var(--font-ui); transition: background .2s ease; }
-    .v3-txt p + .v3-cta { margin-top: .9rem; }
-    .v3-cta i { font-style: normal; transition: transform .2s ease; }
-    .v3-sticker { position: absolute; top: 1rem; right: 1rem; z-index: 2; padding: .3rem .9rem; border-radius: .6rem; background: white; transform: rotate(4deg); box-shadow: 0 6px 16px rgb(21 26 74 / .12); font: 600 1.3rem/1.2 "Caveat", cursive; color: var(--color-coral); }
-    .v3-tile:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
-    @media (hover: hover) {
-      .v3-tile:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px rgb(21 26 74 / .05), 0 24px 48px -16px rgb(21 26 74 / .25); }
-      .v3-tile:hover .v3-pic img { transform: scale(1.05) rotate(-1deg); }
-      .v3-tile:hover .v3-cta { background: var(--color-coral); }
-      .v3-tile:hover .v3-cta i { transform: translateX(4px); }
-    }
-    .v3-fine { margin-top: 2rem; text-align: center; font-size: .85rem; color: var(--color-muted); }
+    /* list (mobile: every prize is an open card) */
+    .pk-picker { margin-top: 2.5rem; }
+    .pk-list { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+    .pk-item { position: relative; overflow: hidden; border-radius: 1.5rem; background: #fff; box-shadow: var(--shadow-card); }
+    .pk-tab { display: grid; grid-template-columns: auto 1fr; grid-template-areas: "n kind" "name name"; gap: .25rem .75rem; width: 100%; padding: 1.25rem 1.25rem .75rem; border: 0; background: none; text-align: left; font: inherit; color: var(--color-ink); cursor: default; }
+    .pk-n { grid-area: n; font: 600 .8rem/1.4 var(--font-ui); color: var(--color-coral); font-variant-numeric: tabular-nums; }
+    .pk-kind { grid-area: kind; justify-self: end; padding: .15rem .65rem; border-radius: 999px; background: var(--c); font-size: .75rem; font-weight: 600; color: var(--color-ink); }
+    .pk-name { grid-area: name; font: 700 1.35rem/1.2 var(--font-heading); letter-spacing: -.02em; }
+    .pk-panel { padding: 0 1.25rem 1.4rem; }
+    .pk-mimg { margin-bottom: 1rem; overflow: hidden; border-radius: 1rem; background: var(--c); }
+    .pk-mimg img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 25%; }
+    .pk-panel p { font-size: .95rem; line-height: 1.6; }
+    .pk-btn { width: 100%; min-height: 3.25rem; margin-top: 1.1rem; font-size: 1.05rem; }
+    .pk-bar { display: none; }
+    .pk-stage { display: none; }
+    .pk-fine { margin-top: 2rem; text-align: center; font-size: .85rem; color: var(--color-muted); }
 
     @media (min-width: 640px) {
-      .v3 { padding: 2rem 2.5rem 4.5rem; }
-      .v3 h1 { font-size: 3.25rem; }
-      .v3-hand { font-size: 1.75rem; }
-      .v3-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-      .v3-a { grid-column: 1 / -1; }
-      .v3-a .v3-tile { flex-direction: row; align-items: center; }
-      .v3-a .v3-txt { width: 48%; padding: 2.25rem; justify-content: center; }
-      .v3-a .v3-pic { width: 52%; padding: 2rem 1.5rem; }
-      .v3-a .v3-pic img { max-height: 22rem; }
+      .pk { padding: 2rem 2.5rem 5rem; }
+      .pk h1 { font-size: 3.4rem; }
+      .pk-hand { font-size: 1.7rem; }
+      .pk-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+      .pk-item:first-child { grid-column: 1 / -1; }
+      .pk-btn { width: auto; }
     }
+
+    /* desktop: the picker */
     @media (min-width: 1024px) {
-      .v3 { padding: 2.25rem 2.5rem 5.5rem; }
-      .v3-hero { grid-template-columns: 1.15fr 1fr; gap: 4rem; }
-      .v3 h1 { font-size: 4rem; }
-      .v3-photo { margin: 2.5rem 1rem 1.5rem 0; }
-      .v3-seal { width: 8rem; height: 8rem; top: -1.5rem; right: -1rem; }
-      .v3-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; margin-top: 4.5rem; }
-      .v3-a { grid-column: span 7; grid-row: span 2; }
-      .v3-b, .v3-c { grid-column: span 5; }
-      .v3-d, .v3-e { grid-column: span 6; }
-      /* hero tile: text over a big product shot */
-      .v3-a .v3-tile { flex-direction: column; align-items: stretch; }
-      .v3-a .v3-txt { width: auto; padding: 2.5rem 2.5rem 0; }
-      .v3-a .v3-txt h2 { font-size: 2.25rem; }
-      .v3-a .v3-txt p { font-size: 1.05rem; max-width: 34rem; }
-      .v3-a .v3-pic { width: auto; flex: 1; padding: 1rem 2rem 2rem; }
-      .v3-a .v3-pic img { max-height: 24rem; }
-      /* small tiles: text left, product right */
-      .v3-b .v3-tile, .v3-c .v3-tile, .v3-d .v3-tile, .v3-e .v3-tile { flex-direction: row; align-items: center; }
-      .v3-b .v3-txt, .v3-c .v3-txt, .v3-d .v3-txt, .v3-e .v3-txt { width: 56%; padding: 1.75rem 0 1.75rem 1.75rem; justify-content: center; }
-      .v3-b .v3-pic, .v3-c .v3-pic, .v3-d .v3-pic, .v3-e .v3-pic { width: 44%; padding: 1rem; }
-      .v3-b .v3-pic img, .v3-c .v3-pic img, .v3-d .v3-pic img, .v3-e .v3-pic img { max-height: 14rem; }
-      .v3-b .v3-txt p, .v3-c .v3-txt p { font-size: .9rem; }
+      .pk { padding: 2.25rem 2.5rem 6rem; }
+      .pk-titles { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 4rem; align-items: end; margin-top: 3.5rem; }
+      .pk h1 { font-size: 4.4rem; }
+      .pk-side { padding-bottom: .5rem; }
+      .pk-picker { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3.5rem; align-items: center; margin-top: 4rem; }
+
+      .pk-list { grid-template-columns: 1fr; gap: 0; border-top: 1px solid rgb(21 26 74 / .1); }
+      .pk-item, .pk-item:first-child { grid-column: auto; border-radius: 0; background: none; box-shadow: none; border-bottom: 1px solid rgb(21 26 74 / .1); }
+      .pk-tab { grid-template-columns: 3rem 1fr auto; grid-template-areas: "n name kind"; align-items: center; padding: 1.35rem 0; cursor: pointer; }
+      .pk-name { font-size: 1.5rem; color: rgb(21 26 74 / .45); transition: color .4s var(--ease), transform .5s var(--ease); }
+      .pk-n { color: rgb(21 26 74 / .35); transition: color .4s; }
+      .pk-kind { background: transparent; box-shadow: inset 0 0 0 1px rgb(21 26 74 / .12); color: var(--color-muted); transition: background .4s, box-shadow .4s, color .4s; }
+      .pk-tab:hover .pk-name { color: var(--color-ink); }
+      .pk-tab:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; border-radius: .5rem; }
+      .pk-item.is-active .pk-name { color: var(--color-ink); }
+      .pk-item.is-active .pk-n { color: var(--color-coral); }
+      .pk-item.is-active .pk-kind { background: var(--c); box-shadow: none; color: var(--color-ink); }
+
+      .pk-panel { display: grid; grid-template-rows: 0fr; padding: 0 0 0 3.75rem; transition: grid-template-rows .6s var(--ease); }
+      .pk-in { min-height: 0; overflow: hidden; }
+      .pk-in .pk-mimg { display: none; }
+      .pk-in p { max-width: 30rem; opacity: 0; transition: opacity .3s; }
+      .pk-in .pk-btn { margin-bottom: 1.6rem; }
+      .pk-item.is-active .pk-panel { grid-template-rows: 1fr; }
+      .pk-item.is-active .pk-in p { opacity: 1; transition: opacity .5s .15s; }
+
+      /* autoplay progress line */
+      .pk-bar { display: block; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; }
+      .pk-bar::after { content: ""; display: block; height: 100%; width: 0; background: var(--color-coral); }
+      .pk-auto .pk-item.is-active .pk-bar::after { animation: pk-fill 5.5s linear forwards; }
+      @keyframes pk-fill { to { width: 100%; } }
+
+      .pk-stage { position: relative; display: block; aspect-ratio: 5 / 4; overflow: hidden; border-radius: 2rem; background: var(--c); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .6), 0 40px 80px -40px rgb(21 26 74 / .35); transition: background-color .7s var(--ease); }
+      .pk-stage img { position: absolute; inset: 7% 8% 12%; width: 84%; height: 81%; object-fit: contain; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); opacity: 0; transform: translateY(1.5rem) scale(.96); transition: opacity .6s var(--ease), transform .9s var(--ease); }
+      .pk-stage img.is-active { opacity: 1; transform: none; }
+      .pk-chip { position: absolute; left: 1.5rem; bottom: 1.5rem; padding: .5rem 1rem; border-radius: 999px; background: rgb(255 255 255 / .85); font-size: .85rem; font-weight: 600; color: var(--color-ink); }
     }
+    @media (min-width: 1280px) { .pk h1 { font-size: 4.6rem; } }
     @media (prefers-reduced-motion: reduce) {
-      .v3-grid > li, .v3-seal text { animation: none; }
-      .v3-tile, .v3-pic img, .v3-btn, .v3-cta i { transition: none; }
+      .pk-panel, .pk-name, .pk-stage, .pk-stage img, .pk-in p { transition: none !important; }
     }
   </style>
   <noscript><style>img.img-loading{filter:none}</style></noscript>
@@ -207,101 +177,115 @@
 
 
   <main>
-    <section class="v3" aria-labelledby="v3-heading">
-      <span class="v3-blob v3-blob-1" aria-hidden="true"></span>
-      <span class="v3-blob v3-blob-2" aria-hidden="true"></span>
-      <div class="v3-wrap">
-        <div class="v3-hero">
-          <div class="v3-copy">
-            <a href="#top" aria-label="Canadian Parent home" class="v3-logo"><img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40"></a>
-            <p class="v3-kicker"><span class="v3-dot" aria-hidden="true"></span>ver $30,000 in free products given away in 2026</p>
-            <h1 id="v3-heading">Top 5 Giveaways For <span class="v3-mark">Canadian parents<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c60-9 140-12 294-6" fill="none" stroke="#FF4D6A" stroke-width="5" stroke-linecap="round"/></svg></span></h1>
-            <p class="v3-hand">New parent or parent-to-be? These five giveaways were made for you. From strollers to a Lululemon outfit, you could win big without spending a cent. Join 400,000+ Canadian parents who love our community.</p>
-            <div class="v3-actions">
-              <a href="#v3-picks" class="v3-btn">See the giveaways <span aria-hidden="true">↓</span></a>
-              <div class="v3-proof">
-                <img src="assets/images/avatars/parents.png" alt="" width="120" height="40">
-                <span><b>400,000+</b> parents<br>across Canada</span>
-              </div>
+    <section class="pk" aria-labelledby="pk-heading">
+      <div class="pk-wrap">
+        <header class="pk-head">
+          <a href="#top" aria-label="Canadian Parent home" class="pk-logo"><img src="assets/images/brand/logo.svg" alt="Canadian Parent" width="195" height="40"></a>
+          <div class="pk-titles">
+            <h1 id="pk-heading">Our top giveaway picks for Canadian parents</h1>
+            <div class="pk-side">
+              <p class="pk-hand">We hand-picked five prizes that make family life a little easier, from strollers to a year of diapers. Choose the one your family needs most and enter in under a minute. It’s always free, with no purchase required.</p>
+              <span class="pk-proof"><img src="assets/images/avatars/parents.png" alt="" width="120" height="40"><span><b>400,000+</b> Canadian parents have joined</span></span>
             </div>
           </div>
-          <figure class="v3-photo">
-            <img src="assets/images/photos/cta-mother-newborn.webp" alt="A mother smiles at her sleeping newborn on a sofa" width="1200" height="900" fetchpriority="high">
-            <svg class="v3-seal" viewBox="0 0 120 120" aria-hidden="true">
-              <defs><path id="v3-ring" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
-              <circle cx="60" cy="60" r="58" fill="#FFF1C7"/>
-              <text><textPath href="#v3-ring">100% FREE · NO PURCHASE · CANADA ·</textPath></text>
-              <path d="M60 78S42 67 42 55c0-6 7-9 11-5l7 7 7-7c4-4 11-1 11 5 0 12-18 23-18 23Z" fill="#FF4D6A"/>
-            </svg>
-            <figcaption class="v3-note">made with love for new families</figcaption>
-          </figure>
-        </div>
+        </header>
 
-        <ul class="v3-grid" id="v3-picks" role="list">
-          <li class="v3-a">
-            <a href="https://work.jqd.io/stroller/" class="v3-tile" style="--bg:#D6F1EE">
-              <span class="v3-sticker">Our #1 pick!</span>
-              <div class="v3-txt">
-                <span class="v3-tag">Grand prize · Gear</span>
-                <h2>Win a new stroller system</h2>
+        <div class="pk-picker">
+          <ol class="pk-list">
+            <li class="pk-item is-active" data-i="0" style="--c:#D6F1EE">
+              <button class="pk-tab" type="button" aria-controls="pk-p0" aria-expanded="true"><span class="pk-n">01</span><span class="pk-name">Maxi-Cosi stroller set</span><span class="pk-kind">Grand prize</span></button>
+              <div class="pk-panel" id="pk-p0"><div class="pk-in">
+                <div class="pk-mimg"><img src="assets/images/giveaways/stroller.jpg" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512"></div>
                 <p>A full travel system with a matching car seat, ready for the school run and beyond. One lucky parent will take it home, and entering is free.</p>
-                <span class="v3-cta">Enter to win a stroller <i aria-hidden="true">→</i></span>
+                <a href="https://work.jqd.io/stroller/" class="btn-primary pk-btn">Enter to win the stroller</a></div>
               </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/stroller.png" alt="Green Maxi-Cosi stroller with matching car seat and gift box" width="640" height="512"></div>
-            </a>
-          </li>
-          <li class="v3-b">
-            <a href="https://work.jqd.io/amazon/" class="v3-tile" style="--bg:#FFF1C7">
-              <div class="v3-txt">
-                
-                 <span class="v3-tag">Registry</span>
-                <h2>$500 Amazon Baby Registry</h2>
-                <p>Fill your registry with the essentials you actually need. Win $500 to cover the big items and the small ones too.</p>
-                <span class="v3-cta">Win my registry <i aria-hidden="true">→</i></span>
-              
-              </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/amazon-registry-v3.png" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400"></div>
-            </a>
-          </li>
-          <li class="v3-c">
-            <a href="https://work.jqd.io/lululemon/" class="v3-tile" style="--bg:#EAF8F6">
-              
-              <div class="v3-txt">
-                <span class="v3-tag">For you</span>
-                <h2>Lululemon bag and outfit</h2>
-                <p>A stylish diaper bag and a fresh outfit just for you. The perfect pair for busy days out with your little one.</p>
-                <span class="v3-cta">Enter to win Lululemon <i aria-hidden="true">→</i></span>
-              </div>
-
-              <div class="v3-pic"><img src="assets/images/giveaways/lululemon-v3.png" alt="Lululemon diaper bag and outfit set in a gift box" width="500" height="500" loading="lazy"></div>
-            </a>
-          </li>
-          <li class="v3-d">
-            <a href="https://work.jqd.io/nike/" class="v3-tile" style="--bg:#FFE6DC">
-              <div class="v3-txt">
-                <span class="v3-tag">For your baby</span>
-                <h2>Nike Shoes for your Baby.</h2>
-                <p>Try trusted baby brands at no cost, shipped straight to you. Find the products your family loves before you buy.</p>
-                <span class="v3-cta">Enter to win <i aria-hidden="true">→</i></span>
-              </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/nike-shoes.png" alt="Nike shoes for babies in a gift box" width="640" height="512" loading="lazy"></div>
-            </a>
-          </li>
-          <li class="v3-e">
-            <a href="https://work.jqd.io/diapers/" class="v3-tile" style="--bg:#F4E8EC">
-              <div class="v3-txt">
-               <span class="v3-tag">Essentials</span>
-                <h2>Diapers for a year</h2>
+              <i class="pk-bar" aria-hidden="true"></i>
+            </li>
+            <li class="pk-item" data-i="1" style="--c:#FFF1C7">
+              <button class="pk-tab" type="button" aria-controls="pk-p1" aria-expanded="false"><span class="pk-n">02</span><span class="pk-name">Diapers for a year</span><span class="pk-kind">Essentials</span></button>
+              <div class="pk-panel" id="pk-p1"><div class="pk-in">
+                <div class="pk-mimg"><img src="assets/images/giveaways/diapers.jpg" alt="Packs of Pampers, Huggies and Rascals diapers in a gift box" width="400" height="400" loading="lazy"></div>
                 <p>Twelve months of top-brand diapers, delivered right to your door. Skip the late-night store runs and put the savings toward your little one.</p>
-                <span class="v3-cta">Win free diapers <i aria-hidden="true">→</i></span>
-              
+                <a href="https://work.jqd.io/diapers/" class="btn-primary pk-btn">Enter to win diapers</a></div>
               </div>
-              <div class="v3-pic"><img src="assets/images/giveaways/diapers-v3.png" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
-            </a>
-          </li>
-        </ul>
-        <p class="v3-fine">No purchase required · Canada only · 18+ · New giveaways every week</p>
+              <i class="pk-bar" aria-hidden="true"></i>
+            </li>
+            <li class="pk-item" data-i="2" style="--c:#EAF8F6">
+              <button class="pk-tab" type="button" aria-controls="pk-p2" aria-expanded="false"><span class="pk-n">03</span><span class="pk-name">Free baby product box</span><span class="pk-kind">Free samples</span></button>
+              <div class="pk-panel" id="pk-p2"><div class="pk-in">
+                <div class="pk-mimg"><img src="assets/images/photos/sample-baby-product.jpg" alt="Baby lotion, formula, wipes, diapers and bottles in a sample box" width="500" height="500" loading="lazy"></div>
+                <p>Try trusted baby brands at no cost, shipped straight to you. Find the products your family loves before you buy.</p>
+                <a href="https://work.jqd.io/babysample2/" class="btn-primary pk-btn">Get my free samples</a></div>
+              </div>
+              <i class="pk-bar" aria-hidden="true"></i>
+            </li>
+            <li class="pk-item" data-i="3" style="--c:#FFE6DC">
+              <button class="pk-tab" type="button" aria-controls="pk-p3" aria-expanded="false"><span class="pk-n">04</span><span class="pk-name">Lululemon bag and outfit</span><span class="pk-kind">For you</span></button>
+              <div class="pk-panel" id="pk-p3"><div class="pk-in">
+                <div class="pk-mimg"><img src="assets/images/photos/lululemon-set.jpg" alt="Lululemon diaper bag and outfit set in a gift box" width="640" height="512" loading="lazy"></div>
+                <p>A stylish diaper bag and a fresh outfit just for you. The perfect pair for busy days out with your little one.</p>
+                <a href="https://work.jqd.io/lululemon/" class="btn-primary pk-btn">Enter to win Lululemon</a></div>
+              </div>
+              <i class="pk-bar" aria-hidden="true"></i>
+            </li>
+            <li class="pk-item" data-i="4" style="--c:#F4E8EC">
+              <button class="pk-tab" type="button" aria-controls="pk-p4" aria-expanded="false"><span class="pk-n">05</span><span class="pk-name">$500 Amazon Baby Registry</span><span class="pk-kind">Registry</span></button>
+              <div class="pk-panel" id="pk-p4"><div class="pk-in">
+                <div class="pk-mimg"><img src="assets/images/photos/amazon-caard.jpg" alt="Diaper backpack, plush bunny, bottles and blanket for a baby registry" width="800" height="640" loading="lazy"></div>
+                <p>Fill your registry with the essentials you actually need. Win $500 to cover the big items and the small ones too.</p>
+                <a href="https://work.jqd.io/amazon/" class="btn-primary pk-btn">Enter to win the registry</a></div>
+              </div>
+              <i class="pk-bar" aria-hidden="true"></i>
+            </li>
+          </ol>
+
+          <div class="pk-stage" aria-hidden="true" style="--c:#D6F1EE">
+            <img class="is-active" src="assets/images/giveaways/stroller.jpg" alt="" width="640" height="512" fetchpriority="high">
+            <img src="assets/images/giveaways/diapers.jpg" alt="" width="400" height="400">
+            <img src="assets/images/photos/sample-baby-product.jpg" alt="" width="500" height="500">
+            <img src="assets/images/photos/lululemon-set.jpg" alt="" width="640" height="512">
+            <img src="assets/images/photos/amazon-caard.jpg" alt="" width="800" height="640">
+            <span class="pk-chip">Free entry · Canada only</span>
+          </div>
+        </div>
+        <p class="pk-fine">No purchase required. Open to residents of Canada, 18 and over.</p>
       </div>
+      <script>
+        (function () {
+          var root = document.querySelector('.pk');
+          var items = [].slice.call(root.querySelectorAll('.pk-item'));
+          var stage = root.querySelector('.pk-stage');
+          var shots = [].slice.call(stage.querySelectorAll('img'));
+          var desktop = matchMedia('(min-width: 1024px)');
+          var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var cur = 0, timer = null, manual = false, DELAY = 5500;
+
+          function show(n) {
+            cur = n;
+            items.forEach(function (it, i) {
+              var on = i === n;
+              it.classList.toggle('is-active', on);
+              it.querySelector('.pk-tab').setAttribute('aria-expanded', on);
+              if (on) { var b = it.querySelector('.pk-bar'); b.style.animation = 'none'; b.offsetWidth; b.style.animation = ''; }
+            });
+            shots.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
+            stage.style.setProperty('--c', items[n].style.getPropertyValue('--c'));
+          }
+          function tick() { show((cur + 1) % items.length); }
+          function start() { if (!manual && !calm && desktop.matches && !timer) { root.classList.add('pk-auto'); timer = setInterval(tick, DELAY); } }
+          function stop() { clearInterval(timer); timer = null; root.classList.remove('pk-auto'); }
+
+          items.forEach(function (it, i) {
+            var tab = it.querySelector('.pk-tab');
+            tab.addEventListener('click', function () { manual = true; stop(); show(i); });
+            it.addEventListener('mouseenter', function () { if (desktop.matches) { stop(); show(i); } });
+          });
+          root.querySelector('.pk-picker').addEventListener('mouseleave', start);
+          root.addEventListener('focusin', function () { manual = true; stop(); });
+          desktop.addEventListener && desktop.addEventListener('change', function () { stop(); start(); });
+          start();
+        })();
+      </script>
     </section>
 
    
