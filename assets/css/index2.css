@@ -29,7 +29,7 @@
 .discover-cta { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: auto 30px 24px; min-height: 58px; padding: 10px 16px 10px 22px; border-radius: 999px; background: white; color: var(--color-ink); box-shadow: 0 4px 12px rgb(21 26 74 / .06); font-size: 16px; line-height: 1.4; font-weight: 500; }
 .discover-cta svg { flex: none; width: 34px; height: 34px; padding: 8px; border-radius: 50%; background: var(--color-coral-tint); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .discover-art { position: relative; display: flex; justify-content: center; align-items: center; min-height: 0; }
-.discover-art img { width: 100%; height: 100%; min-height: 0; object-fit: contain; filter: brightness(1.08) contrast(1.12); mix-blend-mode: multiply; }
+.discover-art img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
 .discover-stroller { grid-column: span 7; background: var(--discover-mint); display: grid; grid-template-columns: .95fr 1.15fr; min-height: 330px; }
 .discover-stroller .discover-copy { display: flex; flex-direction: column; padding: 36px 0 30px 34px; }
 .discover-stroller h2 { font-size: 32px; }
