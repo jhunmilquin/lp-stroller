@@ -1,0 +1,61 @@
+/* Mobile hero follows the reference: heading, photo, description, action. */
+@media (max-width: 760px) {
+  .giveaway-hero .discover-wrap { padding-inline: 12px; }
+  .giveaway-hero .discover-brand-row { align-items: center; }
+  .giveaway-hero .discover-brand img { width: 172px; }
+  .giveaway-hero .discover-brand-row nav a { font-size: 12px; }
+  .giveaway-hero .discover-brand-row nav a:last-child { display: none; }
+  .giveaway-hero .discover-intro.cozy-banner {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 34px 26px;
+    margin: 28px 0 46px;
+    border-radius: 24px;
+    text-align: center;
+  }
+  .giveaway-hero .cozy-banner-copy { display: contents; }
+  .giveaway-hero .cozy-banner h1 {
+    grid-row: 1;
+    max-width: none;
+    font-size: clamp(30px, 8.2vw, 40px);
+    line-height: 1 !important;
+    letter-spacing: -.035em;
+  }
+  .giveaway-hero .cozy-banner h3 {
+    grid-row: 2;
+    margin: 16px 0 20px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.35 !important;
+  }
+  .giveaway-hero .cozy-banner-photo { grid-row: 3; }
+  .giveaway-hero .cozy-banner-photo img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 407 / 360;
+    object-fit: cover;
+    object-position: center;
+  }
+  .giveaway-hero .cozy-subtitle {
+    grid-row: 4;
+    padding: 0;
+    margin: 34px 0 0;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #865064;
+  }
+  .giveaway-hero .cozy-banner-link {
+    grid-row: 5;
+    justify-self: center;
+    min-height: 54px;
+    margin-top: 22px;
+    padding: 13px 26px;
+  }
+  .giveaway-hero .cozy-banner-note {
+    grid-row: 6;
+    margin: 10px 0 0;
+    color: #151a4a;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
