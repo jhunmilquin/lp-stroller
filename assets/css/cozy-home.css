@@ -32,6 +32,10 @@
   color: var(--color-ink); font-family: var(--ch-serif); font-weight: 700;
   font-size: clamp(40px, 5vw, 60px); line-height: 1.06; letter-spacing: -.03em; text-wrap: balance;
 }
+
+.ch-hero h1 em{
+  font-size: clamp(35px, 4.5vw, 50px); line-height: 1.06; letter-spacing: -.03em; text-wrap: balance;
+}
 .ch-hero h1 em { font-style: italic; font-weight: 500; color: var(--ch-rose); }
 .ch-lede { max-width: 44ch; text-wrap: pretty; margin: 22px 0 0; color: #5a4a47; font-size: 17px; line-height: 1.7; }
 
