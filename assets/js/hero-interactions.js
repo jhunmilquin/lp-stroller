@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const hero = document.querySelector('.discover-hero');
+  const hero = document.querySelector('.discover-hero, .gv-section');
   if (!hero) return;
 
   // Randomize icons within the reserved margins and content spaces.
@@ -17,7 +17,7 @@
     icon.style.setProperty('--cozy-size', `${Math.round(40 + Math.random() * 10)}px`);
   });
 
-  const buttons = Array.from(hero.querySelectorAll('.discover-cta'));
+  const buttons = Array.from(hero.querySelectorAll('.discover-cta, .gv-cta'));
   const toggle = hero.querySelector('.discover-motion-toggle');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!buttons.length || !window.IntersectionObserver || !buttons[0].animate) return;
@@ -43,7 +43,7 @@
     timer = undefined;
     if (!enabled()) return;
     const candidates = Array.from(visible).filter(button => {
-      const card = button.closest('.discover-card');
+      const card = button.closest('.discover-card, .gv-card');
       return !card.matches(':hover') && !card.contains(document.activeElement);
     });
     const different = candidates.filter(button => button !== previous);
@@ -79,7 +79,7 @@
   }, { threshold: [0, .75] });
   buttons.forEach(button => {
     observer.observe(button);
-    const card = button.closest('.discover-card');
+    const card = button.closest('.discover-card, .gv-card');
     const settle = () => {
       if (active?.button === button) { active.animation.cancel(); active = undefined; }
     };
