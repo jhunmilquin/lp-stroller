@@ -1,0 +1,35 @@
+/*
+ * Quiet pattern background (optional, CSS only).
+ * A Swiss dot pattern behind the form whose dot colour changes with each step.
+ * Detects the visible step with :has(), so no JS or HTML changes are needed.
+ * To turn it off, delete the pattern.css line in <head>.
+ */
+@property --dot {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(120 200 190 / 0.25);
+}
+
+main:where(:has(#join)) {
+  --dot: rgb(120 200 190 / 0.25); /* step 1: mint */
+  background-color: #f5faf9;
+  background-image:
+    radial-gradient(circle, var(--dot) 1.75px, transparent 2.25px),
+    radial-gradient(circle, var(--dot) 1.75px, transparent 2.25px);
+  background-size: 1.75rem 1.75rem;
+  background-position: 0 0, 0.875rem 0.875rem;
+  transition: --dot 0.6s ease;
+}
+
+/* Same low specificity for every step rule, so the last match wins (thank-you comes last). */
+main:where(:has([data-step]:not([hidden]) #firstName))   { --dot: rgb(240 190 60 / 0.25); }  /* step 2: sun */
+main:where(:has([data-step]:not([hidden]) #lastName))    { --dot: rgb(225 150 170 / 0.25); } /* step 3: blush */
+main:where(:has([data-step]:not([hidden]) [name="age"])) { --dot: rgb(240 150 120 / 0.25); } /* step 4: peach */
+main:where(:has([data-step]:not([hidden]) #email))       { --dot: rgb(120 200 190 / 0.25); } /* step 5: mint */
+main:where(:has(#done:not([hidden])))                    { --dot: rgb(240 190 60 / 0.25); }  /* thank-you: sun */
+
+@media (prefers-reduced-motion: reduce) {
+  main:where(:has(#join)) {
+    transition: none;
+  }
+}

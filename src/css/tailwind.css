@@ -26,3 +26,44 @@
   --font-body: "Poppins", system-ui, sans-serif;
   --shadow-card: 0 8px 32px rgb(21 26 74 / 0.06);
 }
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--color-body);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .choice {
+    @apply relative flex min-h-20 cursor-pointer items-center gap-3 rounded-2xl border-2 border-line bg-white p-3 pr-11 leading-snug font-medium text-ink transition-colors select-none hover:border-ink/25 has-checked:border-coral has-checked:bg-coral-tint/50 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ink;
+  }
+  .choice-icon {
+    @apply grid size-14 shrink-0 place-items-center rounded-xl transition-transform group-has-checked:scale-105;
+  }
+  .choice-icon svg {
+    @apply size-10;
+  }
+  .choice-check {
+    @apply absolute top-1/2 right-4 grid size-6 -translate-y-1/2 place-items-center rounded-full border-2 border-line bg-white text-white transition-colors group-has-checked:border-coral group-has-checked:bg-coral;
+  }
+  .choice-check svg {
+    @apply size-4 scale-0 transition-transform group-has-checked:scale-100;
+  }
+  .field-input {
+    @apply block min-h-14 w-full rounded-xl border-2 border-line bg-white px-4 text-lg text-ink transition-colors placeholder:text-muted/60 hover:border-ink/25 focus:border-ink focus:outline-none aria-invalid:border-danger;
+  }
+  .field-error {
+    @apply mt-2 text-sm font-medium text-danger empty:hidden;
+  }
+}
+
+@layer components {
+  .lang-btn {
+    @apply min-h-10 min-w-11 rounded-full px-3 text-sm font-semibold text-muted transition-colors hover:text-ink aria-pressed:bg-ink aria-pressed:text-white;
+  }
+}
