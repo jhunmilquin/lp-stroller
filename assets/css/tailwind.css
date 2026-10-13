@@ -309,6 +309,9 @@
   .aspect-4\/3 {
     aspect-ratio: 4/3;
   }
+  .aspect-5\/4 {
+    aspect-ratio: 5/4;
+  }
   .size-0 {
     width: 0px;
     height: 0px;
