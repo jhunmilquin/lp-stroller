@@ -620,6 +620,9 @@
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
   }
+  .ps-\[10px\] {
+    padding-inline-start: 10px;
+  }
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
   }
