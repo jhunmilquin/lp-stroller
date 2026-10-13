@@ -282,6 +282,9 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
   .block {
     display: block;
   }
@@ -802,6 +805,9 @@
     .lg\:col-span-7 {
       grid-column: span 7 / span 7;
     }
+    .lg\:mb-10 {
+      margin-bottom: calc(var(--spacing) * 10);
+    }
     .lg\:block {
       display: block;
     }
@@ -822,6 +828,12 @@
     }
     .lg\:gap-12 {
       gap: calc(var(--spacing) * 12);
+    }
+    .lg\:gap-y-0 {
+      row-gap: 0px;
+    }
+    .lg\:self-end {
+      align-self: flex-end;
     }
     .lg\:py-20 {
       padding-block: calc(var(--spacing) * 20);
