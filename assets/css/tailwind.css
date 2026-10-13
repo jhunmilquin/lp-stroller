@@ -303,9 +303,6 @@
   .inline-flex {
     display: inline-flex;
   }
-  .aspect-4\/3 {
-    aspect-ratio: 4/3;
-  }
   .aspect-5\/4 {
     aspect-ratio: 5/4;
   }
