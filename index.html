@@ -13,10 +13,13 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="icon" type="image/png" href="assets/images/brand/fav.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/fav.png">
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="preload" as="image" href="assets/images/hero/hero-mother-stroller.png" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero/diapersd.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/webp/hero/diapersd.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/tailwind.css?v=1.0.1">
   <link rel="stylesheet" href="assets/css/app.css">
   <script src="assets/js/app.js" defer></script>
@@ -104,23 +107,23 @@
   </header>
 
   <main>
-    <section class="py-8 md:py-12 pt-3 pt:md-8 lg:pb-0 lg:pt-20" aria-labelledby="hero-heading" style="background-color: #FFEEE8;">
-      <div class="hero-grid mx-auto grid max-w-7xl grid-cols-1 gap-8 px-0 sm:px-5 md:px-10 lg:grid-cols-12">
+    <section class="py-8 md:py-12 pt-3 pt:md-8 lg:pb-0 lg:pt-20" aria-labelledby="hero-heading" style="background-color: #c1f4f7;">
+      <div class="hero-grid mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:gap-y-0 px-0 sm:px-5 md:px-10 lg:grid-cols-12">
 
         <div class="flex items-center lg:block hero-copy">
           <h1 class="sr-only">Amazon $500 baby Registry</h1>
           <a href="#join" class="block" >
             <picture class="mx-auto block w-full lg:hidden">
-              <source srcset="assets/images/hero/diaper-m2.jpg" type="image/png">
-              <img src="assets/images/hero/diaper-m2.jpg"
+              <source srcset="assets/webp/images/hero/diapersm.webp" type="image/webp">
+              <img src="assets/images/hero/diapersm.jpg"
                 alt="Amazon $500 baby Registry" width="1200" height="1200"
                 loading="eager" fetchpriority="high" class="w-full object-contain img-loading" onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
             </picture>
           </a>
          
             <picture class="mx-auto w-full hidden lg:block">
-              <source srcset="assets/images/hero/diaper-m1.jpg" type="image/png">
-              <img src="assets/images/hero/diaper-m1.jpg"
+              <source srcset="assets/webp/images/hero/diapersd.webp" type="image/webp">
+              <img src="assets/images/hero/diapersd.jpg"
                 alt="Amazon $500 baby Registry" width="1200" height="1200"
                 loading="eager" fetchpriority="high" class="w-full object-contain img-loading" onload="this.classList.remove('img-loading')" onerror="this.classList.remove('img-loading')">
             </picture>
@@ -128,7 +131,7 @@
           
         </div>
         <div class="px-4 md:px-0 lg:col-span-5">
-          <div class="ticket-shadow hero-ticket min-w-0 self-start">
+          <div class="ticket-shadow hero-ticket min-w-0 self-start mb-6 lg:mb-10">
             <div class="ticket-form rounded-3xl">
 
               <div id="ticket-body" class="ticket-body perforation rounded-b-3xl bg-white p-10 md:pb-12 md:p-8">
@@ -255,9 +258,12 @@
               class="mt-4 font-heading text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-ink">
               100% FREE</p>
             <!-- <p class="mt-5 text-lg">Every perk is included with your free membership.</p> -->
-            <img src="assets/images/illustrations/member-pass-samples-box.png"
+            <picture>
+              <source srcset="assets/webp/images/illustrations/member-pass-samples-box.webp" type="image/webp">
+              <img src="assets/images/illustrations/member-pass-samples-box.png"
               alt="An open sample box with a diaper, wipes and baby bottle" width="800" height="600" loading="lazy"
               class="mx-auto mt-6 aspect-4/3 w-60 max-w-full object-contain">
+            </picture>
           </div>
           <div
             class="text-sm pass-footer flex min-h-24 items-center justify-center border-t-2 border-dashed border-ink/20 px-8 py-6 text-center font-ui text-lg font-semibold text-ink">
@@ -431,37 +437,37 @@
             <ul class="wb-track">
             <li class="wb-row" data-day="5">
               <time class="wb-date">&nbsp;</time>
-              <span class="wb-prize"><img src="assets/images/prizes/prize-sound-machine.png" alt="" width="56" height="56" loading="lazy"><b>Baby sound machine</b></span>
+              <span class="wb-prize"><picture><source srcset="assets/webp/images/prizes/prize-sound-machine.webp" type="image/webp"><img src="assets/images/prizes/prize-sound-machine.png" alt="" width="56" height="56" loading="lazy"></picture><b>Baby sound machine</b></span>
               <span class="wb-who"><b>Lydia W.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Temiskaming, ON</span></span>
               <span class="wb-status">Claimed</span>
             </li>
             <li class="wb-row" data-day="4">
               <time class="wb-date">&nbsp;</time>
-              <span class="wb-prize"><img src="assets/images/prizes/prize-audio-player.png" alt="" width="56" height="56" loading="lazy"><b>Kids' audio player</b></span>
+              <span class="wb-prize"><picture><source srcset="assets/webp/images/prizes/prize-audio-player.webp" type="image/webp"><img src="assets/images/prizes/prize-audio-player.png" alt="" width="56" height="56" loading="lazy"></picture><b>Kids' audio player</b></span>
               <span class="wb-who"><b>Olinda F.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Mississauga, ON</span></span>
               <span class="wb-status">Claimed</span>
             </li>
             <li class="wb-row" data-day="3">
               <time class="wb-date">&nbsp;</time>
-              <span class="wb-prize"><img src="assets/images/prizes/prize-formula-dispenser.png" alt="" width="56" height="56" loading="lazy"><b>Formula dispenser</b></span>
+              <span class="wb-prize"><picture><source srcset="assets/webp/images/prizes/prize-formula-dispenser.webp" type="image/webp"><img src="assets/images/prizes/prize-formula-dispenser.png" alt="" width="56" height="56" loading="lazy"></picture><b>Formula dispenser</b></span>
               <span class="wb-who"><b>Billie K.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Moose Jaw, SK</span></span>
               <span class="wb-status">Claimed</span>
             </li>
             <li class="wb-row" data-day="2">
               <time class="wb-date">&nbsp;</time>
-              <span class="wb-prize"><img src="assets/images/prizes/amazongift.png" alt="" width="56" height="56" loading="lazy"><b>$250 Amazon gift card</b></span>
+              <span class="wb-prize"><picture><source srcset="assets/webp/images/prizes/amazongift.webp" type="image/webp"><img src="assets/images/prizes/amazongift.png" alt="" width="56" height="56" loading="lazy"></picture><b>$250 Amazon gift card</b></span>
               <span class="wb-who"><b>Bianca A.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Stouffville, ON</span></span>
               <span class="wb-status">Claimed</span>
             </li>
             <li class="wb-row" data-day="1">
               <time class="wb-date">&nbsp;</time>
-              <span class="wb-prize"><img src="assets/images/prizes/walmartgift.png" alt="" width="56" height="56" loading="lazy"><b>$100 Walmart gift card</b></span>
+              <span class="wb-prize"><picture><source srcset="assets/webp/images/prizes/walmartgift.webp" type="image/webp"><img src="assets/images/prizes/walmartgift.png" alt="" width="56" height="56" loading="lazy"></picture><b>$100 Walmart gift card</b></span>
               <span class="wb-who"><b>Jennifer M.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Calgary, AB</span></span>
               <span class="wb-status">Claimed</span>
             </li>
             <li class="wb-row" data-day="0">
               <time class="wb-date">&nbsp;</time>
-              <span class="wb-prize"><img src="assets/images/prizes/prize-baby-carrier.png" alt="" width="56" height="56" loading="lazy"><b>Baby carrier</b></span>
+              <span class="wb-prize"><picture><source srcset="assets/webp/images/prizes/prize-baby-carrier.webp" type="image/webp"><img src="assets/images/prizes/prize-baby-carrier.png" alt="" width="56" height="56" loading="lazy"></picture><b>Baby carrier</b></span>
               <span class="wb-who"><b>Sarah L.</b><span><svg class="size-4 shrink-0" aria-hidden="true"><use href="#icon-map-pin" /></svg>Vancouver, BC</span></span>
               <span class="wb-status">Claimed</span>
             </li>
@@ -481,9 +487,15 @@
             <p class="mt-5">Enter for your chance to win an entire year of diapers. Join Canadian Parent free and get access to giveaways, sample offers and exclusive coupons.</span></p><a href="#join" class="btn-primary mt-8 w-full lg:w-auto block md:max-w-[350px] text-[18px] sm:text-[1.25rem] p-[15px] sm:py-[0.75rem] ">Enter the Diaper Giveaway</a>
             <p class="mt-4 text-sm text-body">No purchase required. Canada only.</p>
           </div>
-          <img src="assets/images/photos/free-diapers.jpg"
+           <div class="order-1 min-w-0 md:order-2">
+  <picture>
+            <source srcset="assets/webp/images/photos/diapers.webp" type="image/webp">
+            <img src="assets/images/photos/diapers.png"
             alt="A mother smiles at her sleeping newborn on a linen sofa" width="1200" height="900" loading="lazy"
             class="order-1 w-full max-w-[400px] rounded-3xl object-cover md:order-2 mx-auto">
+          </picture>
+           </div>
+        
         </div>
       </div>
     </section>
